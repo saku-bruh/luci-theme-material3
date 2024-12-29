@@ -40,7 +40,7 @@
 	<div class="spinning">{{ _('Loading view…') }}</div>
 	<script>
 		L.require('ui').then(function(ui) {
-			ui.instantiateView('bootstrap.sysauth');
+			ui.instantiateView('material3.sysauth');
 		});
 	</script>
 </div>
