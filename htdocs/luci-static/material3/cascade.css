@@ -9,37 +9,13 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ *
+ * LuCI Material3 Theme
+ * Copyright 2024 AngelaCooljx
+ * By AngelaCooljx <bilibili@att.net>
+ * Based on LuCI Bootstrap Theme
+ * 还没改完 QAQ，细节太多了
  */
-.cbi-button-down,
-.cbi-button-download,
-.cbi-button-find,
-.cbi-button-link,
-.cbi-button-neutral,
-.cbi-button-up,
-.modal.alert-message,
-body,
-code,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-legend {
-	color: var(--text-color-high)
-}
-
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6,
-h6 small,
-p small {
-	color: var(--text-color-low)
-}
-
 :root,
 pre {
 	--border-color-h: var(--background-color-h);
@@ -47,7 +23,6 @@ pre {
 }
 
 address,
-body,
 dl dd,
 dl dt,
 li,
@@ -83,20 +58,41 @@ table {
 	border-collapse: collapse
 }
 
+header .brand,
+ul.unstyled {
+	margin-left: 0
+}
+
+.cbi-dropdown,
+.cbi-dropdown[open],
+.cbi-dynlist>.item,
+.cbi-select,
+.dropdown,
+.dropdown-menu li,
+.table,
+li.menu,
+sub,
+sup {
+	position: relative
+}
+
 a:hover,
 footer a {
 	color: var(--primary-color-low)
 }
 
-.breadcrumb li,
-.cbi-dropdown>ul,
-ul.unstyled {
-	list-style: none
+#tabmenu,
+footer span {
+	margin-bottom: 1em
 }
 
-.close,
-.dropdown-menu a {
-	text-shadow: 0 1px 0 #fff
+.btn.disabled,
+.btn[disabled],
+button[disabled],
+input[type=button][disabled],
+input[type=reset][disabled],
+input[type=submit][disabled] {
+	opacity: var(--disabled-opacity)
 }
 
 .cbi-dropdown>ul>li img,
@@ -109,9 +105,16 @@ ul.unstyled {
 	vertical-align: middle
 }
 
-#syslog,
-textarea {
-	font-family: monospace
+.breadcrumb li,
+.cbi-dropdown>ul,
+.nav,
+ul.unstyled {
+	list-style: none
+}
+
+.menu-btn.active span::before,
+.nav>li>a::after {
+	transform: rotate(45deg)
 }
 
 :root {
@@ -164,7 +167,9 @@ textarea {
 	--warn-color-low: #f2d24f;
 	--on-warn-color: var(--text-color-highest);
 	--disabled-opacity: .7;
-	color-scheme: light
+	color-scheme: light;
+	--sidebar-width: 256px;
+	--header-height: 4rem
 }
 
 :root[data-darkmode=true] {
@@ -220,11 +225,9 @@ table {
 
 html {
 	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 	height: 100%
-}
-
-a:focus {
-	outline: dotted thin
 }
 
 a:active,
@@ -236,7 +239,6 @@ sub,
 sup {
 	font-size: 75%;
 	line-height: 0;
-	position: relative;
 	vertical-align: baseline
 }
 
@@ -279,13 +281,6 @@ input[type=submit] {
 	word-break: break-all
 }
 
-button[disabled],
-input[type=button][disabled],
-input[type=reset][disabled],
-input[type=submit][disabled] {
-	opacity: var(--disabled-opacity)
-}
-
 input[type=search] {
 	-webkit-appearance: textfield;
 	box-sizing: content-box
@@ -295,43 +290,30 @@ input[type=search]::-webkit-search-decoration {
 	-webkit-appearance: none
 }
 
-textarea {
-	overflow: auto;
-	vertical-align: top
-}
-
 .control-group {
 	display: inline-flex;
 	gap: .2em
 }
 
-.cbi-dynlist>.add-item,
-.cbi-value,
-.td.cbi-section-actions>*,
-body {
-	display: flex
-}
-
 .control-group>input+:not(input):not(select),
 .control-group>select+:not(input):not(select) {
-	margin-left: calc(-.2em + -2px);
-	border-radius: 0 3px 3px 0;
-	padding: 0 6px
+	border-radius: 1rem;
+	padding: 0 10px;
+	line-height: 26px
 }
 
 body {
-	background-color: var(--background-color-high);
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	padding: 5px;
-	min-height: 100%;
-	flex-direction: column;
-	overflow-y: scroll
+	display: grid;
+	grid-template-areas: "header header" "sidebar main" "footer footer";
+	grid-template-columns: var(--sidebar-width) 1fr;
+	grid-template-rows: var(--header-height) 1fr;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background: var(--background-color-medium)
 }
 
 .container {
-	max-width: 940px;
 	margin-left: auto;
 	margin-right: auto;
 	zoom: 1
@@ -375,19 +357,14 @@ p {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6,
 legend {
-	line-height: 36px;
-	font-weight: 700
+	line-height: 36px
 }
 
-#syslog,
-.cbi-value,
-.table,
 address,
 dl,
 h1 {
@@ -395,27 +372,54 @@ h1 {
 }
 
 p small {
-	font-size: 11px
+	font-size: 11px;
+	color: var(--text-color-low)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+	font-weight: 700;
+	color: var(--text-color-high)
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6,
+h6 small {
+	color: var(--text-color-low)
 }
 
 h1 {
 	font-size: 30px
 }
 
-h1 small,
-h3,
-legend {
+h1 small {
 	font-size: 18px
 }
 
 h2 {
-	font-size: 24px
+	font-size: 1.875em;
+	line-height: 1.875em
 }
 
 h2 small,
 h3 small,
 h5 {
 	font-size: 14px
+}
+
+h3,
+legend {
+	font-size: 1.5em;
+	margin: .75em 0
 }
 
 h4 {
@@ -455,8 +459,25 @@ li {
 	color: var(--text-color-medium)
 }
 
-ul.unstyled {
-	margin-left: 0
+.cbi-button-down,
+.cbi-button-download,
+.cbi-button-find,
+.cbi-button-link,
+.cbi-button-neutral,
+.cbi-button-up,
+.cbi-dynlist>.item,
+.cbi-select select option,
+.cbi-value label.cbi-value-title,
+.dropdown-menu>li.active>a,
+.dropdown-menu>li>a:hover,
+.ifacebadge,
+.ifacebox .ifacebox-head,
+.nav .dropdown-menu li a,
+.nav>li>a,
+.zonebadge,
+code,
+fieldset legend {
+	color: var(--text-color-high)
 }
 
 dl dt {
@@ -501,12 +522,18 @@ code {
 	padding: 1px 3px
 }
 
+.cbi-section-table .tr:hover .td,
+.cbi-section-table .tr:hover .th,
+.cbi-section-table .tr:hover::before,
+pre {
+	background-color: var(--background-color-low)
+}
+
 pre {
 	--border-color-delta-l: 100%;
 	--border-color-l: calc(var(--background-color-l) + var(--background-color-delta-l-sign) * var(--border-color-delta-l));
 	--border-color-a: 0.15;
 	--border-color: hsla(var(--border-color-hsl), var(--border-color-a));
-	background-color: var(--background-color-low);
 	padding: 8.5px;
 	margin: 0 0 18px;
 	border: 1px solid var(--border-color);
@@ -514,17 +541,6 @@ pre {
 	white-space: pre;
 	white-space: pre-wrap;
 	word-wrap: break-word
-}
-
-.cbi-dropdown:not(.btn):not(.cbi-button),
-.cbi-dynlist>.item,
-.cbi-select,
-input,
-select,
-textarea {
-	background: var(--background-color-high);
-	border: 1px solid var(--border-color-high);
-	color: var(--text-color-high)
 }
 
 fieldset {
@@ -536,7 +552,6 @@ fieldset legend {
 	display: block;
 	font-size: 19.5px;
 	line-height: 1;
-	color: var(--text-color-high);
 	padding-top: 20px
 }
 
@@ -550,7 +565,11 @@ select {
 	line-height: normal
 }
 
-.cbi-value {
+.cbi-value,
+.network-status-table,
+.uci-change-legend,
+.zone-forwards {
+	display: flex;
 	flex-wrap: wrap
 }
 
@@ -564,8 +583,7 @@ select {
 	font-size: 13px;
 	line-height: 18px;
 	flex: 0 0 180px;
-	text-align: right;
-	color: var(--text-color-high)
+	text-align: right
 }
 
 label>input[type=checkbox],
@@ -574,7 +592,11 @@ label>input[type=radio] {
 	margin: 0
 }
 
-header [data-indicator][data-clickable],
+.nav>li>a::after,
+footer ul.breadcrumb {
+	margin-left: auto
+}
+
 label[for],
 th[data-sortable-row] {
 	cursor: pointer
@@ -588,12 +610,16 @@ textarea {
 	display: inline-block;
 	width: 210px;
 	padding: 4px;
+	background: var(--background-color-high);
+	color: var(--text-color-high);
 	font-size: 13px;
 	line-height: 18px;
-	border-radius: 3px
+	border: 1px solid var(--border-color-high);
+	border-radius: 1rem
 }
 
 .cbi-dropdown:not(.btn):not(.cbi-button),
+.cbi-page-actions .cbi-button-apply,
 .cbi-select,
 input,
 select {
@@ -617,14 +643,11 @@ select {
 .cbi-dynlist>.item {
 	margin-bottom: 4px;
 	box-shadow: 0 0 2px var(--border-color-high);
-	padding: 6px 2em 6px 4px;
-	border-radius: 3px;
-	position: relative;
-	pointer-events: auto;
+	background: var(--background-color-high);
+	border: 1px solid var(--border-color-high);
+	pointer-events: none;
 	overflow: hidden;
-	word-break: break-all;
-	cursor: move;
-	user-select: text
+	word-break: break-all
 }
 
 .cbi-select,
@@ -648,18 +671,11 @@ select {
 	pointer-events: auto
 }
 
-.cbi-dynlist>.add-item>.cbi-button-add.drag-over,
-.cbi-dynlist>.add-item>.cbi-input-text.drag-over,
-.cbi-dynlist>.item.drag-over {
-	border-top: 1px solid var(--text-color-highest)
-}
-
-.cbi-dynlist>.item.dragging {
-	opacity: .5
-}
-
-.cbi-dynlist>.item>span {
-	pointer-events: none
+.cbi-dynlist>.add-item,
+.nav,
+.nav>li>a,
+.td.cbi-section-actions>* {
+	display: flex
 }
 
 .cbi-dynlist>.add-item>button,
@@ -683,8 +699,7 @@ select {
 }
 
 .cbi-select {
-	padding: 0;
-	position: relative
+	padding: 0
 }
 
 .cbi-select select,
@@ -715,27 +730,15 @@ select {
 	justify-content: center
 }
 
-.cbi-dropdown[open],
-.dropdown,
-.nav,
-.table,
-li.menu {
-	position: relative
-}
-
 .cbi-select select option {
-	background: var(--background-color-low);
-	color: var(--text-color-high)
+	background: var(--background-color-low)
 }
 
-.cbi-dropdown[open]>ul.dropdown>li.focus,
-.cbi-dropdown[open]>ul.dropdown>li:hover,
 .cbi-select select option:hover {
 	background: var(--primary-color-low);
 	color: var(--on-primary-color)
 }
 
-.cbi-dropdown[open]>ul.dropdown>li[selected],
 .cbi-select select option:checked {
 	background: var(--primary-color-medium);
 	color: var(--on-primary-color)
@@ -917,9 +920,7 @@ textarea[readonly] {
 
 .actions,
 .cbi-page-actions {
-	background: var(--background-color-low);
 	margin-bottom: 18px;
-	padding: 17px 20px 18px 17px;
 	border-top: 1px solid var(--border-color-medium);
 	border-radius: 0 0 3px 3px;
 	text-align: right
@@ -952,13 +953,6 @@ textarea[readonly] {
 	font-size: 13px
 }
 
-.nav,
-.nav>li,
-header .brand {
-	display: block;
-	float: left
-}
-
 .table .td,
 .table .th {
 	display: table-cell;
@@ -972,6 +966,11 @@ header .brand {
 	padding-top: 9px;
 	font-weight: 700;
 	vertical-align: top
+}
+
+.cbi-section-table .tr.cbi-section-table-descr .th,
+header .brand {
+	font-weight: 400
 }
 
 .tr.placeholder {
@@ -998,18 +997,20 @@ header .brand {
 }
 
 header {
+	grid-area: header;
 	position: sticky;
 	top: 0;
 	z-index: 800;
-	overflow: visible;
-	color: #bfbfbf;
-	margin: -5px -5px 15px;
+	height: var(--header-height);
+	background: #fef7ffbb;
+	backdrop-filter: blur(15px);
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: box-shadow .3s;
 	background: linear-gradient(#333, #222);
 	box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
-	padding: 0;
-	padding-left: calc((100% - 940px)/ 2);
-	padding-right: calc((100% - 940px)/ 2)
+	padding: 0
 }
 
 header a {
@@ -1020,23 +1021,21 @@ header a {
 header .brand:hover,
 header ul .active>a {
 	background-color: rgba(255, 255, 255, .05);
-	color: #fff;
+	color: #6650a4;
 	text-decoration: none
 }
 
 header .brand {
-	padding: 8px 20px 12px;
-	margin-left: -15px;
-	color: #fff;
-	font-size: 20px;
-	font-weight: 200;
-	line-height: 1
+	flex: 0 1 auto;
+	text-align: center;
+	float: left;
+	display: block;
+	color: #404040
 }
 
 header .pull-right {
-	margin-left: auto;
-	margin-right: 5px;
-	align-self: center
+	flex: 0 0 auto;
+	margin: 0 12px
 }
 
 header p {
@@ -1044,73 +1043,11 @@ header p {
 	line-height: 40px
 }
 
-.nav {
-	margin: 0 10px 0 0;
-	left: 0
-}
-
-.dropdown-menu li,
-.nav a {
-	float: none;
-	display: block
-}
-
-.nav a {
-	padding: 10px 10px 11px;
-	line-height: 19px;
-	text-decoration: none
-}
-
-.nav a:hover {
-	color: #fff;
-	text-decoration: none
-}
-
-.nav .active>a {
-	background-color: rgba(0, 0, 0, .5)
-}
-
-.nav a.menu:hover {
-	background: rgba(255, 255, 255, .05)
-}
-
-.nav .dropdown-menu {
-	background-color: #333
-}
-
-.nav .dropdown-menu .active a,
-.nav .dropdown-menu a.menu,
-a.label:link,
-a.label:visited {
-	color: #fff
-}
-
-.nav .dropdown-menu li a {
-	color: #999;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
-	padding: 4px 15px
-}
-
-.nav .dropdown-menu li a:hover {
-	background-color: #191919;
-	background-repeat: repeat-x;
-	background-image: linear-gradient(to bottom, #292929, #191919);
-	color: #fff
-}
-
-a.menu:after {
-	width: 0;
-	height: 0;
-	display: inline-block;
-	content: "&darr;";
-	text-indent: -99999px;
-	vertical-align: top;
-	margin-top: 8px;
-	margin-left: 4px;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-top: 4px solid #fff;
-	opacity: .5
+.nav,
+.zone-forwards .zone-dest,
+.zone-forwards .zone-src {
+	display: flex;
+	flex-direction: column
 }
 
 .dropdown-menu {
@@ -1122,21 +1059,17 @@ a.menu:after {
 	z-index: 900;
 	min-width: 160px;
 	max-width: 220px;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 6px 0;
 	zoom: 1;
-	border-color: rgba(0, 0, 0, .2);
-	border-style: solid;
 	border-width: 0 1px 1px;
-	border-radius: 0 0 6px 6px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-	background-clip: padding-box
+	background-clip: padding-box;
+	transition: height .3s ease-in-out;
+	overflow: hidden
 }
 
 .dropdown-menu li {
-	background-color: transparent;
-	position: relative
+	float: none;
+	display: block
 }
 
 .dropdown-menu a {
@@ -1145,7 +1078,8 @@ a.menu:after {
 	clear: both;
 	font-weight: 400;
 	line-height: 18px;
-	color: grey
+	color: grey;
+	text-shadow: 0 0 0 #fff
 }
 
 .dropdown-menu a:hover {
@@ -1166,6 +1100,11 @@ a.menu:after {
 	left: 159px
 }
 
+#tabmenu {
+	text-align: center;
+	width: 100%
+}
+
 .cbi-tabmenu,
 .tabs {
 	--tab-bar-background-color: var(--background-color-high);
@@ -1181,48 +1120,31 @@ a.menu:after {
 	--tab-active-background-color: var(--background-color-high);
 	--tab-active-text-color: #0069d6;
 	--tab-active-border-color: var(--border-color-medium);
-	margin: 0 -5px 18px;
+	margin: 0 -5px 10px;
 	padding: 0 2px;
 	list-style: none;
-	display: flex;
+	display: inline-flex;
 	flex-wrap: wrap;
-	background: linear-gradient(var(--tab-bar-background-color) 28px, var(--tab-inactive-border-color) 28px);
-	background-size: 1px 29px;
-	background-position: left bottom
-}
-
-.cbi-tabmenu>li,
-.tabs>li {
-	flex: 0 1 auto;
-	display: flex;
-	align-items: center;
-	height: 25px;
-	max-width: 48%;
-	margin: 4px 2px 0;
-	background: var(--tab-active-background-color);
-	border: 1px solid var(--tab-active-border-color);
-	border-bottom: none;
-	border-radius: 4px 4px 0 0;
-	color: var(--primary-color-high)
-}
-
-.cbi-dropdown.btn.spinning>ul:not(.dropdown),
-.cbi-dropdown.cbi-button.spinning>ul:not(.dropdown),
-.cbi-dropdown>ul {
-	margin: 0 !important
+	justify-content: center;
+	background: #f2f0f9;
+	border-radius: 1rem
 }
 
 .cbi-tabmenu>li>a,
 .tabs>li>a {
-	padding: 4px 6px;
+	padding: 0 6px;
 	white-space: nowrap;
-	overflow: hidden;
 	text-overflow: ellipsis;
 	color: inherit;
 	text-decoration: none;
-	border-radius: 4px 4px 0 0;
-	line-height: 25px;
+	line-height: 26px;
 	outline: 0
+}
+
+.cbi-tabmenu>li:hover,
+.tabs>li:hover {
+	background: rgba(0, 0, 0, .05);
+	transition: .3s
 }
 
 .cbi-tabmenu>li>a:focus-visible,
@@ -1230,20 +1152,60 @@ a.menu:after {
 	text-decoration: underline
 }
 
-.cbi-tabmenu>.cbi-tab-disabled:hover,
-.tabs>li:not(.active):hover {
-	background: linear-gradient(var(--tab-inactive-hover-background-color) 90%, var(--tab-inactive-border-color) 100%)
+.close:hover,
+.dropdown-menu>li>a:hover,
+.nav>li.active>a,
+.nav>li>a,
+.nav>li>a:hover,
+a.label:hover {
+	text-decoration: none
 }
 
 .cbi-tabmenu>.cbi-tab-disabled,
 .tabs>li:not(.active) {
 	color: var(--tab-inactive-text-color);
-	background: linear-gradient(var(--tab-inactive-background-color) 90%, var(--tab-inactive-border-color) 100%)
+	background: 0 0;
+	border: none
 }
 
 .breadcrumb .active a,
 footer {
 	color: var(--text-color-medium)
+}
+
+.dropdown-menu>li:hover,
+.nav a.menu:hover,
+.nav>li>a:hover,
+.tabs>li:hover {
+	background: #11111111
+}
+
+.cbi-tabmenu>li,
+.tabs>li {
+	flex: 0 1 auto;
+	display: flex;
+	align-items: center;
+	background: var(--tab-active-background-color);
+	border: 1px solid var(--tab-active-border-color);
+	border-bottom: none;
+	color: var(--primary-color-high);
+	border: none;
+	margin: 0;
+	background: #e8def8;
+	color: #000;
+	font-size: 14px;
+	height: 32px;
+	border-radius: 1rem;
+	padding: 0 12px;
+	display: flex;
+	align-items: center;
+	white-space: nowrap
+}
+
+.cbi-dropdown.btn.spinning>ul:not(.dropdown),
+.cbi-dropdown.cbi-button.spinning>ul:not(.dropdown),
+.cbi-dropdown>ul {
+	margin: 0 !important
 }
 
 .cbi-tab-disabled[data-errors]::after {
@@ -1304,6 +1266,7 @@ footer {
 .cbi-dropdown>ul>li .hide-close,
 .cbi-dropdown[open]>ul.dropdown>li .hide-open,
 .hidden,
+.nav>li:last-child>a::after,
 .tab-content>.tab-pane,
 .tab-content>div {
 	display: none
@@ -1325,6 +1288,7 @@ footer {
 }
 
 footer {
+	grid-area: footer;
 	padding-top: 17px;
 	margin-top: auto;
 	border-top: 1px solid var(--border-color-low);
@@ -1333,23 +1297,14 @@ footer {
 	align-items: baseline;
 	justify-content: space-between;
 	font-size: 12px;
-	padding-left: calc((100% - 940px)/ 2);
-	padding-right: calc((100% - 940px)/ 2)
-}
-
-footer span {
-	margin-bottom: 1em
-}
-
-footer ul.breadcrumb {
-	margin-left: auto
+	padding-left: calc(36%)
 }
 
 #modal_overlay {
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, .7);
+	background: rgba(0, 0, 0, .1);
 	z-index: 900;
 	overflow: auto;
 	transition: opacity .125s ease-in;
@@ -1362,12 +1317,13 @@ footer ul.breadcrumb {
 	margin: 5em auto;
 	min-height: 32px;
 	max-width: 600px;
-	border-radius: 3px;
+	box-shadow: none;
 	background: var(--background-color-high);
 	border: 1px solid var(--border-color-low);
-	box-shadow: 0 0 3px var(--background-color-low);
+	border-radius: 16px;
 	padding: 1em 1em .5em;
-	min-width: 270px
+	min-width: 270px;
+	backdrop-filter: blur(20px)
 }
 
 .modal>* {
@@ -1383,19 +1339,6 @@ footer ul.breadcrumb {
 	width: 100%
 }
 
-.modal>.button-row {
-	display: flex;
-	justify-content: space-between
-}
-
-.modal>.button-row>button:not(:last-of-type) {
-	margin-right: .5em
-}
-
-.modal>.button-row>button:first-of-type {
-	margin-right: auto
-}
-
 body.modal-overlay-active {
 	overflow: hidden;
 	height: 100vh
@@ -1405,7 +1348,8 @@ body.modal-overlay-active #modal_overlay {
 	left: 0;
 	right: 0;
 	opacity: 1;
-	visibility: visible
+	visibility: visible;
+	backdrop-filter: blur(10px)
 }
 
 .alert-message .close,
@@ -1453,6 +1397,11 @@ body.modal-overlay-active #modal_overlay {
 	color: var(--on-warn-color)
 }
 
+.modal.alert-message {
+	color: var(--text-color-high);
+	border-radius: 1rem
+}
+
 .btn,
 .cbi-button,
 .item::after {
@@ -1465,9 +1414,13 @@ body.modal-overlay-active #modal_overlay {
 	color: var(--on-color);
 	font-size: 13px;
 	line-height: 2em;
-	border: 1px solid var(--border-color-high);
 	border-radius: 4px;
 	white-space: pre
+}
+
+#maincontent,
+.cbi-tooltip {
+	background: var(--background-color-high)
 }
 
 .cbi-input-invalid,
@@ -1500,7 +1453,8 @@ body.modal-overlay-active #modal_overlay {
 .cbi-button-reset,
 .cbi-section-remove .cbi-button {
 	--on-color: var(--error-color-high);
-	border-color: var(--on-color)
+	border-color: var(--on-color);
+	color: var(--on-color)
 }
 
 .cbi-page-actions::after {
@@ -1518,22 +1472,22 @@ body.modal-overlay-active #modal_overlay {
 .cbi-button-action.important,
 .cbi-page-actions .cbi-button-apply,
 .cbi-section-actions .cbi-button-edit {
-	--on-color: var(--on-primary-color);
-	background: linear-gradient(var(--primary-color-medium), var(--primary-color-low));
-	border-color: var(--primary-color-high)
+	--on-color: var(--on-primary-color)
 }
 
 .cbi-button-positive.important,
 .cbi-page-actions .cbi-button-save {
 	--on-color: var(--on-success-color);
 	background: linear-gradient(var(--success-color-medium), var(--success-color-low));
-	border-color: var(--success-color-high)
+	border-color: var(--success-color-high);
+	color: #fff
 }
 
 .cbi-button-negative.important {
 	--on-color: var(--on-error-color);
 	background: linear-gradient(var(--error-color-medium), var(--error-color-low));
-	border-color: var(--error-color-high)
+	border-color: var(--error-color-high);
+	color: #fff
 }
 
 .cbi-page-actions .cbi-button-apply+.cbi-button-save,
@@ -1547,14 +1501,12 @@ body.modal-overlay-active #modal_overlay {
 	display: inline-flex !important;
 	cursor: pointer;
 	height: auto;
-	position: relative;
 	padding: 0 !important
 }
 
 .cbi-dropdown:not(.btn):not(.cbi-button) {
 	background: linear-gradient(var(--background-color-high) 0, var(--border-color-low) 100%);
 	border: 1px solid var(--border-color-high);
-	border-radius: 3px;
 	color: var(--text-color-high)
 }
 
@@ -1604,8 +1556,7 @@ body.modal-overlay-active #modal_overlay {
 	flex-shrink: 1;
 	flex-grow: 1;
 	align-items: center;
-	align-self: center;
-	color: inherit
+	align-self: center
 }
 
 .cbi-dropdown:not(.btn):not(.cbi-button)>ul>li,
@@ -1644,22 +1595,19 @@ body.modal-overlay-active #modal_overlay {
 	margin: 0 .25em 0 0
 }
 
-.cbi-dropdown>ul>li input[type=text] {
-	height: 20px
-}
-
 .cbi-dropdown[open]>ul.dropdown {
 	display: block;
-	background: var(--background-color-low);
-	border: 1px solid #918e8c;
-	box-shadow: 0 0 4px #918e8c;
+	background: #f3edf7;
 	position: absolute;
 	z-index: 1100;
 	max-width: none;
 	min-width: 100%;
 	width: auto;
 	transition: max-height .125s ease-in;
-	overflow-y: auto
+	overflow-y: auto;
+	box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
+	border-radius: .25rem;
+	left: 0 !important
 }
 
 .cbi-dropdown>ul>li[display],
@@ -1670,7 +1618,14 @@ body.modal-overlay-active #modal_overlay {
 .cbi-dropdown[open]>ul.dropdown>li,
 .cbi-dropdown[open]>ul.preview {
 	flex-grow: 1;
-	display: flex !important
+	display: flex !important;
+	color: #fff
+}
+
+.cbi-dropdown[multiple]>ul>li>label,
+.cbi-dropdown[multiple][open]>ul.dropdown>li,
+.nav .dropdown-menu .active a {
+	color: #000
 }
 
 .cbi-dropdown[empty]>ul>li,
@@ -1683,12 +1638,20 @@ body.modal-overlay-active #modal_overlay {
 }
 
 .cbi-dropdown[open]>ul.dropdown>li {
-	border-bottom: 1px solid var(--border-color-high)
+	border: none;
+	padding: 8px;
+	color: #000
+}
+
+.cbi-dropdown[open]>ul.dropdown>li.focus,
+.cbi-dropdown[open]>ul.dropdown>li:hover {
+	background: #ccc6db
 }
 
 .cbi-dropdown[open]>ul.dropdown>li[selected].focus,
 .cbi-dropdown[open]>ul.dropdown>li[selected]:hover {
-	background: linear-gradient(90deg, var(--primary-color-medium) 50%, var(--primary-color-low))
+	background: #e2dce6;
+	color: #000
 }
 
 .cbi-dropdown[open]>ul.dropdown>li:last-child {
@@ -1718,7 +1681,6 @@ body.modal-overlay-active #modal_overlay {
 	left: -10000px;
 	box-shadow: 0 0 2px var(--border-color-high);
 	border-radius: 3px;
-	background: var(--background-color-high);
 	white-space: pre;
 	padding: 2px 5px;
 	opacity: 0;
@@ -1733,7 +1695,6 @@ body.modal-overlay-active #modal_overlay {
 
 .cbi-progressbar {
 	border: 1px solid var(--border-color-high);
-	border-radius: 3px;
 	position: relative;
 	min-width: 170px;
 	height: 8px;
@@ -1742,11 +1703,10 @@ body.modal-overlay-active #modal_overlay {
 }
 
 .cbi-progressbar>div {
-	background: var(--primary-color-medium);
+	background: #6650a4;
 	height: 100%;
 	transition: width .25s ease-in;
-	width: 0%;
-	border-radius: 2px
+	width: 0%
 }
 
 .cbi-progressbar::before {
@@ -1774,13 +1734,6 @@ body.modal-overlay-active #modal_overlay {
 	position: relative
 }
 
-.network-status-table,
-.uci-change-legend,
-.zone-forwards {
-	display: flex;
-	flex-wrap: wrap
-}
-
 .zone-forwards>* {
 	flex: 1 1 40%;
 	padding: 1px
@@ -1791,12 +1744,6 @@ body.modal-overlay-active #modal_overlay {
 	text-align: center
 }
 
-.zone-forwards .zone-dest,
-.zone-forwards .zone-src {
-	display: flex;
-	flex-direction: column
-}
-
 .btn.active,
 .btn:active {
 	box-shadow: inset 0 2px 4px hsla(var(--border-color-low-hsl), .25), 0 1px 2px rgba(0, 0, 0, .05)
@@ -1805,7 +1752,6 @@ body.modal-overlay-active #modal_overlay {
 .btn.disabled,
 .btn[disabled] {
 	cursor: default;
-	opacity: var(--disabled-opacity);
 	box-shadow: none
 }
 
@@ -1833,12 +1779,12 @@ input[type=submit].btn::-moz-focus-inner {
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 13.5px;
+	text-shadow: 0 1px 0 #fff;
 	opacity: .25
 }
 
 .close:hover {
 	color: #000;
-	text-decoration: none;
 	opacity: .4
 }
 
@@ -1873,29 +1819,20 @@ input[type=submit].btn::-moz-focus-inner {
 	margin: .25em 0
 }
 
-.cbi-section-table .tr:hover .td,
-.cbi-section-table .tr:hover .th,
-.cbi-section-table .tr:hover::before,
-.label,
-header [data-indicator] {
-	background-color: var(--background-color-low)
-}
-
 .alert-message button {
 	margin: .25em 0
 }
 
 .label,
 header [data-indicator] {
-	padding: 3px 3px 2px;
-	font-size: 9.75px;
 	font-weight: 700;
 	color: var(--text-color-high);
 	text-transform: uppercase;
 	white-space: nowrap;
-	border-radius: 3px;
+	border-radius: 16px;
 	text-shadow: none;
-	margin: .125em 0 .125em .4em
+	margin: .125em 0 .125em .4em;
+	text-align: center
 }
 
 .ifacebadge,
@@ -1904,8 +1841,15 @@ header [data-indicator] {
 	text-shadow: 0 1px 1px hsla(var(--background-color-high-hsl), .75)
 }
 
-a.label:hover {
-	text-decoration: none
+header [data-indicator][data-clickable] {
+	cursor: pointer;
+	transition: .3s
+}
+
+.nav .dropdown-menu a.menu,
+a.label:link,
+a.label:visited {
+	color: #fff
 }
 
 .label.important {
@@ -1936,11 +1880,9 @@ form.inline {
 
 #syslog {
 	width: 100%;
-	color: var(--text-color-highest)
-}
-
-.cbi-section-table .tr.cbi-section-table-descr .th {
-	font-weight: 400
+	color: var(--text-color-highest);
+	margin-bottom: 18px;
+	font-family: consolas, monospace
 }
 
 .cbi-section-table-descr.named::before,
@@ -1951,8 +1893,7 @@ form.inline {
 	padding: 10px 10px 9px;
 	line-height: 18px;
 	font-weight: 700;
-	vertical-align: middle;
-	border-top: 1px solid var(--border-color-medium)
+	vertical-align: middle
 }
 
 .left {
@@ -2011,7 +1952,7 @@ table table td {
 .td.cbi-section-actions>*>form>*,
 .td.cbi-section-actions>:not(.cbi-dropdown)>* {
 	flex: 1 1 4em;
-	margin: 0 1px
+	border-radius: 1rem
 }
 
 .td.cbi-section-actions>*>form {
@@ -2020,6 +1961,7 @@ table table td {
 }
 
 .cbi-rowstyle-2,
+.dropdown-menu>li>a:hover,
 .tr.cbi-section-table-titles,
 .tr.table-titles {
 	background: var(--background-color-medium)
@@ -2047,6 +1989,7 @@ th[data-sort-direction=desc]::after {
 	width: 1em;
 	height: 1em;
 	margin-right: .25em;
+	margin-top: .25em;
 	background: var(--primary-color-high);
 	mask-image: var(--help-icon);
 	mask-size: cover;
@@ -2062,6 +2005,13 @@ th[data-sort-direction=desc]::after {
 	margin-bottom: 18px
 }
 
+.ifacebadge,
+.ifacebox {
+	border: 1px solid var(--border-color-high);
+	line-height: 1.2em;
+	white-space: nowrap
+}
+
 .cbi-section-error ul {
 	margin: 0 0 0 20px
 }
@@ -2072,30 +2022,18 @@ th[data-sort-direction=desc]::after {
 }
 
 .ifacebox {
-	border: 1px solid var(--border-color-high);
-	margin: 0 10px;
 	text-align: center;
-	white-space: nowrap;
 	background: linear-gradient(var(--background-color-high), var(--background-color-medium));
-	border-radius: 4px;
 	box-shadow: inset 0 1px 0 hsla(var(--text-color-low-hsl), .05);
 	display: inline-flex;
 	flex-direction: column;
-	line-height: 1.2em;
 	min-width: 100px
 }
 
 .ifacebox .ifacebox-head {
 	border-bottom: 1px solid var(--border-color-high);
-	border-radius: 3px 3px 0 0;
 	padding: 2px;
-	background: #eee;
-	color: var(--text-color-high)
-}
-
-.ifacebox .ifacebox-head.active {
-	background: var(--primary-color-high);
-	color: var(--on-primary-color)
+	background: #eee
 }
 
 [data-darkmode=true] .ifacebox-head[style],
@@ -2107,22 +2045,11 @@ th[data-sort-direction=desc]::after {
 	padding: .25em
 }
 
-#cbi-network-interface .ifacebox-body {
-	white-space: normal
-}
-
 .ifacebadge {
 	display: inline-block;
 	flex-direction: row;
-	white-space: nowrap;
-	border: 1px solid var(--border-color-high);
-	padding: 2px;
-	background: linear-gradient(var(--background-color-high), var(--background-color-high) 25%, var(--background-color-medium));
-	color: var(--text-color-high);
-	border-radius: 4px;
 	box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), .05);
-	cursor: default;
-	line-height: 1.2em
+	cursor: default
 }
 
 .ifacebadge img {
@@ -2171,7 +2098,6 @@ th[data-sort-direction=desc]::after {
 .network-status-table .ifacebox-body .ifacebadge {
 	display: flex;
 	flex: 1;
-	padding: .25em;
 	min-width: 220px;
 	margin: .125em
 }
@@ -2195,8 +2121,7 @@ th[data-sort-direction=desc]::after {
 	padding: 2px;
 	border-radius: 4px;
 	display: inline-block;
-	white-space: nowrap;
-	color: var(--text-color-high)
+	white-space: nowrap
 }
 
 .zonebadge>em,
@@ -2257,6 +2182,12 @@ div.cbi-value var.cbi-tooltip-container {
 	white-space: pre
 }
 
+.cbi-filebrowser>*,
+.dropdown-menu li a {
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+
 .uci-dialog div>del,
 .uci-dialog div>ins,
 .uci-dialog div>var {
@@ -2268,6 +2199,11 @@ div.cbi-value var.cbi-tooltip-container {
 	padding: 2px;
 	position: relative;
 	background-color: var(--background-color-low)
+}
+
+.nav .dropdown-menu li a,
+.nav>li>a {
+	padding: 1rem 1.5rem
 }
 
 .uci-dialog div>ins {
@@ -2349,6 +2285,14 @@ div.cbi-value var.cbi-tooltip-container {
 	padding-left: 32px !important
 }
 
+.sidebar,
+.sidebar-overlay {
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	bottom: 0
+}
+
 .spinning::before {
 	--spinner-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' stroke='%23000' stroke-width='3' fill='none'><circle cx='10' cy='10' r='8' stroke-opacity='.5'/><path d='M10 2c4 0 8 4 8 8'><animateTransform attributeName='transform' type='rotate' dur='1s' from='0 10 10' to='360 10 10' repeatCount='indefinite'/></path></svg>");
 	position: absolute;
@@ -2395,10 +2339,8 @@ div.cbi-value var.cbi-tooltip-container {
 .cbi-filebrowser>* {
 	max-width: 100%;
 	overflow: hidden;
-	text-overflow: ellipsis;
 	padding: 0 0 .25em;
 	margin: .25em .25em 0;
-	white-space: nowrap;
 	border-bottom: 1px solid #ccc
 }
 
@@ -2511,6 +2453,14 @@ div.cbi-value var.cbi-tooltip-container {
 	max-width: none
 }
 
+[data-page=admin-status-iptables] .cbi-tabmenu {
+	margin-top: 28px
+}
+
+[data-page=admin-status-processes] .table .td {
+	word-break: break-all
+}
+
 [data-darkmode=true] [data-page=admin-status-channel_analysis] #view>div>div>div>div>div[style],
 [data-darkmode=true] [data-page=admin-status-realtime-bandwidth] #view>div>div>div>div[style],
 [data-darkmode=true] [data-page=admin-status-realtime-connections] #view>div>div>div[style],
@@ -2525,4 +2475,580 @@ div.cbi-value var.cbi-tooltip-container {
 [data-darkmode=true] [data-page=admin-status-realtime-load] #view>div>div>div>svg>line[style],
 [data-darkmode=true] [data-page=admin-status-realtime-wireless] #view>div>div>div>div>svg>line[style] {
 	stroke: #fff !important
+}
+
+#maincontent {
+	grid-area: main;
+	padding: 1rem;
+	overflow-x: hidden;
+	min-height: calc(100vh - var(--header-height));
+	width: 100%;
+	box-sizing: border-box
+}
+
+.sidebar {
+	grid-area: sidebar;
+	width: var(--sidebar-width);
+	background: var(--background-color-low);
+	border-right: 0px solid var(--border-color-medium);
+	padding: 0;
+	overflow-y: auto;
+	transition: transform .3s
+}
+
+.sidebar-overlay {
+	display: block;
+	right: 0;
+	background: rgba(0, 0, 0, .5);
+	z-index: 800;
+	transition: .3s;
+	opacity: 0;
+	visibility: hidden
+}
+
+.nav {
+	flex-direction: column;
+	margin: 0;
+	padding: 1rem;
+	float: none
+}
+
+.nav>li {
+	width: 100%;
+	float: none
+}
+
+.nav>li>a {
+	align-items: center;
+	color: var(--text-color-high);
+	border-radius: 2rem
+}
+
+.nav>li>a::before {
+	content: '';
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: 1rem;
+	background-color: var(--text-color-medium);
+	-webkit-mask: url("icons/other.svg") center/contain no-repeat;
+	mask: url("icons/other.svg") center/contain no-repeat;
+	transition: background-color .3s
+}
+
+.nav>li[data-path="admin/status"]>a::before {
+	-webkit-mask: url("icons/status.svg") center/contain no-repeat;
+	mask: url("icons/status.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/system"]>a::before {
+	-webkit-mask: url("icons/system.svg") center/contain no-repeat;
+	mask: url("icons/system.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/services"]>a::before {
+	-webkit-mask: url("icons/services.svg") center/contain no-repeat;
+	mask: url("icons/services.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/network"]>a::before {
+	-webkit-mask: url("icons/network.svg") center/contain no-repeat;
+	mask: url("icons/network.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/nas"]>a::before {
+	-webkit-mask: url("icons/nas.svg") center/contain no-repeat;
+	mask: url("icons/nas.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/docker"]>a::before {
+	-webkit-mask: url("icons/docker.svg") center/contain no-repeat;
+	mask: url("icons/docker.svg") center/contain no-repeat
+}
+
+.nav>li[data-path="admin/logout"]>a::before {
+	-webkit-mask: url("icons/logout.svg") center/contain no-repeat;
+	mask: url("icons/logout.svg") center/contain no-repeat
+}
+
+.nav>li.active>a::before,
+.nav>li>a:hover::before {
+	background-color: var(--text-color-highest)
+}
+
+.nav>li.active>a,
+.nav>li>a:hover {
+	color: var(--text-color-highest)
+}
+
+.nav .dropdown-menu li a:hover {
+	background-color: #191919;
+	background-repeat: repeat-x;
+	background-image: linear-gradient(to bottom, #292929, #191919);
+	color: #fff
+}
+
+.nav>li.dropdown>a::after {
+	opacity: 1;
+	transition: transform .3s
+}
+
+.nav>li.dropdown.open>a::after {
+	transform: rotate(225deg)
+}
+
+.menu-btn {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-left: .5rem;
+	cursor: pointer;
+	color: #000
+}
+
+.menu-btn span {
+	position: relative;
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: currentColor;
+	transition: .3s
+}
+
+.menu-btn span::after,
+.menu-btn span::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: currentColor;
+	transition: .3s
+}
+
+.menu-btn span::before {
+	transform: translateY(-6px)
+}
+
+.menu-btn span::after {
+	transform: translateY(6px)
+}
+
+.cbi-rowstyle-2,
+.menu-btn.active span,
+.tr.cbi-section-table-titles,
+.tr.table-titles {
+	background: 0 0
+}
+
+.menu-btn.active span::after {
+	transform: rotate(-45deg)
+}
+
+.nav>li>a {
+	align-items: center;
+	transition: .3s
+}
+
+.nav>li>a::after {
+	content: '';
+	width: .5rem;
+	height: .5rem;
+	border-right: 2px solid var(--text-color-medium);
+	border-bottom: 2px solid var(--text-color-medium);
+	transition: transform .3s;
+	opacity: 0
+}
+
+.nav>li>a:hover::after {
+	opacity: 1
+}
+
+.dropdown-menu {
+	background: var(--background-color-low);
+	background: var(--background-color-low);
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	box-shadow: none
+}
+
+.dropdown-menu>li>a {
+	color: var(--text-color-medium);
+	transition: .3s;
+	padding: .6rem 1.5rem .6rem 3rem;
+	color: var(--text-color-medium);
+	display: block
+}
+
+.dropdown-menu>li {
+	position: relative;
+	border-radius: 2rem;
+	transition: background-color .3s
+}
+
+.dropdown-menu>li:hover {
+	background: rgba(0, 0, 0, .05);
+	border-radius: 2rem
+}
+
+.dropdown-menu>li.active {
+	border-left-color: var(--primary-color-high);
+	background: #e8def8;
+	transition: background-color .3s
+}
+
+.dropdown-menu>li.active:hover {
+	background: #d8cfe8;
+	transition: background-color .3s
+}
+
+body {
+	background: #fef7ff;
+	--background-color-high: #fef7ff;
+	--background-color-low: #fef7ff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+body,
+button,
+input {
+	font-family: "Segoe UI Variable Display", "Google Sans", "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, sans-serif
+}
+
+header .pull-right {
+	padding-top: 0
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 350
+}
+
+header .brand {
+	padding: 0 57px 1px;
+	font-size: 25px;
+	line-height: 40px
+}
+
+.label,
+header [data-indicator] {
+	font-size: 12px;
+	padding: 4px 8px
+}
+
+.actions,
+.cbi-page-actions {
+	border: none;
+	padding: 8px 16px
+}
+
+.cbi-section-node {
+	padding: 4px 8px
+}
+
+.cbi-section-node,
+.create-item-input,
+.ifacebox,
+.table,
+table {
+	background: #f7f2fa;
+	border-radius: 16px;
+	box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
+	margin: 1px
+}
+
+.cbi-dropdown>ul>li input[type=text] {
+	height: 30px;
+	border-radius: 6px;
+	border: none
+}
+
+.ifacebox .ifacebox-head {
+	border-radius: 16px 16px 0 0;
+	opacity: .9
+}
+
+.nav .dropdown-menu {
+	position: static !important;
+	float: none;
+	min-width: 100%;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	background: var(--background-color-medium);
+	height: 0;
+	transition: height .3s ease-in-out;
+	overflow: hidden
+}
+
+.nav .dropdown-menu,
+header {
+	border: none;
+	backdrop-filter: blur(15px);
+	box-shadow: none;
+	background: #fef7ffbb
+}
+
+#localtime,
+.btn,
+.cbi-button,
+.cbi-dropdown,
+.cbi-dropdown:not(.btn):not(.cbi-button),
+.cbi-dynlist>.item,
+.cbi-input-text,
+.cbi-page-actions .cbi-button-apply,
+.cbi-page-actions .cbi-button-apply+.cbi-button-save,
+.cbi-page-actions .cbi-button-negative+.cbi-button-save,
+select,
+textarea {
+	border-radius: 1rem;
+	text-shadow: none;
+	padding: 1px 10px;
+	box-shadow: none;
+	color: #6650a4
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	font-family: consolas, monospace;
+	color: #000
+}
+
+.cbi-dynlist>.item {
+	padding: 6px 10px
+}
+
+.cbi-dynlist>.item::after {
+	background: 0 0;
+	box-shadow: none;
+	border-left: 1px solid #b2aac9
+}
+
+.label.notice,
+header [data-indicator][data-style=active] {
+	background: #beb6d1
+}
+
+header [data-indicator][data-style=active]:hover {
+	background: #a197be
+}
+
+header [data-indicator][data-style=inactive]:hover {
+	background: rgba(0, 0, 0, .05)
+}
+
+.dropdown-menu li a {
+	border-radius: 2rem;
+	overflow: hidden
+}
+
+.dropdown-menu li a:hover {
+	border-radius: 2rem;
+	background: 0 0 !important;
+	color: var(--text-color-highest) !important
+}
+
+.nav>li>.dropdown-menu {
+	padding-left: 2.5rem
+}
+
+.nav>li.open>.dropdown-menu {
+	display: block;
+	background: 0 0
+}
+
+.nav>li:has(>.dropdown-menu>li.active) {
+	border-radius: 2rem 2rem 0 0
+}
+
+.nav>li:has(>.dropdown-menu>li.active)>a {
+	color: var(--text-color-highest) !important
+}
+
+.cbi-progressbar {
+	background: #e6e0e9;
+	border: none;
+	border-radius: 20px
+}
+
+.cbi-progressbar>div {
+	border-radius: 20px
+}
+
+.table .td,
+.table .th {
+	border-top: none
+}
+
+.td.cbi-section-actions>*>*,
+.td.cbi-section-actions>*>form>* {
+	margin: 0;
+	border-radius: 0
+}
+
+.td.cbi-section-actions>*>:first-child {
+	border-radius: 1rem
+}
+
+.td.cbi-section-actions>*>:last-child {
+	border-radius: 1rem;
+	border: none;
+	background: #e8def8;
+	color: #000
+}
+
+.ifacebadge,
+.ifacebadge.large,
+.network-status-table .ifacebox-body .ifacebadge {
+	padding: 8px;
+	border: 1px solid #aaa;
+	box-shadow: none;
+	border-radius: 1rem
+}
+
+.network-status-table {
+	width: calc(100% + 16px);
+	position: relative;
+	left: -8px;
+	margin-bottom: 8px
+}
+
+.ifacebox .ifacebox-head.active {
+	background: 0 0;
+	border: none;
+	color: #000;
+	text-shadow: none
+}
+
+.network-status-table .ifacebox {
+	border: none;
+	box-shadow: none;
+	padding: 8px;
+	box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%)
+}
+
+[data-page^=admin-services-openclash] .tabs>li:last-child {
+	justify-content: center
+}
+
+[data-page^=admin-services-openclash] ul li a {
+	margin: auto
+}
+
+.cbi-section h3 {
+	padding-left: 0
+}
+
+.cbi-modal h4 {
+	text-align: center
+}
+
+.cbi-value,
+form .clearfix {
+	margin: 16px 0
+}
+
+.cbi-tabmenu>li,
+.dropdown-menu>li>a,
+.nav>li>a,
+.tabs>li {
+	position: relative;
+	overflow: hidden
+}
+
+.ripple {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	margin-left: -100px;
+	margin-top: -100px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, .15);
+	transform: scale(0);
+	pointer-events: none;
+	animation: 1s ease-out ripple
+}
+
+@keyframes ripple {
+	from {
+		transform: scale(0);
+		opacity: 1
+	}
+
+	to {
+		transform: scale(2.5);
+		opacity: 0
+	}
+}
+
+[data-darkmode=true] .ripple {
+	background: rgba(255, 255, 255, .15)
+}
+
+header [data-indicator] {
+	padding: 5px 9px 5px 6px;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px
+}
+
+header [data-indicator]::before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-color: currentColor;
+	-webkit-mask: url("icons/refresh.svg") center/contain no-repeat;
+	mask: url("icons/refresh.svg") center/contain no-repeat
+}
+
+header [data-indicator][data-style=active]::before {
+	animation: 5s linear infinite spin-with-pause
+}
+
+@keyframes spin-with-pause {
+	0% {
+		transform: rotate(0)
+	}
+
+	100%,
+	20% {
+		transform: rotate(360deg)
+	}
+}
+
+#localtime,
+.btn,
+.cbi-button,
+.cbi-dropdown,
+.cbi-dropdown:not(.btn):not(.cbi-button),
+.cbi-dynlist>.item,
+.cbi-input-text,
+.cbi-page-actions .cbi-button-apply,
+.cbi-page-actions .cbi-button-apply+.cbi-button-save,
+.cbi-page-actions .cbi-button-negative+.cbi-button-save,
+select,
+textarea {
+	background: #fef7ff;
+	border: 1px solid #6650a4
+}
+
+.cbi-page-actions .cbi-button-apply+.cbi-button-save,
+.cbi-page-actions .cbi-button-negative+.cbi-button-save {
+	background: #e8def8;
+	color: #000;
+	border: 1px solid #e8def8
+}
+
+.btn.primary,
+.cbi-button-action.important,
+.cbi-page-actions .cbi-button-apply,
+.cbi-section-actions .cbi-button-edit {
+	background: #6750a4;
+	color: #fff;
+	border: 1px solid #6750a4
 }

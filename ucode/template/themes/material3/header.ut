@@ -9,7 +9,7 @@
 	import { getuid, getspnam } from 'luci.core';
 
 	const boardinfo = ubus.call('system', 'board');
-	const darkpref = (theme == 'material3-dark' ? 'true' : (theme == 'material3-light' ? 'false' : null));
+	const darkpref = 'false';
 
 	http.prepare_content('text/html; charset=UTF-8');
 -%}
@@ -31,7 +31,7 @@
 		{% endif %}
 		<meta name="viewport" content="initial-scale=1.0">
 		<link rel="stylesheet" href="{{ media }}/cascade.css">
-		<link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="{{ media }}/mobile.css" />
+		<link rel="stylesheet" media="screen and (max-width: 768px)" href="{{ media }}/mobile.css" />
 		<link rel="icon" href="{{ media }}/logo_48.png" sizes="48x48">
 		<link rel="icon" href="{{ media }}/logo.svg" sizes="any">
 		{% if (node?.css): %}
@@ -47,10 +47,17 @@
 	<body class="lang_{{ dispatcher.lang }} {{ entityencode(striptags(node?.title ?? ''), true) }}" data-page="{{ entityencode(join('-', ctx.request_path), true) }}">
 		{% if (!blank_page): %}
 		<header>
+			<div class="menu-btn">
+				<span aria-label="{{ _('Toggle navigation menu') }}"></span>
+			</div>
+			
 			<a class="brand" href="/">{{ striptags(boardinfo.hostname ?? '?') }}</a>
-			<ul class="nav" id="topmenu" style="display:none"></ul>
 			<div id="indicators" class="pull-right"></div>
 		</header>
+
+		<aside class="sidebar">
+			<ul class="nav" id="topmenu" style="display:none"></ul>
+		</aside>
 
 		<div id="maincontent" class="container">
 			{% if (getuid() == 0 && getspnam('root')?.pwdp === ''): %}

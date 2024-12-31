@@ -1,12 +1,20 @@
 header .brand,
 header h3 a {
-	display: none !important
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: auto;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 1.6rem
 }
 
-@media screen and (max-device-width:600px) {
+@media screen and (max-width:768px) {
 
+	.menu-btn,
 	.table,
-	.tr {
+	.tr,
+	header .nav {
 		display: flex
 	}
 
@@ -20,39 +28,63 @@ header h3 a {
 		content: attr(data-title)
 	}
 
+	.dropdown-menu>li>a {
+		padding: .8rem 1.5rem .8rem 3rem
+	}
+
+	body {
+		grid-template-areas: "header" "main" "footer";
+		grid-template-columns: 1fr
+	}
+
+	#maincontent {
+		margin-left: 0
+	}
+
+	footer {
+		padding-left: 1rem;
+		padding-right: 1rem
+	}
+
 	.modal {
 		margin: 1.5em auto
 	}
 
+	h3 {
+		font-size: 1.2em;
+		margin: 0
+	}
+
 	.cbi-tabmenu,
 	.tabs {
-		background: linear-gradient(var(--background-color-high) 20%, var(--border-color-medium) 100%);
-		background-size: 1px 34px;
-		margin-bottom: 10px
+		background: 0 0/1px 34px #f7f2fa;
+		margin: 1px 1px 10px;
+		border-radius: 1rem
 	}
 
 	.cbi-tabmenu>li,
 	.tabs>li {
-		height: 30px
+		height: 32px
 	}
 
 	.cbi-tabmenu>li>a,
 	.tabs>li>a {
-		padding: 0 8px;
-		line-height: 30px
+		line-height: 30px;
+		border-radius: 1rem
 	}
 
 	.table {
 		flex-direction: column;
-		width: 100%
+		width: 100%;
+		padding: 5px 0
 	}
 
 	.tr {
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: flex-end;
-		border-top: 1px solid var(--border-color-medium);
-		padding: 5px 0;
+		border-top: 0 solid var(--border-color-medium);
+		padding: 5px;
 		margin: 0 -3px
 	}
 
@@ -72,14 +104,6 @@ header h3 a {
 
 	.table .td.cbi-dropdown-open {
 		overflow: visible
-	}
-
-	.td[data-title]::before,
-	input[type=password]+.cbi-button,
-	input[type=text]+.cbi-button,
-	select+.cbi-button {
-		overflow: hidden;
-		text-overflow: ellipsis
 	}
 
 	.col-1 {
@@ -189,6 +213,8 @@ header h3 a {
 	.td[data-title]::before {
 		font-weight: 700;
 		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		white-space: pre-line
 	}
 
@@ -284,6 +310,12 @@ header h3 a {
 		width: calc(100% - 25px)
 	}
 
+	input[type=password]+.cbi-button,
+	input[type=text]+.cbi-button,
+	select+.cbi-button {
+		text-overflow: ellipsis
+	}
+
 	.cbi-value-field input[type=checkbox],
 	.cbi-value-field input[type=radio] {
 		margin: 0
@@ -299,7 +331,6 @@ header h3 a {
 	.actions,
 	.cbi-page-actions {
 		border-top: none;
-		margin-top: -.5em;
 		padding: 8px
 	}
 
@@ -328,7 +359,6 @@ header h3 a {
 	header .nav {
 		flex: 3 3 80%;
 		margin: 2px 5px 2px 0;
-		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start
 	}
@@ -338,12 +368,10 @@ header h3 a {
 	}
 
 	header .pull-right {
-		flex: 0 1 20%;
-		display: flex;
-		flex-direction: column;
-		padding: 0;
-		justify-content: space-around;
-		margin: .2em 5px .2em auto
+		padding: 0 8px;
+		margin: .2em 0 .2em auto;
+		position: relative;
+		z-index: 1
 	}
 
 	.dropdown-menu,
@@ -354,6 +382,37 @@ header h3 a {
 	.cbi-optionals,
 	.cbi-section-create {
 		padding: 0 0 14px
+	}
+
+	header .menu-btn {
+		position: relative;
+		border-radius: 50%;
+		z-index: 1
+	}
+
+	header .menu-btn:hover {
+		background: rgba(0, 0, 0, .05);
+		transition: .3s
+	}
+
+	.sidebar {
+		transform: translateX(-100%);
+		z-index: 900;
+		border-radius: 0 1rem 1rem 0
+	}
+
+	.sidebar.active {
+		transform: translateX(0)
+	}
+
+	.sidebar.active::after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1
 	}
 
 	#cbi-network-switch_vlan .td,
@@ -391,9 +450,57 @@ header h3 a {
 	[data-page=admin-network-network] .td[data-name="_ifacestat"] {
 		flex-basis: 60%
 	}
+
+	[data-page^=admin-services-openclash] .cbi-value {
+		overflow-x: auto
+	}
+
+	[data-page^=admin-services-openclash] div#cbi-openclash {
+		overflow-x: scroll
+	}
+
+	.sidebar-overlay {
+		opacity: 0;
+		visibility: hidden
+	}
+
+	.sidebar-overlay.active {
+		opacity: 1;
+		visibility: visible
+	}
+
+	header.with-shadow {
+		background: #f7f2fabb;
+		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%)
+	}
+
+	header [data-indicator] {
+		width: 32px;
+		height: 32px;
+		padding: 0;
+		margin: 0 4px;
+		font-size: 0;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		position: relative
+	}
+
+	header [data-indicator]::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: 24px;
+		height: 24px;
+		background-color: currentColor;
+		-webkit-mask: url("icons/refresh.svg") center/contain no-repeat;
+		mask: url("icons/refresh.svg") center/contain no-repeat
+	}
 }
 
-@media screen and (max-device-width:375px) {
+@media screen and (max-width:375px) {
 
 	.cbi-page-actions button,
 	.cbi-section-actions .cbi-button {

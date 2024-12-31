@@ -8,6 +8,8 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Material3 Theme
 LUCI_DEPENDS:=+luci-base
+PKG_VERSION:=alpha-0.0.2
+PKG_RELEASE:=20241231
 
 PKG_LICENSE:=Apache-2.0
 
@@ -15,8 +17,8 @@ define Package/luci-theme-material3/postrm
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
 	uci -q delete luci.themes.Material3
-	uci -q delete luci.themes.Material3Dark
-	uci -q delete luci.themes.Material3Light
+	# uci -q delete luci.themes.Material3Dark
+	# uci -q delete luci.themes.Material3Light
 	uci commit luci
 }
 endef
