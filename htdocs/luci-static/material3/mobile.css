@@ -487,16 +487,22 @@ header h3 a {
 		position: relative
 	}
 
-	header [data-indicator]::before {
+	header [data-indicator="poll-status"]::before {
 		content: '';
 		position: absolute;
 		inset: 0;
 		margin: auto;
 		width: 24px;
 		height: 24px;
-		background-color: currentColor;
-		-webkit-mask: url("icons/refresh.svg") center/contain no-repeat;
-		mask: url("icons/refresh.svg") center/contain no-repeat
+	}
+
+	header [data-indicator="uci-changes"]::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: 20px;
+		height: 20px;
 	}
 }
 

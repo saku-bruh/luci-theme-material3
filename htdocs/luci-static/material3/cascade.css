@@ -1717,6 +1717,10 @@ body.modal-overlay-active #modal_overlay {
 	color: #fff
 }
 
+.uci-dialog .cbi-dropdown>ul>li[display] {
+	color: #000;
+}
+
 .cbi-dropdown[multiple]>ul>li>label,
 .cbi-dropdown[multiple][open]>ul.dropdown>li,
 .nav .dropdown-menu .active a {
@@ -2825,7 +2829,8 @@ h3 {
 }
 
 header .brand {
-	padding: 0 57px 1px;
+	/* padding: 0 57px 1px; */
+	width: var(--sidebar-width);
 	font-size: 25px;
 	line-height: 40px
 }
@@ -3098,7 +3103,7 @@ header [data-indicator] {
 	gap: 4px
 }
 
-header [data-indicator]::before {
+header [data-indicator="poll-status"]::before {
 	content: '';
 	width: 16px;
 	height: 16px;
@@ -3107,7 +3112,16 @@ header [data-indicator]::before {
 	mask: url("icons/refresh.svg") center/contain no-repeat
 }
 
-header [data-indicator][data-style=active]::before {
+header [data-indicator="uci-changes"]::before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-color: currentColor;
+	-webkit-mask: url("icons/changes.svg") center/contain no-repeat;
+	mask: url("icons/changes.svg") center/contain no-repeat
+}
+
+header [data-indicator="poll-status"][data-style=active]::before {
 	animation: 5s linear infinite spin-with-pause
 }
 
