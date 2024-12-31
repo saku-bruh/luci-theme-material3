@@ -3,7 +3,7 @@ A Material Design 3 theme for OpenWrt Luci.
 
 This is a personal project based on the LuCI Bootstrap theme, imitating the Material Design 3 style. Since I'm not very familiar with web theme design, the CSS code might be a bit messy. Some of the project code was completed with the assistance of Cursor AI.
 
-
+**Nice to initiate an issue or PR!**
 ## ✨ Preview
 <table>
   <tr>
@@ -26,7 +26,7 @@ This is a personal project based on the LuCI Bootstrap theme, imitating the Mate
   </tr>
 </table>
 
-### 📝 ToDo
+## 📝 ToDo
 - [ ] Dark themes
 - [ ] Fix some style issues
 - [ ] Add more color schemes
