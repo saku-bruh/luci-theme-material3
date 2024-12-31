@@ -48,6 +48,10 @@ header h3 a {
 
 	.modal {
 		margin: 1.5em auto;
+		/* margin-top: 160px; */
+	}
+
+	.modal.login {
 		margin-top: 160px;
 	}
 
