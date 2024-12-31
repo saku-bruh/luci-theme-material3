@@ -169,7 +169,97 @@ ul.unstyled {
 	--disabled-opacity: .7;
 	color-scheme: light;
 	--sidebar-width: 256px;
-	--header-height: 4rem
+	--header-height: 4rem;
+
+	--md-sys-color-primary: hsl(256, 34%, 48%);
+	--md-sys-color-primary-container: hsl(263, 65%, 92%);
+	--md-sys-color-primary-container-hover: #d8cfe8;
+
+	--md-sys-color-surface: #fef7ff;
+	--md-sys-color-surface-translucent: #fef7ffbb;
+
+	--md-sys-color-card: #f7f2fa;
+	--md-sys-color-card-translucent: #f7f2fabb;
+
+	--md-sys-color-progressbar: #e6e0e9;
+
+	--md-sys-color-dropdown: #f3edf7;
+	--md-sys-color-dropdown-selected: #e3dde7;
+	--md-sys-color-dropdown-hover: #e2dce6;
+
+	--md-sys-color-refresh-button: #beb6d1;
+	--md-sys-color-refresh-button-hover: #a9a0c2;
+	--md-sys-color-font: #000;
+	--md-sys-color-light: #fff;
+}
+
+:root[data-theme="blue"] {
+	--md-sys-color-primary: #0061a4;
+	--md-sys-color-primary-container: #d7e3f8;
+	--md-sys-color-primary-container-hover: #c7d3e8;
+
+	--md-sys-color-surface: #fdfcff;
+	--md-sys-color-surface-translucent: #fdfcffbb;
+
+	--md-sys-color-card: #f4f3f7;
+	--md-sys-color-card-translucent: #f4f3f7bb;
+
+	--md-sys-color-progressbar: #e2e2e6;
+
+	--md-sys-color-dropdown: #eeedf1;
+	--md-sys-color-dropdown-selected: #dedde1;
+	--md-sys-color-dropdown-hover: #dddce0;
+
+	--md-sys-color-refresh-button: #b6bec1;
+	--md-sys-color-refresh-button-hover: #a0a9c2;
+	--md-sys-color-font: #000;
+	--md-sys-color-light: #fff;
+}
+
+:root[data-theme="green"] {
+	--md-sys-color-primary: #006c48;
+	--md-sys-color-primary-container: #d5e8cf;
+	--md-sys-color-primary-container-hover: #c5d8c0;
+
+	--md-sys-color-surface: #fcfdf6;
+	--md-sys-color-surface-translucent: #fcfdf6bb;
+
+	--md-sys-color-card: #f3f4ee;
+	--md-sys-color-card-translucent: #f3f4eebb;
+
+	--md-sys-color-progressbar: #e2e3dd;
+
+	--md-sys-color-dropdown: #eeeee8;
+	--md-sys-color-dropdown-selected: #deded8;
+	--md-sys-color-dropdown-hover: #ddddd8;
+
+	--md-sys-color-refresh-button: #b6c1b9;
+	--md-sys-color-refresh-button-hover: #a0c2a9;
+	--md-sys-color-font: #000;
+	--md-sys-color-light: #fff;
+}
+
+:root[data-theme="red"] {
+	--md-sys-color-primary: #bb1614;
+	--md-sys-color-primary-container: #ffdad5;
+	--md-sys-color-primary-container-hover: #efccc6;
+
+	--md-sys-color-surface: #fffbff;
+	--md-sys-color-surface-translucent: #fffbffbb;
+
+	--md-sys-color-card: #fef1ef;
+	--md-sys-color-card-translucent: #fef1efbb;
+
+	--md-sys-color-progressbar: #ede0de;
+
+	--md-sys-color-dropdown: #f8ebe9;
+	--md-sys-color-dropdown-selected: #e8dbd9;
+	--md-sys-color-dropdown-hover: #e8dbd9;
+
+	--md-sys-color-refresh-button: #c1b6b6;
+	--md-sys-color-refresh-button-hover: #c2a0a0;
+	--md-sys-color-font: #000;
+	--md-sys-color-light: #fff;
 }
 
 :root[data-darkmode=true] {
@@ -310,7 +400,12 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	background: var(--background-color-medium)
+	background: var(--background-color-medium);
+	font-size: 13px;
+	font-weight: 400;
+	min-height: 100%;
+	flex-direction: column;
+	overflow-y: scroll
 }
 
 .container {
@@ -1002,7 +1097,7 @@ header {
 	top: 0;
 	z-index: 800;
 	height: var(--header-height);
-	background: #fef7ffbb;
+	background: var(--md-sys-color-surface-translucent);
 	backdrop-filter: blur(15px);
 	display: flex;
 	align-items: center;
@@ -1021,7 +1116,7 @@ header a {
 header .brand:hover,
 header ul .active>a {
 	background-color: rgba(255, 255, 255, .05);
-	color: #6650a4;
+	color: var(--md-sys-color-primary);
 	text-decoration: none
 }
 
@@ -1034,8 +1129,8 @@ header .brand {
 }
 
 header .pull-right {
-	flex: 0 0 auto;
-	margin: 0 12px
+	/* flex: 0 0 auto; */
+	margin: 0 12px;
 }
 
 header p {
@@ -1120,13 +1215,13 @@ header p {
 	--tab-active-background-color: var(--background-color-high);
 	--tab-active-text-color: #0069d6;
 	--tab-active-border-color: var(--border-color-medium);
-	margin: 0 -5px 10px;
-	padding: 0 2px;
+	margin: 0 0px 10px;
+	/* padding: 0 2px; */
 	list-style: none;
 	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	background: #f2f0f9;
+	background: var(--md-sys-color-card);
 	border-radius: 1rem
 }
 
@@ -1191,7 +1286,7 @@ footer {
 	color: var(--primary-color-high);
 	border: none;
 	margin: 0;
-	background: #e8def8;
+	background: var(--md-sys-color-primary-container);
 	color: #000;
 	font-size: 14px;
 	height: 32px;
@@ -1478,9 +1573,9 @@ body.modal-overlay-active #modal_overlay {
 .cbi-button-positive.important,
 .cbi-page-actions .cbi-button-save {
 	--on-color: var(--on-success-color);
-	background: linear-gradient(var(--success-color-medium), var(--success-color-low));
-	border-color: var(--success-color-high);
-	color: #fff
+	background: var(--md-sys-color-primary-container);
+	border-color: var(--md-sys-color-primary-container);
+	color: #000;
 }
 
 .cbi-button-negative.important {
@@ -1597,7 +1692,7 @@ body.modal-overlay-active #modal_overlay {
 
 .cbi-dropdown[open]>ul.dropdown {
 	display: block;
-	background: #f3edf7;
+	background: var(--md-sys-color-dropdown);
 	position: absolute;
 	z-index: 1100;
 	max-width: none;
@@ -1643,15 +1738,14 @@ body.modal-overlay-active #modal_overlay {
 	color: #000
 }
 
-.cbi-dropdown[open]>ul.dropdown>li.focus,
-.cbi-dropdown[open]>ul.dropdown>li:hover {
-	background: #ccc6db
+.cbi-dropdown[open]>ul.dropdown>li[selected].focus {
+	background: var(--md-sys-color-dropdown-selected);
+	/* color: #000 */
 }
 
-.cbi-dropdown[open]>ul.dropdown>li[selected].focus,
+.cbi-dropdown[open]>ul.dropdown>li:hover,
 .cbi-dropdown[open]>ul.dropdown>li[selected]:hover {
-	background: #e2dce6;
-	color: #000
+	background: var(--md-sys-color-dropdown-hover);
 }
 
 .cbi-dropdown[open]>ul.dropdown>li:last-child {
@@ -1697,13 +1791,13 @@ body.modal-overlay-active #modal_overlay {
 	border: 1px solid var(--border-color-high);
 	position: relative;
 	min-width: 170px;
-	height: 8px;
+	height: 4px;
 	margin: 1.4em 0 4px;
 	background: var(--background-color-medium)
 }
 
 .cbi-progressbar>div {
-	background: #6650a4;
+	background: var(--md-sys-color-primary);
 	height: 100%;
 	transition: width .25s ease-in;
 	width: 0%
@@ -2119,7 +2213,7 @@ th[data-sort-direction=desc]::after {
 
 .zonebadge {
 	padding: 2px;
-	border-radius: 4px;
+	border-radius: 1rem;
 	display: inline-block;
 	white-space: nowrap
 }
@@ -2493,7 +2587,8 @@ div.cbi-value var.cbi-tooltip-container {
 	border-right: 0px solid var(--border-color-medium);
 	padding: 0;
 	overflow-y: auto;
-	transition: transform .3s
+	transition: transform .3s;
+	font-size: 1rem;
 }
 
 .sidebar-overlay {
@@ -2604,7 +2699,7 @@ div.cbi-value var.cbi-tooltip-container {
 	height: 2.5rem;
 	margin-left: .5rem;
 	cursor: pointer;
-	color: #000
+	color: var(--md-sys-color-font)
 }
 
 .menu-btn span {
@@ -2695,19 +2790,19 @@ div.cbi-value var.cbi-tooltip-container {
 
 .dropdown-menu>li.active {
 	border-left-color: var(--primary-color-high);
-	background: #e8def8;
+	background: var(--md-sys-color-primary-container);
 	transition: background-color .3s
 }
 
 .dropdown-menu>li.active:hover {
-	background: #d8cfe8;
+	background: var(--md-sys-color-primary-container-hover);
 	transition: background-color .3s
 }
 
 body {
-	background: #fef7ff;
-	--background-color-high: #fef7ff;
-	--background-color-low: #fef7ff;
+	background: var(--md-sys-color-surface);
+	--background-color-high: var(--md-sys-color-surface);
+	--background-color-low: var(--md-sys-color-surface);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale
 }
@@ -2719,7 +2814,8 @@ input {
 }
 
 header .pull-right {
-	padding-top: 0
+	/* padding-top: 0; */
+	/* display: flex; */
 }
 
 h1,
@@ -2755,10 +2851,11 @@ header [data-indicator] {
 .ifacebox,
 .table,
 table {
-	background: #f7f2fa;
+	background: var(--md-sys-color-card);
 	border-radius: 16px;
 	box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
-	margin: 1px
+	margin: 1px;
+	width: calc(100% - 2px);
 }
 
 .cbi-dropdown>ul>li input[type=text] {
@@ -2768,7 +2865,7 @@ table {
 }
 
 .ifacebox .ifacebox-head {
-	border-radius: 16px 16px 0 0;
+	border-radius: 1rem 1rem 0 0;
 	opacity: .9
 }
 
@@ -2790,7 +2887,7 @@ header {
 	border: none;
 	backdrop-filter: blur(15px);
 	box-shadow: none;
-	background: #fef7ffbb
+	background: var(--md-sys-color-surface-translucent);
 }
 
 #localtime,
@@ -2809,14 +2906,14 @@ textarea {
 	text-shadow: none;
 	padding: 1px 10px;
 	box-shadow: none;
-	color: #6650a4
+	color: var(--md-sys-color-primary)
 }
 
 textarea {
 	overflow: auto;
 	vertical-align: top;
 	font-family: consolas, monospace;
-	color: #000
+	color: var(--md-sys-color-font)
 }
 
 .cbi-dynlist>.item {
@@ -2831,11 +2928,11 @@ textarea {
 
 .label.notice,
 header [data-indicator][data-style=active] {
-	background: #beb6d1
+	background: var(--md-sys-color-refresh-button);
 }
 
 header [data-indicator][data-style=active]:hover {
-	background: #a197be
+	background: var(--md-sys-color-refresh-button-hover);
 }
 
 header [data-indicator][data-style=inactive]:hover {
@@ -2871,13 +2968,13 @@ header [data-indicator][data-style=inactive]:hover {
 }
 
 .cbi-progressbar {
-	background: #e6e0e9;
+	background: var(--md-sys-color-progressbar);
 	border: none;
-	border-radius: 20px
+	/* border-radius: 20px; */
 }
 
 .cbi-progressbar>div {
-	border-radius: 20px
+	/* border-radius: 20px; */
 }
 
 .table .td,
@@ -2898,8 +2995,8 @@ header [data-indicator][data-style=inactive]:hover {
 .td.cbi-section-actions>*>:last-child {
 	border-radius: 1rem;
 	border: none;
-	background: #e8def8;
-	color: #000
+	background: var(--md-sys-color-primary-container);
+	color: var(--md-sys-color-font)
 }
 
 .ifacebadge,
@@ -2921,7 +3018,7 @@ header [data-indicator][data-style=inactive]:hover {
 .ifacebox .ifacebox-head.active {
 	background: 0 0;
 	border: none;
-	color: #000;
+	color: var(--md-sys-color-font);
 	text-shadow: none
 }
 
@@ -2959,6 +3056,10 @@ form .clearfix {
 .tabs>li {
 	position: relative;
 	overflow: hidden
+}
+
+.cbi-tabmenu>.cbi-tab:hover {
+	background: var(--md-sys-color-primary-container-hover);
 }
 
 .ripple {
@@ -3033,22 +3134,110 @@ header [data-indicator][data-style=active]::before {
 .cbi-page-actions .cbi-button-negative+.cbi-button-save,
 select,
 textarea {
-	background: #fef7ff;
-	border: 1px solid #6650a4
+	/* background: var(--md-sys-color-light); */
+	/* background: var(--md-sys-color-surface); */
+	border: 1px solid var(--md-sys-color-primary)
 }
 
 .cbi-page-actions .cbi-button-apply+.cbi-button-save,
 .cbi-page-actions .cbi-button-negative+.cbi-button-save {
-	background: #e8def8;
-	color: #000;
-	border: 1px solid #e8def8
+	background: var(--md-sys-color-primary-container);
+	color: var(--md-sys-color-font);
+	border: 1px solid var(--md-sys-color-primary-container)
 }
 
 .btn.primary,
 .cbi-button-action.important,
 .cbi-page-actions .cbi-button-apply,
 .cbi-section-actions .cbi-button-edit {
-	background: #6750a4;
+	background: var(--md-sys-color-primary);
 	color: #fff;
-	border: 1px solid #6750a4
+	border: 1px solid var(--md-sys-color-primary)
+}
+
+@media screen and (max-width: 1280px) {
+	.table {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	.table .td,
+	.table .th {
+		/* padding: 6px; */
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		word-break: break-word;
+		hyphens: auto;
+	}
+
+	/* 调整特定列的宽度 */
+	.td.cbi-section-actions {
+		width: auto;
+		min-width: 120px;
+		white-space: normal;
+	}
+
+	/* 确保按钮不会溢出 */
+	.td.cbi-section-actions>* {
+		margin: 2px 0;
+	}
+
+	.td.cbi-section-actions>*>* {
+		display: inline-block;
+		max-width: 100%;
+		margin: 2px;
+	}
+
+	/* 处理长文本 */
+	.table .td[data-title]::before {
+		word-break: keep-all;
+		hyphens: none;
+	}
+
+	/* 优化代码和路径显示 */
+	.td pre,
+	.td code,
+	.td .ifacebadge {
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+
+	/* 处理进程页面的表格 */
+	[data-page="admin-status-processes"] .table .th:last-child,
+	[data-page="admin-status-processes"] .table .td:last-child {
+		width: 200px;
+		/* 调整最后一列的宽度 */
+	}
+
+	[data-page="admin-system-startup"] .th.nowrap.cbi-section-actions {
+		width: 234px;
+		/* 调整最后一列的宽度 */
+	}
+
+	[data-page="admin-system-mounts"] #cbi-fstab-swap .table .th:last-child,
+	[data-page="admin-system-mounts"] #cbi-fstab-mount .table .th:last-child {
+		width: 150px;
+		/* 调整最后一列的宽度 */
+	}
+
+	[data-page="admin-system-mounts"] #cbi-fstab-swap .table .th:first-child {
+		width: 10% !important;
+		/* 调整第一列的宽度 */
+	}
+
+	[data-page^=admin-services-openclash] div#cbi-openclash {
+		overflow-x: scroll
+	}
+
+	[data-page^=admin-services-openclash] div#cbi-openclash .cbi-section {
+		width: calc(100% - 2px);
+	}
+}
+
+
+select#themeSelect {
+	width: 64px;
+	margin: 1px;
+	padding: 4px;
+	font-size: 15px !important;
 }

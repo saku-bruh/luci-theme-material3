@@ -47,7 +47,8 @@ header h3 a {
 	}
 
 	.modal {
-		margin: 1.5em auto
+		margin: 1.5em auto;
+		margin-top: 160px;
 	}
 
 	h3 {
@@ -57,7 +58,6 @@ header h3 a {
 
 	.cbi-tabmenu,
 	.tabs {
-		background: 0 0/1px 34px #f7f2fa;
 		margin: 1px 1px 10px;
 		border-radius: 1rem
 	}
@@ -455,9 +455,9 @@ header h3 a {
 		overflow-x: auto
 	}
 
-	[data-page^=admin-services-openclash] div#cbi-openclash {
+	/* [data-page^=admin-services-openclash] div#cbi-openclash {
 		overflow-x: scroll
-	}
+	} */
 
 	.sidebar-overlay {
 		opacity: 0;
@@ -470,7 +470,7 @@ header h3 a {
 	}
 
 	header.with-shadow {
-		background: #f7f2fabb;
+		background: var(--md-sys-color-card-translucent);
 		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%)
 	}
 
@@ -500,7 +500,7 @@ header h3 a {
 	}
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:330px) {
 
 	.cbi-page-actions button,
 	.cbi-section-actions .cbi-button {
@@ -565,7 +565,7 @@ header h3 a {
 	.td .ifacebox .ifacebox-head {
 		min-width: 25%;
 		justify-content: space-around;
-		border-radius: 4px 0 0 4px
+		border-radius: 1rem;
 	}
 
 	.td .ifacebox .ifacebox-body,

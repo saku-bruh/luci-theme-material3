@@ -17,6 +17,9 @@ define Package/luci-theme-material3/postrm
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
 	uci -q delete luci.themes.Material3
+	uci -q delete luci.themes.Material3Blue
+	uci -q delete luci.themes.Material3Green
+	uci -q delete luci.themes.Material3Red
 	# uci -q delete luci.themes.Material3Dark
 	# uci -q delete luci.themes.Material3Light
 	uci commit luci
