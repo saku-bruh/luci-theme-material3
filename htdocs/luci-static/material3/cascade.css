@@ -1000,7 +1000,7 @@ textarea[readonly] {
 
 .cbi-optionals,
 .cbi-section-create {
-	padding: 0 0 10px 10px
+	padding: 5px 0
 }
 
 .cbi-section-create {
@@ -3016,7 +3016,7 @@ header [data-indicator][data-style=inactive]:hover {
 .ifacebadge,
 .ifacebadge.large,
 .network-status-table .ifacebox-body .ifacebadge {
-	padding: 2px;
+	padding: 8px;
 	border: 1px solid #aaa;
 	box-shadow: none;
 	border-radius: 1rem
@@ -3161,6 +3161,12 @@ textarea {
 	/* background: var(--md-sys-color-surface); */
 	border: 1px solid var(--md-sys-color-primary);
 	color: var(--md-sys-color-primary);
+}
+
+.cbi-input-text,
+textarea {
+	background: var(--md-sys-color-light);
+	color: var(--md-sys-color-font);
 }
 
 .cbi-page-actions .cbi-button-apply+.cbi-button-save,

@@ -181,7 +181,7 @@ header h3 a {
 
 	.table.cbi-section-table {
 		border: none;
-		background: 0 0;
+		/* background: 0 0; */
 		margin: 0
 	}
 
@@ -203,7 +203,7 @@ header h3 a {
 	}
 
 	.cbi-section-table+.cbi-section-create {
-		padding-top: 0
+		/* padding-top: 0; */
 	}
 
 	.tr[data-title]::before {
@@ -385,7 +385,7 @@ header h3 a {
 
 	.cbi-optionals,
 	.cbi-section-create {
-		padding: 0 0 14px
+		padding: 7px 0;
 	}
 
 	header .menu-btn {
