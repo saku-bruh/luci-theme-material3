@@ -405,7 +405,8 @@ body {
 	font-weight: 400;
 	min-height: 100%;
 	flex-direction: column;
-	overflow-y: scroll
+	overflow-y: scroll;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -3224,6 +3225,14 @@ textarea {
 	.td .ifacebadge {
 		white-space: pre-wrap;
 		word-break: break-all;
+	}
+
+	[data-page^=admin-services-openclash] #cbi-openclash {
+		overflow-x: scroll
+	}
+
+	[data-page^=admin-services-openclash] #cbi-openclash .cbi-section {
+		width: calc(100% - 2px);
 	}
 }
 
