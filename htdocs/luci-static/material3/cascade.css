@@ -3215,6 +3215,7 @@ textarea {
 	.table .td[data-title]::before {
 		word-break: keep-all;
 		hyphens: none;
+		text-align: left;
 	}
 
 	/* 优化代码和路径显示 */
