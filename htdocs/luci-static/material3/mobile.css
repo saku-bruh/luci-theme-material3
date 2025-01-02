@@ -9,7 +9,7 @@ header h3 a {
 	font-size: 1.6rem
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:854px) {
 
 	.menu-btn,
 	.table,

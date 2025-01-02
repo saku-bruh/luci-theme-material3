@@ -551,7 +551,7 @@ ol {
 }
 
 li {
-	color: var(--text-color-medium)
+	/* color: var(--text-color-medium); */
 }
 
 .cbi-button-down,
@@ -1714,7 +1714,15 @@ body.modal-overlay-active #modal_overlay {
 .cbi-dropdown[open]>ul.preview {
 	flex-grow: 1;
 	display: flex !important;
-	color: #fff
+	/* color: #fff; */
+}
+
+.cbi-dropdown>ul>li[display] {
+	/* color: var(--md-sys-color-primary); */
+}
+
+.cbi-value-field em {
+	color: var(--md-sys-color-primary);
 }
 
 .uci-dialog .cbi-dropdown>ul>li[display] {
@@ -2911,7 +2919,7 @@ textarea {
 	text-shadow: none;
 	padding: 1px 10px;
 	box-shadow: none;
-	color: var(--md-sys-color-primary)
+	/* color: var(--md-sys-color-primary); */
 }
 
 textarea {
@@ -2928,7 +2936,7 @@ textarea {
 .cbi-dynlist>.item::after {
 	background: 0 0;
 	box-shadow: none;
-	border-left: 1px solid #b2aac9
+	border-left: none;
 }
 
 .label.notice,
@@ -3007,7 +3015,7 @@ header [data-indicator][data-style=inactive]:hover {
 .ifacebadge,
 .ifacebadge.large,
 .network-status-table .ifacebox-body .ifacebadge {
-	padding: 8px;
+	padding: 2px;
 	border: 1px solid #aaa;
 	box-shadow: none;
 	border-radius: 1rem
@@ -3150,7 +3158,8 @@ select,
 textarea {
 	/* background: var(--md-sys-color-light); */
 	/* background: var(--md-sys-color-surface); */
-	border: 1px solid var(--md-sys-color-primary)
+	border: 1px solid var(--md-sys-color-primary);
+	color: var(--md-sys-color-primary);
 }
 
 .cbi-page-actions .cbi-button-apply+.cbi-button-save,
@@ -3169,10 +3178,10 @@ textarea {
 	border: 1px solid var(--md-sys-color-primary)
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1300px) {
 	.table {
 		width: 100%;
-		table-layout: fixed;
+		/* table-layout: fixed; */
 	}
 
 	.table .td,
@@ -3214,37 +3223,6 @@ textarea {
 	.td .ifacebadge {
 		white-space: pre-wrap;
 		word-break: break-all;
-	}
-
-	/* 处理进程页面的表格 */
-	[data-page="admin-status-processes"] .table .th:last-child,
-	[data-page="admin-status-processes"] .table .td:last-child {
-		width: 200px;
-		/* 调整最后一列的宽度 */
-	}
-
-	[data-page="admin-system-startup"] .th.nowrap.cbi-section-actions {
-		width: 234px;
-		/* 调整最后一列的宽度 */
-	}
-
-	[data-page="admin-system-mounts"] #cbi-fstab-swap .table .th:last-child,
-	[data-page="admin-system-mounts"] #cbi-fstab-mount .table .th:last-child {
-		width: 150px;
-		/* 调整最后一列的宽度 */
-	}
-
-	[data-page="admin-system-mounts"] #cbi-fstab-swap .table .th:first-child {
-		width: 10% !important;
-		/* 调整第一列的宽度 */
-	}
-
-	[data-page^=admin-services-openclash] div#cbi-openclash {
-		overflow-x: scroll
-	}
-
-	[data-page^=admin-services-openclash] div#cbi-openclash .cbi-section {
-		width: calc(100% - 2px);
 	}
 }
 
