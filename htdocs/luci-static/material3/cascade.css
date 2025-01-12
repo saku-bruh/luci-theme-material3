@@ -3164,6 +3164,7 @@ textarea {
 }
 
 .cbi-input-text,
+.cbi-input-password,
 textarea {
 	background: var(--md-sys-color-light);
 	color: var(--md-sys-color-font);
@@ -3187,7 +3188,7 @@ textarea {
 
 @media screen and (max-width: 1300px) {
 	.table {
-		width: 100%;
+		max-width: 100%;
 		/* table-layout: fixed; */
 	}
 
@@ -3240,8 +3241,15 @@ textarea {
 	[data-page^=admin-services-openclash] #cbi-openclash .cbi-section {
 		width: calc(100% - 2px);
 	}
-}
 
+	[data-page=admin-network-network] #cbi-network-interface {
+		overflow-x: scroll;
+	}
+
+	[data-page=admin-network-network] #cbi-network-interface .cbi-section-create {
+		margin: 0 -3px;
+	}
+}
 
 select#themeSelect {
 	width: 64px;
