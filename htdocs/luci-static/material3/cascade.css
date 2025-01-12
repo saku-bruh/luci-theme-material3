@@ -168,7 +168,7 @@ ul.unstyled {
 	--on-warn-color: var(--text-color-highest);
 	--disabled-opacity: .7;
 	color-scheme: light;
-	--sidebar-width: 256px;
+	--sidebar-width: 280px;
 	--header-height: 4rem;
 
 	--md-sys-color-primary: hsl(256, 34%, 48%);
@@ -1167,7 +1167,7 @@ header p {
 	float: none;
 	display: block;
 	overflow: hidden;
-	margin: 4px 0;
+	/* margin: 4px 0; */
 }
 
 .dropdown-menu a {
@@ -2312,7 +2312,8 @@ div.cbi-value var.cbi-tooltip-container {
 
 .nav .dropdown-menu li a,
 .nav>li>a {
-	padding: 1rem 1.5rem
+	padding: 1rem 1.5rem;
+	line-height: 1.5rem;
 }
 
 .uci-dialog div>ins {
