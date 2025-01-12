@@ -1165,7 +1165,9 @@ header p {
 
 .dropdown-menu li {
 	float: none;
-	display: block
+	display: block;
+	overflow: hidden;
+	margin: 4px 0;
 }
 
 .dropdown-menu a {
