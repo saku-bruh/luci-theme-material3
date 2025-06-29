@@ -251,7 +251,7 @@
 				}
 			}
 
-function updateThemeColor() {
+			function updateThemeColor() {
                 const bgColor = getComputedStyle(document.body).backgroundColor;
                 let metaThemeColor = document.querySelector('meta[name="theme-color"]');
                 if (!metaThemeColor) {
@@ -261,7 +261,6 @@ function updateThemeColor() {
                 }
                 metaThemeColor.setAttribute('content', bgColor);
             }
-			}
 
 			function toggleTheme() {
 				const current = html.getAttribute('data-darkmode');
