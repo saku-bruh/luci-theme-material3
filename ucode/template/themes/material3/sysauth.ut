@@ -5,6 +5,14 @@
 
 {% include('header', { blank_page: true }) %}
 
+<script type="text/javascript">//<![CDATA[
+	document.addEventListener('DOMContentLoaded', function() {
+		const darkmode = localStorage.getItem('luci-theme');
+		if (darkmode === 'dark' || (darkmode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches))
+			document.documentElement.setAttribute('data-darkmode', 'true');
+	});
+//]]></script>
+
 <section hidden>
 	<form method="post" class="cbi-map">
 		<div class="cbi-section">

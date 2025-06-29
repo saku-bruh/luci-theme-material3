@@ -256,8 +256,8 @@
 
 	/* ========== 暗色主题颜色继承 ========== */
 	[data-darkmode=true] {
-		--md-sys-color-primary: hsl(256, 34%, 70%);
-		--md-sys-color-primary-container: hsl(265, 80%, 30%);
+		--md-sys-color-primary: hsl(256, 34%, 55%);
+		--md-sys-color-primary-container: hsl(265, 80%, 25%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
@@ -271,10 +271,6 @@
 		--md-sys-color-primary: #a8c8ff;
 		--primary-color-high: #5d9bc7;
 		--md-sys-color-primary-container: #1d4a7a;
-		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
-		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
-		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 20%, transparent);
-		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 50%, transparent);
 	}
 
 	[data-darkmode=true][data-theme="green"] {
@@ -283,10 +279,6 @@
 		--md-sys-color-primary: #8fdcb4;
 		--primary-color-high: #5cb48a;
 		--md-sys-color-primary-container: #005538;
-		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
-		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
-		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 20%, transparent);
-		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 50%, transparent);
 	}
 
 	[data-darkmode=true][data-theme="red"] {
@@ -295,10 +287,6 @@
 		--md-sys-color-primary: #ffb4ab;
 		--primary-color-high: #d68b83;
 		--md-sys-color-primary-container: #93000a;
-		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
-		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
-		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 20%, transparent);
-		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 50%, transparent);
 	}
 
 	:root[data-darkmode=true] {

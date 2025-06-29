@@ -235,6 +235,7 @@
 				html.classList.add('theme-transition');
 				html.setAttribute('data-darkmode', initMode);
 				updateToggleState(initMode);
+				updateThemeColor();
 				
 				// 移除过渡类
 				setTimeout(() => {
@@ -254,6 +255,21 @@
 				}
 			}
 
+			// 更新主题颜色
+			function updateThemeColor() {
+				const isDark = html.getAttribute('data-darkmode') === 'true';
+				const lightColor = '#fef7ff';
+				const darkColor = '#1a181b';
+
+				let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+				if (!metaThemeColor) {
+					metaThemeColor = document.createElement('meta');
+					metaThemeColor.name = 'theme-color';
+					document.head.appendChild(metaThemeColor);
+				}
+				metaThemeColor.setAttribute('content', isDark ? darkColor : lightColor);
+			}
+
 			// 切换主题（单次点击）
 			function toggleTheme() {
 				const current = html.getAttribute('data-darkmode');
@@ -266,6 +282,7 @@
 				html.setAttribute('data-darkmode', newMode);
 				localStorage.setItem('luci-theme-manual', newMode);
 				updateToggleState(newMode);
+				updateThemeColor(); // Update theme-color on toggle
 
 				// 移除过渡类
 				setTimeout(() => {
@@ -290,8 +307,9 @@
 				if (!localStorage.getItem('luci-theme-manual')) {
 					const newMode = e.matches ? 'true' : 'false';
 					html.classList.add('theme-transition');
-					html.setAttribute('data-darkmode', newMode);
-					updateToggleState(newMode);
+						html.setAttribute('data-darkmode', newMode);
+						updateToggleState(newMode);
+						updateThemeColor(); // Update theme-color on system change
 					setTimeout(() => {
 						html.classList.remove('theme-transition');
 					}, transitionDuration);
