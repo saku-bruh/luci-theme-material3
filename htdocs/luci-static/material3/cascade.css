@@ -184,8 +184,8 @@
 		--sidebar-width: 280px;
 		--header-height: 4rem;
 		--md-sys-color-primary: hsl(256, 34%, 48%);
-		--md-sys-color-primary-container: hsl(263, 65%, 92%);
-		--md-sys-color-primary-container-hover: #d8cfe8;
+		--md-sys-color-primary-container: hsl(263, 65%, 90%);
+		--md-sys-color-primary-container-hover: #d0c7e8;
 		--md-sys-color-surface: #fef7ff;
 		--md-sys-color-surface-translucent: #fef7ffbb;
 		--md-sys-color-card: #f7f2fa;
@@ -256,8 +256,8 @@
 
 	/* ========== 暗色主题颜色继承 ========== */
 	[data-darkmode=true] {
-		--md-sys-color-primary: hsl(256, 34%, 48%);
-		--md-sys-color-primary-container: hsl(265, 80%, 70%);
+		--md-sys-color-primary: hsl(256, 34%, 60%);
+		--md-sys-color-primary-container: hsl(265, 80%, 25%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
@@ -296,30 +296,20 @@
 	}
 
 	:root[data-darkmode=true] {
-		/* 修正基础色相 */
 		--background-color-h: 240;
 		--background-color-s: 5%;
-		/* Material3暗色表面系统 */
 		--md-sys-color-surface: hsl(var(--background-color-h), var(--background-color-s), 12%);
 		--md-sys-color-surface-translucent: hsla(var(--background-color-h), var(--background-color-s), 12%, 0.84);
-		--md-sys-color-card: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
-		/* 组件颜色适配 */
-		--md-sys-color-dropdown: hsl(var(--background-color-h), var(--background-color-s), 20%);
-		--md-sys-color-dropdown-selected: hsl(var(--background-color-h), var(--background-color-s), 24%);
-		--md-sys-color-progressbar: hsl(var(--background-color-h), var(--background-color-s), 18%);
-		/* 文字对比度增强 */
+		--md-sys-color-card: hsl(256, 10%, 15%);
+		--md-sys-color-dropdown: hsl(var(--background-color-h), var(--background-color-s), 18%);
+		--md-sys-color-dropdown-selected: hsl(var(--background-color-h), var(--background-color-s), 22%);
+		--md-sys-color-progressbar: hsl(var(--background-color-h), var(--background-color-s), 15%);
 		--text-color-medium-hsl: var(--text-color-h), var(--text-color-s), 85%;
 		--text-color-low-hsl: var(--text-color-h), var(--text-color-s), 65%;
-		/* 强制文字颜色为Material3的on-surface色系 */
 		--text-color-highest: hsl(0, 0%, 100%);
-		/* 纯白 - 主要文字 */
-		--text-color-high: hsl(0, 0%, 90%);
-		/* 高强调文字 */
-		--text-color-medium: hsl(0, 0%, 80%);
-		/* 中等强调文字 */
-		--text-color-low: hsl(0, 0%, 60%);
-		/* 禁用/辅助文字 */
-		/* 确保所有文本元素继承新变量 */
+		--text-color-high: hsl(0, 0%, 95%);
+		--text-color-medium: hsl(0, 0%, 85%);
+		--text-color-low: hsl(0, 0%, 65%);
 		color: var(--text-color-high);
 	}
 
@@ -2584,6 +2574,24 @@
 	[data-darkmode=true] .spinning::before {
 		background: var(--on-color, #fff)
 	}
+
+	[data-darkmode=true] .modal {
+		background: var(--md-sys-color-surface);
+		color: var(--text-color-high);
+	}
+
+	[data-darkmode=true] .uci-dialog div>del {
+		background-color: rgba(var(--error-color-high-rgb), .3);
+		border-color: rgba(var(--error-color-high-rgb), .6);
+	}
+	[data-darkmode=true] .uci-dialog div>ins {
+		background-color: rgba(var(--success-color-high-rgb), .3);
+		border-color: rgba(var(--success-color-high-rgb), .6);
+	}
+	[data-darkmode=true] .uci-dialog div>var {
+		background-color: var(--md-sys-color-card);
+	}
+    
 
 	[data-tab-title] {
 		height: 0;
