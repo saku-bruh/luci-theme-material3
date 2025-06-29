@@ -256,8 +256,8 @@
 
 	/* ========== 暗色主题颜色继承 ========== */
 	[data-darkmode=true] {
-		--md-sys-color-primary: hsl(256, 34%, 60%);
-		--md-sys-color-primary-container: hsl(265, 80%, 25%);
+		--md-sys-color-primary: hsl(256, 34%, 70%);
+		--md-sys-color-primary-container: hsl(265, 80%, 30%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
@@ -266,6 +266,8 @@
 	}
 
 	[data-darkmode=true][data-theme="blue"] {
+		--background-color-h: 210;
+		--background-color-s: 15%;
 		--md-sys-color-primary: #a8c8ff;
 		--primary-color-high: #5d9bc7;
 		--md-sys-color-primary-container: #1d4a7a;
@@ -276,6 +278,8 @@
 	}
 
 	[data-darkmode=true][data-theme="green"] {
+		--background-color-h: 150;
+		--background-color-s: 15%;
 		--md-sys-color-primary: #8fdcb4;
 		--primary-color-high: #5cb48a;
 		--md-sys-color-primary-container: #005538;
@@ -286,6 +290,8 @@
 	}
 
 	[data-darkmode=true][data-theme="red"] {
+		--background-color-h: 0;
+		--background-color-s: 15%;
 		--md-sys-color-primary: #ffb4ab;
 		--primary-color-high: #d68b83;
 		--md-sys-color-primary-container: #93000a;
@@ -297,13 +303,13 @@
 
 	:root[data-darkmode=true] {
 		--background-color-h: 240;
-		--background-color-s: 5%;
+		--background-color-s: 10%;
 		--md-sys-color-surface: hsl(var(--background-color-h), var(--background-color-s), 12%);
 		--md-sys-color-surface-translucent: hsla(var(--background-color-h), var(--background-color-s), 12%, 0.84);
-		--md-sys-color-card: hsl(256, 10%, 15%);
-		--md-sys-color-dropdown: hsl(var(--background-color-h), var(--background-color-s), 18%);
-		--md-sys-color-dropdown-selected: hsl(var(--background-color-h), var(--background-color-s), 22%);
-		--md-sys-color-progressbar: hsl(var(--background-color-h), var(--background-color-s), 15%);
+		--md-sys-color-card: hsl(256, 15%, 18%);
+		--md-sys-color-dropdown: hsl(var(--background-color-h), var(--background-color-s), 16%);
+		--md-sys-color-dropdown-selected: hsl(var(--background-color-h), var(--background-color-s), 20%);
+		--md-sys-color-progressbar: hsl(var(--background-color-h), var(--background-color-s), 12%);
 		--text-color-medium-hsl: var(--text-color-h), var(--text-color-s), 85%;
 		--text-color-low-hsl: var(--text-color-h), var(--text-color-s), 65%;
 		--text-color-highest: hsl(0, 0%, 100%);
@@ -2578,6 +2584,7 @@
 	[data-darkmode=true] .modal {
 		background: var(--md-sys-color-surface);
 		color: var(--text-color-high);
+		box-shadow: none;
 	}
 
 	[data-darkmode=true] .uci-dialog div>del {
@@ -3169,6 +3176,12 @@
 
 	.cbi-progressbar>div {
 		border-radius: 1rem;
+	}
+
+	[data-darkmode=true] .cbi-progressbar {
+		background: var(--md-sys-color-progressbar);
+		border: none;
+		box-shadow: none;
 	}
 
 	.table .td,
