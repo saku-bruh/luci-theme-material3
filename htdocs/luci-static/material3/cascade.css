@@ -120,12 +120,10 @@
 	}
 
 	:root {
-		/* 新增暗黑模式专用变量 */
 		--md-sys-color-on-primary: var(--background-color-high);
 		--md-sys-color-on-surface: var(--text-color-highest);
 		--md-sys-color-surface-dim: hsl(var(--background-color-h), var(--background-color-s), calc(var(--background-color-l) - 5%));
 		--md-sys-color-surface-bright: hsl(var(--background-color-h), var(--background-color-s), calc(var(--background-color-l) + 5%));
-		/* 状态层透明度 (Material3标准) */
 		--state-layer-hover-opacity: 0.08;
 		--state-layer-focus-opacity: 0.12;
 		--state-layer-pressed-opacity: 0.12;
@@ -186,7 +184,6 @@
 		--md-sys-color-primary: hsl(256, 34%, 60%);
 		--md-sys-color-primary-container: hsl(263, 65%, 94%);
 		--md-sys-color-primary-container-hover: #d0c7e8;
-		/* increase purple theme background saturation */
 		--md-sys-color-surface: #fef7ff;
 		--md-sys-color-surface-translucent: #fef7ffbb;
 		--md-sys-color-card: #f3ebfe;
@@ -205,7 +202,6 @@
 		--md-sys-color-primary: #0061a4;
 		--md-sys-color-primary-container: #d7e3f8;
 		--md-sys-color-primary-container-hover: #c7d3e8;
-		/* increase surface tint for better saturation */
 		--md-sys-color-surface: #eff5ff;
 		--md-sys-color-surface-translucent: #eff5ffbb;
 		--md-sys-color-card: #e7f0ff;
@@ -224,11 +220,10 @@
 		--md-sys-color-primary: #006c48;
 		--md-sys-color-primary-container: #d5e8cf;
 		--md-sys-color-primary-container-hover: #c5d8c0;
-		/* decrease surface saturation for green theme */
 		--md-sys-color-surface: #f7fdf6;
 		--md-sys-color-surface-translucent: #f7fdf6bb;
-		--md-sys-color-card: #f3f4ee;
-		--md-sys-color-card-translucent: #f3f4eebb;
+		--md-sys-color-card: #edf7ea;
+		--md-sys-color-card-translucent: #edf7eabb;
 		--md-sys-color-progressbar: #e2e3dd;
 		--md-sys-color-dropdown: #eeeee8;
 		--md-sys-color-dropdown-selected: #deded8;
@@ -257,9 +252,6 @@
 		--md-sys-color-light: #fff;
 	}
 
-/* ========== 暗色主题颜色继承 ========== */
-
-/* Login dialog tweaks */
 .modal.login .cbi-value-title {
     flex: 0 0 180px !important;
     text-align: right !important;
@@ -269,14 +261,12 @@
     color: #fff !important;
 }
 
-/* hide separators inside login modal */
 .modal.login hr {
     display: none !important;
     height: 0 !important;
     border: 0 !important;
 }
 
-/* remove white border around login modal */
 .modal.login {
     border: none !important;
 }
@@ -284,15 +274,14 @@
     background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
 }
 
-/* Basic mobile fixes */
 @media (max-width: 854px) {
     header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
     .sidebar { width: calc(var(--sidebar-width) - 80px); }
     .sidebar.active { transform: translateX(0); }
 }
 	[data-darkmode=true] {
---md-sys-color-primary: hsl(256, 34%, 72%);
---md-sys-color-primary-container: hsl(265, 80%, 30%);
+--md-sys-color-primary: hsl(256, 34%, 80%);
+--md-sys-color-primary-container: hsl(265, 60%, 35%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
@@ -306,10 +295,8 @@
 		--md-sys-color-primary: #a8c8ff;
 		--primary-color-high: #5d9bc7;
 		--md-sys-color-primary-container: #1d4a7a;
-		/* header buttons & hover */
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
-		/* card / surface tint */
 		--md-sys-color-surface: hsl(210,15%,12%);
 		--md-sys-color-surface-translucent: hsla(210,15%,12%,0.84);
 		--md-sys-color-card: hsl(210,15%,18%);
@@ -377,24 +364,20 @@
 		color: var(--text-color-high);
 	}
 
-/* ===== Dark mode per-theme overrides (moved below generic to take precedence) ===== */
 [data-darkmode=true][data-theme="blue"] {
-	/* Color scheme */
 	--background-color-h: 210;
 	--background-color-s: 15%;
 	--md-sys-color-primary: #a8c8ff;
 	--primary-color-high: #5d9bc7;
 	--md-sys-color-primary-container: #1d4a7a;
-	/* Header buttons & hover */
 	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
 	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
 	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
 	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
-	/* Surface / card */
-	--md-sys-color-surface: hsl(210,15%,12%);
-	--md-sys-color-surface-translucent: hsla(210,15%,12%,0.84);
-	--md-sys-color-card: hsl(210,15%,18%);
-	--md-sys-color-progressbar: hsl(210,15%,12%);
+	--md-sys-color-surface: hsl(210,18%,12%);
+	--md-sys-color-surface-translucent: hsla(210,18%,12%,0.84);
+	--md-sys-color-card: hsl(210,18%,18%);
+	--md-sys-color-progressbar: hsl(210,18%,12%);
 }
 
 [data-darkmode=true][data-theme="green"] {
@@ -429,37 +412,30 @@
 	--md-sys-color-progressbar: hsl(0,20%,12%);
 }
 
-/* ========== 全局组件 ========== */
 	[data-darkmode=true] {
-		/* 基础文本元素 */
 		body, p, td, th, li, div, strong{
 			color: var(--text-color-high);
 			-webkit-font-smoothing: antialiased;
 			text-rendering: optimizeLegibility;
 		}
-		/* 头部品牌颜色 */
 		header .brand {
 			color: #ffffff;
 		}
-		/* 按钮颜色 */
 		.btn.primary, .cbi-button-action.important, .cbi-page-actions .cbi-button-apply, .cbi-section-actions .cbi-button-edit {
 			background: var(--md-sys-color-primary-container);
 			color: #fff;
 			border: 1px solid var(--md-sys-color-primary);
 		}
-		/* 保存按钮颜色 */
 		.cbi-page-actions .cbi-button-apply+.cbi-button-save {
 			background: var(--md-sys-color-primary);
 			color: #ffffff;
 			border: 1px solid var(--md-sys-color-primary-container);
 		}
-		/* 操作按钮颜色 */
 		.td.cbi-section-actions>*>:last-child {
 			border-radius: 1rem;
 			background: var(--md-sys-color-primary-container);
 			color: var(--text-color-highest);
 		}
-		/* 下拉框颜色 */
 		.cbi-dropdown:not(.btn):not(.cbi-button) {
 			background: var(--md-sys-color-primary);
 			color: var(--text-color-highest);
@@ -468,7 +444,6 @@
 		.cbi-value-field em {
 			color: var(--text-color-highest);
 		}
-		/* 链接颜色 */
 		.nav .dropdown-menu .active a {
 			color: #fff;
 		}
@@ -480,13 +455,11 @@
 		a:hover {
 			color: color-mix(in srgb, var(--primary-color-high) 85%, white);
 		}
-		/* 标题类 */
 		h1, h2, h3, h4, h5, h6,
 		.cbi-section-title, .alert-message h4 {
 			color: var(--text-color-highest);
 		}
 
-		/* 输入框文字 */
 		.cbi-input-text,
 		.cbi-input-select,
 		.cbi-input-password,
@@ -496,12 +469,10 @@
 			--placeholder-color: var(--text-color-low);
 		}
 
-		/* 表格特殊处理 */
 		.table td, .table th {
 			color: var(--text-color-high);
 		}
 
-		/* 输入框 */
 		.cbi-input-text, .cbi-input-select {
 			background-color: var(--md-sys-color-dropdown);
 			--placeholder-color: var(--text-color-low);
@@ -510,13 +481,11 @@
 		.cbi-tabmenu>li, .tabs>li {
 			color: #fff;
 		}
-		/* 表格 */
 		.table {
 			--row-stripe-bg: hsla(var(--background-color-h), 30%, 18%, 0.5);
 			--row-hover-bg: hsla(var(--primary-color-h), 50%, 30%, 0.2);
 		}
 
-		/* 卡片 */
 		.cbi-section, .cbi-map {
 			background-color: #00000000;
 			--text-color-high: hsl(0, 0%, 95%);
@@ -538,14 +507,12 @@
 			width: calc(100% - 2px);
 		}
 
-		/* 禁用状态文字 */
 		.cbi-button-disabled,
 		input:disabled {
 			opacity: 0.5;
 			color: var(--text-color-medium) !important;
 		}
 
-		/* 按钮状态层 */
 		.btn:hover {
 			background-color: color-mix(
 				in srgb,
@@ -3504,14 +3471,12 @@
 			hyphens: auto;
 		}
 
-		/* 调整特定列的宽度 */
 		.td.cbi-section-actions {
 			width: auto;
 			min-width: 120px;
 			white-space: normal;
 		}
 
-		/* 确保按钮不会溢出 */
 		.td.cbi-section-actions>* {
 			margin: 2px 0;
 		}
@@ -3522,14 +3487,12 @@
 			margin: 2px;
 		}
 
-		/* 处理长文本 */
 		.table .td[data-title]::before {
 			word-break: keep-all;
 			hyphens: none;
 			text-align: left;
 		}
 
-		/* 优化代码和路径显示 */
 		.td pre,
 		.td code,
 		.td .ifacebadge {
