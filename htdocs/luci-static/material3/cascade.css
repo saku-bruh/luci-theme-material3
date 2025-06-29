@@ -183,8 +183,8 @@
 		color-scheme: light;
 		--sidebar-width: 280px;
 		--header-height: 4rem;
-		--md-sys-color-primary: hsl(256, 34%, 48%);
-		--md-sys-color-primary-container: hsl(263, 65%, 90%);
+--md-sys-color-primary: hsl(256, 34%, 60%);
+--md-sys-color-primary-container: hsl(263, 65%, 94%);
 		--md-sys-color-primary-container-hover: #d0c7e8;
 		--md-sys-color-surface: #fef7ff;
 		--md-sys-color-surface-translucent: #fef7ffbb;
@@ -254,9 +254,29 @@
 		--md-sys-color-light: #fff;
 	}
 
-	/* ========== 暗色主题颜色继承 ========== */
+/* ========== 暗色主题颜色继承 ========== */
+
+/* Login dialog tweaks */
+.modal.login .cbi-value-title {
+    flex: 0 0 180px !important;
+    text-align: right !important;
+}
+.modal.login .btn.cbi-button-positive.important {
+    background: var(--md-sys-color-primary) !important;
+    color: #fff !important;
+}
+.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
+    background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
+}
+
+/* Basic mobile fixes */
+@media (max-width: 854px) {
+    header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
+    .sidebar { width: calc(var(--sidebar-width) - 80px); }
+    .sidebar.active { transform: translateX(0); }
+}
 	[data-darkmode=true] {
-		--md-sys-color-primary: hsl(256, 34%, 55%);
+--md-sys-color-primary: hsl(256, 34%, 65%);
 		--md-sys-color-primary-container: hsl(265, 80%, 25%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
