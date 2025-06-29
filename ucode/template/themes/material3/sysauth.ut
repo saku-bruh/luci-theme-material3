@@ -6,7 +6,23 @@
 {% include('header', { blank_page: true }) %}
 
 <script type="text/javascript">//<![CDATA[
-	document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+		const html = document.documentElement;
+		// Align dark mode handling with main UI logic
+		const manualMode = localStorage.getItem('luci-theme-manual');
+		const autoMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false';
+		const initMode = manualMode || autoMode;
+		html.setAttribute('data-darkmode', initMode);
+		// Ensure theme-color meta matches
+		const lightColor = '#fef7ff';
+		const darkColor = '#1a181b';
+		let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+		if (!metaThemeColor) {
+			metaThemeColor = document.createElement('meta');
+			metaThemeColor.name = 'theme-color';
+			document.head.appendChild(metaThemeColor);
+		}
+		metaThemeColor.setAttribute('content', initMode === 'true' ? darkColor : lightColor);
 		const darkmode = localStorage.getItem('luci-theme');
 		if (darkmode === 'dark' || (darkmode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches))
 			document.documentElement.setAttribute('data-darkmode', 'true');

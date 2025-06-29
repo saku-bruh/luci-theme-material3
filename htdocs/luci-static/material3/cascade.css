@@ -265,7 +265,20 @@
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 50%, transparent);
 	}
 
-	[data-darkmode=true][data-theme="blue"] {
+[data-darkmode=true][data-theme="blue"] {
+		--background-color-h: 210;
+		--background-color-s: 15%;
+		--md-sys-color-primary: #a8c8ff;
+		--primary-color-high: #5d9bc7;
+		--md-sys-color-primary-container: #1d4a7a;
+		/* header buttons & hover */
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		/* card / surface tint */
+		--md-sys-color-surface: hsl(210,15%,12%);
+		--md-sys-color-surface-translucent: hsla(210,15%,12%,0.84);
+		--md-sys-color-card: hsl(210,15%,18%);
+		--md-sys-color-progressbar: hsl(210,15%,12%);
 		--background-color-h: 210;
 		--background-color-s: 15%;
 		--md-sys-color-primary: #a8c8ff;
@@ -273,7 +286,18 @@
 		--md-sys-color-primary-container: #1d4a7a;
 	}
 
-	[data-darkmode=true][data-theme="green"] {
+[data-darkmode=true][data-theme="green"] {
+		--background-color-h: 150;
+		--background-color-s: 15%;
+		--md-sys-color-primary: #8fdcb4;
+		--primary-color-high: #5cb48a;
+		--md-sys-color-primary-container: #005538;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		--md-sys-color-surface: hsl(150,15%,12%);
+		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
+		--md-sys-color-card: hsl(150,15%,18%);
+		--md-sys-color-progressbar: hsl(150,15%,12%);
 		--background-color-h: 150;
 		--background-color-s: 15%;
 		--md-sys-color-primary: #8fdcb4;
@@ -281,7 +305,18 @@
 		--md-sys-color-primary-container: #005538;
 	}
 
-	[data-darkmode=true][data-theme="red"] {
+[data-darkmode=true][data-theme="red"] {
+		--background-color-h: 0;
+		--background-color-s: 20%;
+		--md-sys-color-primary: #ffb4ab;
+		--primary-color-high: #d68b83;
+		--md-sys-color-primary-container: #93000a;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		--md-sys-color-surface: hsl(0,20%,12%);
+		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
+		--md-sys-color-card: hsl(0,20%,18%);
+		--md-sys-color-progressbar: hsl(0,20%,12%);
 		--background-color-h: 0;
 		--background-color-s: 15%;
 		--md-sys-color-primary: #ffb4ab;
@@ -307,7 +342,59 @@
 		color: var(--text-color-high);
 	}
 
-	/* ========== 全局组件 ========== */
+/* ===== Dark mode per-theme overrides (moved below generic to take precedence) ===== */
+[data-darkmode=true][data-theme="blue"] {
+	/* Color scheme */
+	--background-color-h: 210;
+	--background-color-s: 15%;
+	--md-sys-color-primary: #a8c8ff;
+	--primary-color-high: #5d9bc7;
+	--md-sys-color-primary-container: #1d4a7a;
+	/* Header buttons & hover */
+	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+	/* Surface / card */
+	--md-sys-color-surface: hsl(210,15%,12%);
+	--md-sys-color-surface-translucent: hsla(210,15%,12%,0.84);
+	--md-sys-color-card: hsl(210,15%,18%);
+	--md-sys-color-progressbar: hsl(210,15%,12%);
+}
+
+[data-darkmode=true][data-theme="green"] {
+	--background-color-h: 150;
+	--background-color-s: 15%;
+	--md-sys-color-primary: #8fdcb4;
+	--primary-color-high: #5cb48a;
+	--md-sys-color-primary-container: #005538;
+	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+	--md-sys-color-surface: hsl(150,15%,12%);
+	--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
+	--md-sys-color-card: hsl(150,15%,18%);
+	--md-sys-color-progressbar: hsl(150,15%,12%);
+}
+
+[data-darkmode=true][data-theme="red"] {
+	--background-color-h: 0;
+	--background-color-s: 20%;
+	--md-sys-color-primary: #ffb4ab;
+	--primary-color-high: #d68b83;
+	--md-sys-color-primary-container: #93000a;
+	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+	--md-sys-color-surface: hsl(0,20%,12%);
+	--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
+	--md-sys-color-card: hsl(0,20%,18%);
+	--md-sys-color-progressbar: hsl(0,20%,12%);
+}
+
+/* ========== 全局组件 ========== */
 	[data-darkmode=true] {
 		/* 基础文本元素 */
 		body, p, td, th, li, div, strong{
