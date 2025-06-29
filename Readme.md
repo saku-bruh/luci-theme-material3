@@ -1,41 +1,41 @@
-# luci-theme-material3
-A Material Design 3 theme for OpenWrt Luci.
+# MaterialWRT
+An improved Material Design 3 theme for OpenWRT's LuCI! (With plans to potentially update to MD3 Expressive soon!)
 
-This is a personal project based on the LuCI Bootstrap theme, imitating the Material Design 3 style. Since I'm not very familiar with web theme design, the CSS code might be a bit messy. Some of the project code was completed with the assistance of Cursor AI.
-
-**Nice to initiate an issue or PR!**
-## ✨ Preview
+## ✨ Theme Preview
 <table>
   <tr>
     <th>🖥️ Desktop</th>
     <th>📱 Mobile</th>
   </tr>
   <tr>
-    <td><img src="imgs/md3-desktop-overview.jpg" style="max-height: 600px;" /></td>
-    <td><img src="imgs/md3-mobile-overview.jpg" style="max-height: 600px;" /></td>
+    <td><img src="imgs/md3-desktop.png" style="max-height: 600px;"/></td>
+    <td><img src="imgs/md3-mobile-7.png" style="max-height: 600px;"/></td>
   </tr>
 </table>
 
-### 🎨 All color schemes
+### 🎨 Color Schemes
 <table>
   <tr>
-    <td><img src="imgs/md3-mobile-default.jpg" /></td>
-    <td><img src="imgs/md3-mobile-blue.jpg" /></td>
-    <td><img src="imgs/md3-mobile-green.jpg" /></td>
-    <td><img src="imgs/md3-mobile-red.jpg" /></td>
+    <td><img src="imgs/md3-mobile-1.png"/></td>
+    <td><img src="imgs/md3-mobile-2.png"/></td>
+    <td><img src="imgs/md3-mobile-3.png"/></td>
+    <td><img src="imgs/md3-mobile-4.png"/></td>
+    <td><img src="imgs/md3-mobile-5.png"/></td>
+    <td><img src="imgs/md3-mobile-6.png"/></td>
+    <td><img src="imgs/md3-mobile-7.png"/></td>
+    <td><img src="imgs/md3-mobile-8.png"/></td>
   </tr>
 </table>
 
-## 📝 ToDo
-- [X] Dark themes
-- [ ] Fix some style issues
-- [ ] Add more color schemes
-- [ ] Improve to be closer to MD3 principles
-- [ ] Optimize CSS...
+## ✅ What's done?
+- [X] Dark Themes
+- [X] Fix style issues
+- [X] Improve to be closer to MD3 principles
+- [X] Cleaned up CSS of comments
 
-## 🙏 Credits
-- [OpenWrt Luci](https://github.com/openwrt/luci)
-- [Cursor](https://www.cursor.com/)
-- [MDUI](https://www.mdui.org/zh-cn/)
-- [Material Design 3](https://m3.material.io/)
-- [Reddit - LuCI theme bootstrap: Some modifications using userstyle](https://www.reddit.com/r/openwrt/comments/qmtmpf/lucithemebootstrap_some_modifications_using/)
+## 📝 To-do
+- [ ] Update to Material 3 Expressive design language
+- [ ] Add more color schemes
+
+## 📋 Credits
+- [AngelaCooljx - and all other credits under their original repository](https://github.com/AngelaCooljx/luci-theme-material3)
