@@ -212,8 +212,8 @@
 		--md-sys-color-dropdown: #eeedf1;
 		--md-sys-color-dropdown-selected: #dedde1;
 		--md-sys-color-dropdown-hover: #dddce0;
-		--md-sys-color-refresh-button: #b6bec1;
-		--md-sys-color-refresh-button-hover: #a0a9c2;
+--md-sys-color-refresh-button: #93b8e0;
+--md-sys-color-refresh-button-hover: #70a1e0;
 		--md-sys-color-font: #000;
 		--md-sys-color-light: #fff;
 	}
@@ -265,6 +265,12 @@
     background: var(--md-sys-color-primary) !important;
     color: #fff !important;
 }
+
+/* hide separators inside login modal */
+.modal.login hr { display: none !important; height: 0 !important; border: 0 !important; }
+    background: var(--md-sys-color-primary) !important;
+    color: #fff !important;
+}
 .modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
     background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
 }
@@ -276,8 +282,8 @@
     .sidebar.active { transform: translateX(0); }
 }
 	[data-darkmode=true] {
---md-sys-color-primary: hsl(256, 34%, 65%);
-		--md-sys-color-primary-container: hsl(265, 80%, 25%);
+--md-sys-color-primary: hsl(256, 34%, 72%);
+--md-sys-color-primary-container: hsl(265, 80%, 30%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
