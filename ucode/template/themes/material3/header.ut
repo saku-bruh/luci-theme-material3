@@ -243,7 +243,7 @@
 
 			function updateToggleState(isDark) {
 				if (toggle) {
-					toggle.checked = isDark === 'true';
+					toggle.dataset.active = isDark;
 					toggle.classList.add('theme-switching');
 					setTimeout(() => {
 						toggle.classList.remove('theme-switching');
@@ -261,17 +261,6 @@ function updateThemeColor() {
                 }
                 metaThemeColor.setAttribute('content', bgColor);
             }
-				const isDark = html.getAttribute('data-darkmode') === 'true';
-				const lightColor = '#fef7ff';
-				const darkColor = '#1a181b';
-
-				let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-				if (!metaThemeColor) {
-					metaThemeColor = document.createElement('meta');
-					metaThemeColor.name = 'theme-color';
-					document.head.appendChild(metaThemeColor);
-				}
-				metaThemeColor.setAttribute('content', isDark ? darkColor : lightColor);
 			}
 
 			function toggleTheme() {
