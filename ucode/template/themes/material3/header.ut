@@ -15,6 +15,7 @@
 		case 'material3-blue': themepref = 'blue'; break;
 		case 'material3-green': themepref = 'green'; break;
 		case 'material3-red': themepref = 'red'; break;
+		case 'material3-amoled': themepref = 'amoled'; break;
 	}
 
 	http.prepare_content('text/html; charset=UTF-8');

@@ -8,6 +8,7 @@ if [ "$PKG_UPGRADE" != 1 ]; then
   	        set luci.themes.Material3Blue=/luci-static/material3-blue
 	        set luci.themes.Material3Green=/luci-static/material3-green
 	        set luci.themes.Material3Red=/luci-static/material3-red
+			set luci.themes.Material3Amoled=/luci-static/material3-amoled
 		commit luci
 	EOF
 fi

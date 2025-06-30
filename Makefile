@@ -20,6 +20,7 @@ define Package/luci-theme-material3/postrm
 	uci -q delete luci.themes.Material3Blue
 	uci -q delete luci.themes.Material3Green
 	uci -q delete luci.themes.Material3Red
+	uci -q delete luci.themes.Material3Amoled
 	uci set luci.main.mediaurlbase='/luci-static/bootstrap'
 	# uci -q delete luci.themes.Material3Dark
 	# uci -q delete luci.themes.Material3Light

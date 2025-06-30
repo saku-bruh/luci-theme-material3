@@ -3522,3 +3522,66 @@
 		padding: 4px;
 		font-size: 15px !important;
 	}
+
+	:root[data-theme="amoled"] {
+		--background-color-h: 0 !important;
+		--background-color-s: 0% !important;
+		--md-sys-color-primary: #555 !important;
+		--primary-color-high: #555 !important;
+		--md-sys-color-card: #090909 !important;
+		--md-sys-color-primary-container: #0f0f0f !important;
+		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent) !important;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent) !important;
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent) !important;
+		--md-sys-color-dropdown: #000 !important;
+		--md-sys-color-dropdown-selected: #111 !important;
+		--md-sys-color-dropdown-hover: #222 !important;
+		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
+		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0) !important;
+		--md-sys-color-progressbar: hsl(0, 0%, 12%) !important;
+		--md-sys-color-font: #fff !important;
+		--md-sys-color-light: #fff !important;
+	}
+	html[data-theme="amoled"] .table .tr:not(:first-child) {
+		border-top: 1px solid var(--md-sys-color-primary) !important;
+	}
+	html[data-theme="amoled"] .table .tr:not(:last-child) {
+		border-bottom: 1px solid var(--md-sys-color-primary) !important;
+	}
+	html[data-theme="amoled"] .table {
+		background: #000 !important;
+		border-color: var(--md-sys-color-primary) !important;
+	}
+	html[data-theme="amoled"] #view > div,
+	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+		background: #000 !important;
+		border: none !important;
+	}
+	html[data-theme="amoled"] #view > div > svg > text,
+	html[data-theme="amoled"] #view > div > svg > line,
+	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > text,
+	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > line {
+		fill: #fff !important;
+		stroke: #fff !important;
+	}
+	html[data-theme="amoled"] ul > li:hover,
+	html[data-theme="amoled"] ul > li > a:hover,
+	html[data-theme="amoled"] button:hover {
+		background: none !important;
+		color: #555 !important;
+		transition: .5s !important;
+		border-color: none !important;
+		box-shadow: none !important;
+		--focus-color-rgb: 255, 255, 255 !important;
+	}
+	html[data-theme="amoled"] ul > li,
+	html[data-theme="amoled"] ul > li > a,
+	html[data-theme="amoled"] button {
+		transition: .5s !important;
+	}
+	html[data-theme="amoled"] .cbi-button,
+	html[data-theme="amoled"] input,
+	html[data-theme="amoled"] textarea {
+		background: var(--md-sys-color-card) !important;
+		color: var(--md-sys-color-font) !important;
+	}
