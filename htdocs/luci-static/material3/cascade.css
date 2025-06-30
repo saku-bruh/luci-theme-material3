@@ -3543,7 +3543,7 @@
 		--md-sys-color-light: #fff !important;
 	}
 	html[data-theme="amoled"] .table .tr:not(:first-child) {
-		border-bottom: 1px solid var(--md-sys-color-primary) !important;
+		border-top: 1px solid var(--md-sys-color-primary) !important;
 	}
 	html[data-theme="amoled"] .table {
 		background: #000 !important;
@@ -3581,4 +3581,14 @@
 	html[data-theme="amoled"] textarea {
 		background: var(--md-sys-color-card) !important;
 		color: var(--md-sys-color-font) !important;
+	}
+	html[data-theme="amoled"] .cbi-tabmenu {
+		width: fit-content !important;
+		margin: 0 auto 10px !important;
+	}
+	html[data-theme="amoled"] #view > div {
+		text-align: center !important;
+	}
+	html[data-theme="amoled"] #view > .cbi-section {
+		text-align: left !important;
 	}
