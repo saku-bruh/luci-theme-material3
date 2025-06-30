@@ -178,7 +178,7 @@
 		--warn-color-low: #f2d24f;
 		--on-warn-color: var(--text-color-highest);
 		--disabled-opacity: .7;
-	color-scheme: light;
+		color-scheme: light;
 		--sidebar-width: 280px;
 		--header-height: 4rem;
 		--md-sys-color-primary: hsl(256, 34%, 60%);
@@ -198,7 +198,7 @@
 		--md-sys-color-light: #fff;
 	}
 
-:root[data-theme="blue"] {
+	:root[data-theme="blue"] {
 		--md-sys-color-primary: #0061a4;
 		--md-sys-color-primary-container: #d7e3f8;
 		--md-sys-color-primary-container-hover: #c7d3e8;
@@ -216,7 +216,7 @@
 		--md-sys-color-light: #fff;
 	}
 
-:root[data-theme="green"] {
+	:root[data-theme="green"] {
 		--md-sys-color-primary: #006c48;
 		--md-sys-color-primary-container: #d5e8cf;
 		--md-sys-color-primary-container-hover: #c5d8c0;
@@ -252,36 +252,36 @@
 		--md-sys-color-light: #fff;
 	}
 
-.modal.login .cbi-value-title {
-    flex: 0 0 180px !important;
-    text-align: right !important;
-}
-.modal.login .btn.cbi-button-positive.important {
-    background: var(--md-sys-color-primary) !important;
-    color: #fff !important;
-}
+	.modal.login .cbi-value-title {
+		flex: 0 0 180px !important;
+		text-align: right !important;
+	}
+	.modal.login .btn.cbi-button-positive.important {
+		background: var(--md-sys-color-primary) !important;
+		color: #fff !important;
+	}
 
-.modal.login hr {
-    display: none !important;
-    height: 0 !important;
-    border: 0 !important;
-}
+	.modal.login hr {
+		display: none !important;
+		height: 0 !important;
+		border: 0 !important;
+	}
 
-.modal.login {
-    border: none !important;
-}
-.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
-    background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
-}
+	.modal.login {
+		border: none !important;
+	}
+	.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
+		background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
+	}
 
-@media (max-width: 854px) {
-    header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
-    .sidebar { width: calc(var(--sidebar-width) - 80px); }
-    .sidebar.active { transform: translateX(0); }
-}
+	@media (max-width: 854px) {
+		header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
+		.sidebar { width: calc(var(--sidebar-width) - 80px); }
+		.sidebar.active { transform: translateX(0); }
+	}
 	[data-darkmode=true] {
---md-sys-color-primary: hsl(256, 34%, 80%);
---md-sys-color-primary-container: hsl(265, 60%, 35%);
+		--md-sys-color-primary: hsl(256, 34%, 80%);
+		--md-sys-color-primary-container: hsl(265, 60%, 35%);
 		--primary-color-high: var(--md-sys-color-primary);
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent);
@@ -289,7 +289,7 @@
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 50%, transparent);
 	}
 
-[data-darkmode=true][data-theme="blue"] {
+	[data-darkmode=true][data-theme="blue"] {
 		--background-color-h: 210;
 		--background-color-s: 15%;
 		--md-sys-color-primary: #a8c8ff;
@@ -308,7 +308,7 @@
 		--md-sys-color-primary-container: #1d4a7a;
 	}
 
-[data-darkmode=true][data-theme="green"] {
+	[data-darkmode=true][data-theme="green"] {
 		--background-color-h: 150;
 		--background-color-s: 15%;
 		--md-sys-color-primary: #8fdcb4;
@@ -327,7 +327,7 @@
 		--md-sys-color-primary-container: #005538;
 	}
 
-[data-darkmode=true][data-theme="red"] {
+	[data-darkmode=true][data-theme="red"] {
 		--background-color-h: 0;
 		--background-color-s: 20%;
 		--md-sys-color-primary: #ffb4ab;
@@ -364,53 +364,53 @@
 		color: var(--text-color-high);
 	}
 
-[data-darkmode=true][data-theme="blue"] {
-	--background-color-h: 210;
-	--background-color-s: 15%;
-	--md-sys-color-primary: #a8c8ff;
-	--primary-color-high: #5d9bc7;
-	--md-sys-color-primary-container: #1d4a7a;
-	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
-	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
-	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
-	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
-	--md-sys-color-surface: hsl(210,18%,12%);
-	--md-sys-color-surface-translucent: hsla(210,18%,12%,0.84);
-	--md-sys-color-card: hsl(210,18%,18%);
-	--md-sys-color-progressbar: hsl(210,18%,12%);
-}
+	[data-darkmode=true][data-theme="blue"] {
+		--background-color-h: 210;
+		--background-color-s: 15%;
+		--md-sys-color-primary: #a8c8ff;
+		--primary-color-high: #5d9bc7;
+		--md-sys-color-primary-container: #1d4a7a;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+		--md-sys-color-surface: hsl(210,18%,12%);
+		--md-sys-color-surface-translucent: hsla(210,18%,12%,0.84);
+		--md-sys-color-card: hsl(210,18%,18%);
+		--md-sys-color-progressbar: hsl(210,18%,12%);
+	}
 
-[data-darkmode=true][data-theme="green"] {
-	--background-color-h: 150;
-	--background-color-s: 15%;
-	--md-sys-color-primary: #8fdcb4;
-	--primary-color-high: #5cb48a;
-	--md-sys-color-primary-container: #005538;
-	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
-	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
-	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
-	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
-	--md-sys-color-surface: hsl(150,15%,12%);
-	--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
-	--md-sys-color-card: hsl(150,15%,18%);
-	--md-sys-color-progressbar: hsl(150,15%,12%);
-}
+	[data-darkmode=true][data-theme="green"] {
+		--background-color-h: 150;
+		--background-color-s: 15%;
+		--md-sys-color-primary: #8fdcb4;
+		--primary-color-high: #5cb48a;
+		--md-sys-color-primary-container: #005538;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+		--md-sys-color-surface: hsl(150,15%,12%);
+		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
+		--md-sys-color-card: hsl(150,15%,18%);
+		--md-sys-color-progressbar: hsl(150,15%,12%);
+	}
 
-[data-darkmode=true][data-theme="red"] {
-	--background-color-h: 0;
-	--background-color-s: 20%;
-	--md-sys-color-primary: #ffb4ab;
-	--primary-color-high: #d68b83;
-	--md-sys-color-primary-container: #93000a;
-	--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
-	--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
-	--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
-	--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
-	--md-sys-color-surface: hsl(0,20%,12%);
-	--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
-	--md-sys-color-card: hsl(0,20%,18%);
-	--md-sys-color-progressbar: hsl(0,20%,12%);
-}
+	[data-darkmode=true][data-theme="red"] {
+		--background-color-h: 0;
+		--background-color-s: 20%;
+		--md-sys-color-primary: #ffb4ab;
+		--primary-color-high: #d68b83;
+		--md-sys-color-primary-container: #93000a;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent);
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
+		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
+		--md-sys-color-surface: hsl(0,20%,12%);
+		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
+		--md-sys-color-card: hsl(0,20%,18%);
+		--md-sys-color-progressbar: hsl(0,20%,12%);
+	}
 
 	[data-darkmode=true] {
 		body, p, td, th, li, div, strong{
@@ -2675,7 +2675,6 @@
 	[data-darkmode=true] .uci-dialog div>var {
 		background-color: var(--md-sys-color-card);
 	}
-    
 
 	[data-tab-title] {
 		height: 0;
