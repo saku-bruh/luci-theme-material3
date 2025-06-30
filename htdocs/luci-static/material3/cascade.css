@@ -3586,9 +3586,16 @@
 		width: fit-content !important;
 		margin: 0 auto 10px !important;
 	}
+	html[data-theme="amoled"] .cbi-section {
+		text-align: left !important;
+	}
 	html[data-theme="amoled"] #view > div {
 		text-align: center !important;
 	}
-	html[data-theme="amoled"] #view > .cbi-section {
-		text-align: left !important;
+	html[data-theme="amoled"] input,
+	html[data-theme="amoled"] textarea,
+	html[data-theme="amoled"] select,
+	html[data-theme="amoled"] .cbi-value-field {
+		width: 100% !important;
+		margin: 3px !important;
 	}
