@@ -3543,9 +3543,6 @@
 		--md-sys-color-light: #fff !important;
 	}
 	html[data-theme="amoled"] .table .tr:not(:first-child) {
-		border-top: 1px solid var(--md-sys-color-primary) !important;
-	}
-	html[data-theme="amoled"] .table .tr:not(:last-child) {
 		border-bottom: 1px solid var(--md-sys-color-primary) !important;
 	}
 	html[data-theme="amoled"] .table {
