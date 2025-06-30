@@ -3586,7 +3586,7 @@
 		width: fit-content !important;
 		margin: 0 auto 10px !important;
 	}
-	html[data-theme="amoled"] .cbi-section {
+	html[data-theme="amoled"] #view > .cbi-section {
 		text-align: left !important;
 	}
 	html[data-theme="amoled"] #view > div {
