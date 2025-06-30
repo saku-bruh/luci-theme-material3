@@ -32,12 +32,12 @@ An improved Material Design 3 theme for OpenWRT's LuCI! (With plans to potential
 - [X] Fix style issues
 - [X] Improve to be closer to MD3 principles
 - [X] Cleaned up CSS of comments
-- [X] AMOLED color scheme support with experimental fade animations (must use light mode for now)
+- [X] AMOLED color scheme support with experimental fade animations (dark mode only, for now)
 
 ## 📝 To-do
 - [ ] Update to Material 3 Expressive design language
 - [ ] Add more color schemes
-- [ ] Force AMOLED theme to hide light/dark mode toggle and use dark mode under the hood
+- [ ] Fix AMOLED theme light/dark mode
 
 ## 📋 Credits
 - [AngelaCooljx - and all other credits under their original repository](https://github.com/AngelaCooljx/luci-theme-material3)
