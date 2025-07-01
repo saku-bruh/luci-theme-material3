@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&display=swap');
 
+html[data-theme="amoled"] .dropdown-menu > li.active {
+    background: transparent !important;
+}
+html[data-theme="amoled"]:not([data-darkmode="true"]) .dropdown-menu > li.active > a {
+    background: #000 !important;
+    color: #fff !important;
+}
+html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+
+
 	/*!
 	* LuCI Bootstrap Theme
 	* Copyright 2012 Nut & Bolt
@@ -256,10 +270,10 @@
 		flex: 0 0 180px !important;
 		text-align: right !important;
 	}
-	.modal.login .btn.cbi-button-positive.important {
-		background: var(--md-sys-color-primary) !important;
-		color: #fff !important;
-	}
+.modal.login .btn.cbi-button-positive.important {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
 
 	.modal.login hr {
 		display: none !important;
@@ -270,9 +284,10 @@
 	.modal.login {
 		border: none !important;
 	}
-	.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
-		background: color-mix(in srgb, var(--md-sys-color-primary) 80%, #000) !important;
-	}
+.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
 
 	@media (max-width: 854px) {
 		header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
@@ -846,7 +861,6 @@
 	pre {
 		font-size: 12px;
 		padding: 0 3px 2px;
-		font-family: Monaco, Andale Mono, Courier New, monospace;
 		border-radius: 3px
 	}
 
@@ -893,7 +907,6 @@
 	input,
 	label,
 	select {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 13px;
 		font-weight: 400;
 		line-height: normal
@@ -1252,12 +1265,16 @@
 		flex: 1 1 auto
 	}
 
-	.actions,
+.actions,
 	.cbi-page-actions {
 		margin-bottom: 18px;
 		border-top: 1px solid var(--border-color-medium);
 		border-radius: 0 0 3px 3px;
 		text-align: right
+	}
+
+	html:not([data-theme="amoled"]) .cbi-page-actions {
+		text-align: center;
 	}
 
 	.actions .secondary-action a,
@@ -1342,7 +1359,6 @@
 		align-items: center;
 		justify-content: space-between;
 		transition: box-shadow .3s;
-		background: linear-gradient(#333, #222);
 		box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
 		padding: 0
 	}
@@ -1690,7 +1706,6 @@
 
 	.alert-message .close,
 	.btn .close {
-		font-family: Arial, sans-serif;
 		line-height: 18px
 	}
 
@@ -2049,12 +2064,20 @@
 		background: var(--background-color-medium)
 	}
 
-	.cbi-progressbar>div {
+.cbi-progressbar>div {
 		background: var(--md-sys-color-primary);
 		height: 100%;
 		transition: width .25s ease-in;
 		width: 0%
 	}
+
+html[data-darkmode="true"] .cbi-progressbar > div {
+	background: #FFFFFF !important;
+}
+
+html:not([data-darkmode="true"]) .cbi-progressbar > div {
+	background: #000000 !important;
+}
 
 	.cbi-progressbar::before {
 		position: absolute;
@@ -2229,7 +2252,6 @@
 	width: 100%;
 	color: var(--text-color-highest);
 	margin-bottom: 18px;
-	font-family: consolas, monospace
 	}
 
 	.cbi-section-table-descr.named::before,
@@ -2576,7 +2598,6 @@
 	.uci-dialog ins,
 	.uci-dialog var {
 		text-decoration: none;
-		font-family: monospace;
 		font-style: normal;
 		color: var(--text-color-high);
 		display: block
@@ -3079,15 +3100,10 @@
 		-moz-osx-font-smoothing: grayscale
 	}
 
-	body,
-	button,
-	.cbi-section,
-	.table,
-	.cbi-input-text,
-	input {
-		font-family: "Google Sans", "Product Sans", sans-serif;
-		transition: background-color var(--transition-color), color var(--transition-color), border-color var(--transition-color);
-	}
+* {
+    font-family: 'Google Sans', 'Product Sans', sans-serif !important;
+}
+
 
 	header .pull-right {
 		/* padding-top: 0; */
@@ -3189,7 +3205,6 @@
 	textarea {
 		overflow: auto;
 		vertical-align: top;
-		font-family: consolas, monospace;
 		color: var(--md-sys-color-font)
 	}
 
@@ -3247,6 +3262,7 @@
 	.cbi-progressbar {
 		background: linear-gradient(to top, #d8d8d8, #f8f8f8);
 		border: 1px solid #ccc;
+		border-radius: 1rem;
 		border-radius: 1rem;
 	}
 
@@ -3523,7 +3539,29 @@
 		font-size: 15px !important;
 	}
 
-	:root[data-theme="amoled"] {
+:root[data-theme="amoled"] {
+		--background-color-h: 0 !important;
+		--background-color-s: 0% !important;
+		--background-color-l: 100% !important;
+		--md-sys-color-primary: #000 !important;
+		--primary-color-high: #000 !important;
+		--md-sys-color-card: #fafafa !important;
+		--md-sys-color-primary-container: #f0f0f0 !important;
+		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent) !important;
+		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent) !important;
+		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent) !important;
+		--md-sys-color-dropdown: #fff !important;
+		--md-sys-color-dropdown-selected: #f0f0f0 !important;
+		--md-sys-color-dropdown-hover: #e0e0e0 !important;
+		--md-sys-color-surface: hsl(0, 0%, 100%) !important;
+		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.8) !important;
+		--md-sys-color-progressbar: hsl(0, 0%, 88%) !important;
+		--md-sys-color-font: #000 !important;
+		--md-sys-color-light: #fff !important;
+	}
+
+
+	:root[data-theme="amoled"][data-darkmode=true] {
 		--background-color-h: 0 !important;
 		--background-color-s: 0% !important;
 		--md-sys-color-primary: #555 !important;
@@ -3537,7 +3575,7 @@
 		--md-sys-color-dropdown-selected: #111 !important;
 		--md-sys-color-dropdown-hover: #222 !important;
 		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
-		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0) !important;
+		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 12%) !important;
 		--md-sys-color-font: #fff !important;
 		--md-sys-color-light: #fff !important;
@@ -3545,43 +3583,45 @@
 	html[data-theme="amoled"] .table .tr:not(:first-child) {
 		border-top: 1px solid var(--md-sys-color-primary) !important;
 	}
-	html[data-theme="amoled"] .table {
+html[data-theme="amoled"][data-darkmode="true"] .table {
 		background: #000 !important;
 		border-color: var(--md-sys-color-primary) !important;
 	}
-	html[data-theme="amoled"] #view > div,
-	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-		background: #000 !important;
-		border: none !important;
-	}
-	html[data-theme="amoled"] #view > div > svg > text,
-	html[data-theme="amoled"] #view > div > svg > line,
-	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > text,
-	html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > line {
-		fill: #fff !important;
-		stroke: #fff !important;
-	}
-	html[data-theme="amoled"] ul > li:hover,
-	html[data-theme="amoled"] ul > li > a:hover,
-	html[data-theme="amoled"] button:hover {
-		background: none !important;
-		color: #555 !important;
-		transition: .5s !important;
-		border-color: none !important;
-		box-shadow: none !important;
-		--focus-color-rgb: 255, 255, 255 !important;
-	}
-	html[data-theme="amoled"] ul > li,
-	html[data-theme="amoled"] ul > li > a,
-	html[data-theme="amoled"] button {
-		transition: .5s !important;
-	}
-	html[data-theme="amoled"] .cbi-button,
-	html[data-theme="amoled"] input,
-	html[data-theme="amoled"] textarea {
+
+	html[data-theme="amoled"][data-darkmode="true"] .cbi-button,
+	html[data-theme="amoled"][data-darkmode="true"] input,
+	html[data-theme="amoled"][data-darkmode="true"] textarea {
 		background: var(--md-sys-color-card) !important;
 		color: var(--md-sys-color-font) !important;
 	}
+
+	html[data-theme="amoled"][data-darkmode="true"] .cbi-button,
+	html[data-theme="amoled"][data-darkmode="true"] input,
+	html[data-theme="amoled"][data-darkmode="true"] textarea {
+		background: var(--md-sys-color-card) !important;
+		color: var(--md-sys-color-font) !important;
+	}
+html[data-theme="amoled"][data-darkmode="true"] #view > div,
+	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+		background: #000 !important;
+		border: none !important;
+	}
+html[data-theme="amoled"][data-darkmode="true"] #view > div > svg > text,
+	html[data-theme="amoled"][data-darkmode="true"] #view > div > svg > line,
+	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > text,
+	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > line {
+		fill: #fff !important;
+		stroke: #fff !important;
+	}
+html[data-darkmode="true"] .dropdown-menu > li:not(.active):hover > a,
+html[data-darkmode="true"] button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html:not([data-darkmode="true"]) .dropdown-menu > li:not(.active):hover > a,
+html:not([data-darkmode="true"]) button:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
 	html[data-theme="amoled"] .cbi-tabmenu {
 		width: fit-content !important;
 		margin: 0 auto 10px !important;
@@ -3592,10 +3632,69 @@
 	html[data-theme="amoled"] #view > div {
 		text-align: center !important;
 	}
-	html[data-theme="amoled"] input,
-	html[data-theme="amoled"] textarea,
-	html[data-theme="amoled"] select,
-	html[data-theme="amoled"] .cbi-value-field {
-		width: 100% !important;
-		margin: 3px !important;
-	}
+.cbi-value-field input,
+.cbi-value-field textarea,
+.cbi-value-field select {
+    width: 100% !important;
+    margin: 3px !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator] {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] header [data-indicator] {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply {
+    background: #FFFFFF !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply ul li {
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save {
+    background: var(--md-sys-color-primary) !important;
+    color: var(--md-sys-color-font) !important;
+}
+
+html[data-darkmode="true"]:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-apply.cbi-dropdown > .open {
+    border-left-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply.cbi-dropdown > .open {
+    border-left-color: #000000 !important;
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .theme-toggle .icon {
+    fill: #000000 !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .theme-toggle .icon {
+    fill: #FFFFFF !important;
+}
+
+/* Fix dropdown arrow color for Material3Amoled dark mode */
+html[data-theme="amoled"][data-darkmode="true"] .cbi-select::before {
+    color: #000000 !important;
+}
+
+/* Fix spinner color for Material3Amoled dark mode */
+html[data-theme="amoled"][data-darkmode="true"] .spinning::before {
+    background: #000000 !important;
+}
+
+html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover > a {
+    color: #FFFFFF !important;
+}
+
+html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}

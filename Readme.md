@@ -9,7 +9,7 @@ An improved Material Design 3 theme for OpenWRT's LuCI! (With plans to potential
   </tr>
   <tr>
     <td><img src="imgs/md3-desktop.png" style="max-height: 600px;"/></td>
-    <td><img src="imgs/md3-mobile-7.png" style="max-height: 600px;"/></td>
+    <td><img src="imgs/md3-mobile-10.png" style="max-height: 600px;"/></td>
   </tr>
 </table>
 
@@ -20,10 +20,12 @@ An improved Material Design 3 theme for OpenWRT's LuCI! (With plans to potential
     <td><img src="imgs/md3-mobile-2.png"/></td>
     <td><img src="imgs/md3-mobile-3.png"/></td>
     <td><img src="imgs/md3-mobile-4.png"/></td>
+    <td><img src="imgs/md3-mobile-9.png"/></td>
     <td><img src="imgs/md3-mobile-5.png"/></td>
     <td><img src="imgs/md3-mobile-6.png"/></td>
     <td><img src="imgs/md3-mobile-7.png"/></td>
     <td><img src="imgs/md3-mobile-8.png"/></td>
+    <td><img src="imgs/md3-mobile-10.png"/></td>
   </tr>
 </table>
 
@@ -32,13 +34,13 @@ An improved Material Design 3 theme for OpenWRT's LuCI! (With plans to potential
 - [X] Fix style issues
 - [X] Improve to be closer to MD3 principles
 - [X] Cleaned up CSS of comments
-- [X] AMOLED color scheme support with experimental fade animations (dark mode only, for now)
+- [X] Greyscale (AMOLED) color scheme support
 
 ## 📝 To-do
 - [ ] Update to Material 3 Expressive design language
 - [ ] Add more color schemes
-- [ ] Fix AMOLED theme light/dark mode
 
 ## 📋 Credits
 - [AngelaCooljx - and all other credits under their original repository](https://github.com/AngelaCooljx/luci-theme-material3)
 - [shiyu1314 - for the base codebase](https://github.com/shiyu1314/luci-theme-material3)
+- [JoshuaDoes - for greyscale (AMOLED) theme contributions](https://github.com/JoshuaDoes/luci-theme-material3-amoled)

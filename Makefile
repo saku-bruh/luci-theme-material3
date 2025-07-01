@@ -8,8 +8,8 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Material 3 Theme
 LUCI_DEPENDS:=+luci-base
-PKG_VERSION:=Release-1.1-BETA
-PKG_RELEASE:=20250630
+PKG_VERSION:=Release-1.1
+PKG_RELEASE:=20250701
 
 PKG_LICENSE:=Apache-2.0
 
