@@ -270,10 +270,10 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		flex: 0 0 180px !important;
 		text-align: right !important;
 	}
-	.modal.login .btn.cbi-button-positive.important {
-		background: var(--md-sys-color-primary) !important;
-		color: #fff !important;
-	}
+.modal.login .btn.cbi-button-positive.important {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
 
 	.modal.login hr {
 		display: none !important;
@@ -3557,7 +3557,7 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 88%) !important;
 		--md-sys-color-font: #000 !important;
-		--md-sys-color-light: #000 !important;
+		--md-sys-color-light: #fff !important;
 	}
 
 
