@@ -14,7 +14,6 @@ PKG_RELEASE:=20250701
 PKG_LICENSE:=Apache-2.0
 
 define Package/luci-theme-material3/postrm
-#!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
 	uci -q delete luci.themes.Material3
 	uci -q delete luci.themes.Material3Blue
@@ -32,7 +31,6 @@ define Package/luci-theme-material3/postrm
 endef
 
 define Package/luci-theme-material3/postinst
-#!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
 	UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0"
 
