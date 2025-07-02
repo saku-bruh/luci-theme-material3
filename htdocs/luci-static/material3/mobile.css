@@ -260,7 +260,6 @@ header h3 a {
 
 	.cbi-value {
 		padding-bottom: .5em;
-		border-bottom: 1px solid var(--border-color-high);
 		margin-bottom: .5em;
 		display: block
 	}
