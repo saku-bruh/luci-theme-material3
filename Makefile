@@ -42,60 +42,60 @@ define Package/luci-theme-material3/postinst
 	FONT_DIR="/www/luci-static/material3/fonts"
 
 	# Ensure target directory exists
-	mkdir -p "$FONT_DIR"
+	mkdir -p "$$FONT_DIR"
 
 	# Download Google Fonts CSS
-	wget -q -O "$INPUT" -U "$UA" "https://fonts.googleapis.com/css?family=Google+Sans"
+	wget -q -O "$$INPUT" -U "$$UA" "https://fonts.googleapis.com/css?family=Google+Sans"
 
 	# Generate local CSS
 	lang=""
 	in_block=0
 
-	rm -f "$TMP"
+	rm -f "$$TMP"
 	while IFS= read -r line; do
-		case "$line" in
+		case "$$line" in
 		"/* "*)
-			lang=$(echo "$line" | sed -n 's|/\*\s*\(.*\)\s*\*/|\1|p' | sed 's/^ *//;s/ *$//')
+			lang=$$(echo "$$line" | sed -n 's|/\*\s*\(.*\)\s*\*/|\1|p' | sed 's/^ *//;s/ *$$//')
 			in_block=1
-			echo "$line" >> "$TMP"
+			echo "$$line" >> "$$TMP"
 			;;
 		*"@font-face {"*)
-			echo "$line" >> "$TMP"
+			echo "$$line" >> "$$TMP"
 			;;
 		*"src: url("*)
-			if [ "$in_block" -eq 1 ] && [ -n "$lang" ]; then
-				file=$(echo "$line" | sed -n 's|.*url(.*\/\([^/]*\.woff2\)).*|\1|p')
-				echo "  src: url('fonts/$lang.woff2') format('woff2');" >> "$TMP"
+			if [ "$$in_block" -eq 1 ] && [ -n "$$lang" ]; then
+				file=$$(echo "$$line" | sed -n 's|.*url(.*\/\([^/]*\.woff2\)).*|\1|p')
+				echo "  src: url(\"fonts/$$lang.woff2\") format(\"woff2\");" >> "$$TMP"
 
 				# Download font
-				if [ ! -f "$FONT_DIR/$lang.woff2" ]; then
-					url=$(echo "$line" | sed -n 's|.*url(\(https[^)]*\.woff2\)).*|\1|p')
-					wget -q -O "$FONT_DIR/$lang.woff2" "$url"
-					if [ $? -ne 0 ]; then
-						rm -rf "$FONT_DIR"
+				if [ ! -f "$$FONT_DIR/$$lang.woff2" ]; then
+					url=$$(echo "$$line" | sed -n 's|.*url(\(https[^)]*\.woff2\)).*|\1|p')
+					wget -q -O "$$FONT_DIR/$$lang.woff2" "$$url"
+					if [ $$? -ne 0 ]; then
+						rm -rf "$$FONT_DIR"
 						break
 					fi
 				fi
 			else
-				echo "$line" >> "$TMP"
+				echo "$$line" >> "$$TMP"
 			fi
 			;;
 		"}")
 			in_block=0
-			echo "$line" >> "$TMP"
-			echo "" >> "$TMP"
+			echo "$$line" >> "$$TMP"
+			echo "" >> "$$TMP"
 			;;
 		*)
-			echo "$line" >> "$TMP"
+			echo "$$line" >> "$$TMP"
 			;;
 		esac
-	done < "$INPUT"
-	rm -f "$INPUT"
+	done < "$$INPUT"
+	rm -f "$$INPUT"
 
-	if [ -d "$FONT_DIR" ]; then
-		mv "$TMP" "$OUTPUT"
+	if [ -d "$$FONT_DIR" ]; then
+		mv "$$TMP" "$$OUTPUT"
 	else
-		rm -f "$TMP"
+		rm -f "$$TMP"
 	fi
 }
 endef
