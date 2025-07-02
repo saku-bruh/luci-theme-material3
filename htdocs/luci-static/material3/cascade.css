@@ -185,7 +185,7 @@
 		--md-sys-color-primary-container: hsl(263, 65%, 94%);
 		--md-sys-color-primary-container-hover: #d0c7e8;
 		--md-sys-color-surface: #fef7ff;
-		--md-sys-color-surface-translucent: #fef7ffbb;
+		--md-sys-color-surface-translucent: #fef7ff80;
 		--md-sys-color-card: #f3ebfe;
 		--md-sys-color-card-translucent: #f3ebfebb;
 		--md-sys-color-progressbar: #e6e0e9;
@@ -207,7 +207,7 @@
 		--md-sys-color-primary-container: #d7e3f8;
 		--md-sys-color-primary-container-hover: #c7d3e8;
 		--md-sys-color-surface: #eff5ff;
-		--md-sys-color-surface-translucent: #eff5ffbb;
+		--md-sys-color-surface-translucent: #eff5ff80;
 		--md-sys-color-card: #e7f0ff;
 		--md-sys-color-card-translucent: #e7f0ffbb;
 		--md-sys-color-progressbar: #e2e2e6;
@@ -223,7 +223,7 @@
 		--md-sys-color-primary-container: #d5e8cf;
 		--md-sys-color-primary-container-hover: #c5d8c0;
 		--md-sys-color-surface: #f7fdf6;
-		--md-sys-color-surface-translucent: #f7fdf6bb;
+		--md-sys-color-surface-translucent: #f7fdf680;
 		--md-sys-color-card: #edf7ea;
 		--md-sys-color-card-translucent: #edf7eabb;
 		--md-sys-color-progressbar: #e2e3dd;
@@ -239,7 +239,7 @@
 		--md-sys-color-primary-container: #ffdad5;
 		--md-sys-color-primary-container-hover: #efccc6;
 		--md-sys-color-surface: #fffbff;
-		--md-sys-color-surface-translucent: #fffbffbb;
+		--md-sys-color-surface-translucent: #fffbff80;
 		--md-sys-color-card: #fef1ef;
 		--md-sys-color-card-translucent: #fef1efbb;
 		--md-sys-color-progressbar: #ede0de;
@@ -289,7 +289,7 @@
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
 		--md-sys-color-surface: hsl(210,15%,12%);
-		--md-sys-color-surface-translucent: hsla(210,15%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(210,15%,12%,0.5);
 		--md-sys-color-card: hsl(210,15%,18%);
 		--md-sys-color-progressbar: hsl(210,15%,12%);
 		--background-color-h: 210;
@@ -308,7 +308,7 @@
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
 		--md-sys-color-surface: hsl(150,15%,12%);
-		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.5);
 		--md-sys-color-card: hsl(150,15%,18%);
 		--md-sys-color-progressbar: hsl(150,15%,12%);
 		--background-color-h: 150;
@@ -327,7 +327,7 @@
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent);
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 100%, transparent);
 		--md-sys-color-surface: hsl(0,20%,12%);
-		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.5);
 		--md-sys-color-card: hsl(0,20%,18%);
 		--md-sys-color-progressbar: hsl(0,20%,12%);
 		--background-color-h: 0;
@@ -341,7 +341,7 @@
 		--background-color-h: 240;
 		--background-color-s: 10%;
 		--md-sys-color-surface: hsl(var(--background-color-h), var(--background-color-s), 12%);
-		--md-sys-color-surface-translucent: hsla(var(--background-color-h), var(--background-color-s), 12%, 0.84);
+		--md-sys-color-surface-translucent: hsla(var(--background-color-h), var(--background-color-s), 12%, 0.5);
 		--md-sys-color-card: hsl(256, 15%, 18%);
 		--md-sys-color-dropdown: hsl(var(--background-color-h), var(--background-color-s), 16%);
 		--md-sys-color-dropdown-selected: hsl(var(--background-color-h), var(--background-color-s), 20%);
@@ -366,7 +366,7 @@
 		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
 		--md-sys-color-surface: hsl(210,18%,12%);
-		--md-sys-color-surface-translucent: hsla(210,18%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(210,18%,12%,0.5);
 		--md-sys-color-card: hsl(210,18%,18%);
 		--md-sys-color-progressbar: hsl(210,18%,12%);
 	}
@@ -382,7 +382,7 @@
 		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
 		--md-sys-color-surface: hsl(150,15%,12%);
-		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(150,15%,12%,0.5);
 		--md-sys-color-card: hsl(150,15%,18%);
 		--md-sys-color-progressbar: hsl(150,15%,12%);
 	}
@@ -398,7 +398,7 @@
 		--md-sys-color-dropdown-hover: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 60%, transparent);
 		--md-sys-color-surface: hsl(0,20%,12%);
-		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.84);
+		--md-sys-color-surface-translucent: hsla(0,20%,12%,0.5);
 		--md-sys-color-card: hsl(0,20%,18%);
 		--md-sys-color-progressbar: hsl(0,20%,12%);
 	}
@@ -3526,7 +3526,7 @@
 		--md-sys-color-dropdown-selected: #e0e0e0;
 		--md-sys-color-dropdown-hover: #d0d0d0;
 		--md-sys-color-surface: hsl(0, 0%, 100%) !important;
-		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.8) !important;
+		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.5) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
 		--md-sys-color-light: #fff !important;
 	}
@@ -3545,7 +3545,7 @@
 		--md-sys-color-dropdown-selected: #222;
 		--md-sys-color-dropdown-hover: #333;
 		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
-		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.8) !important;
+		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.5) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
 		--md-sys-color-light: #fff !important;
 	}
