@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&display=swap');
+@import url('google-sans.css');
 
 html[data-theme="amoled"] .dropdown-menu > li.active {
     background: transparent !important;
