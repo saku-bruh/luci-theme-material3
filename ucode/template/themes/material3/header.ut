@@ -33,6 +33,7 @@
 		<!-- single theme-color tag; JS overwrites to match light/dark -->
 		<meta name="theme-color" content="#fef7ff" />
 <link rel="stylesheet" href="{{ media }}/cascade.css" />
+<link rel="stylesheet" href="{{ media }}/slider.css" />
 <link rel="stylesheet" href="{{ media }}/theme-overrides.css" />
 		<link rel="stylesheet" media="screen and (max-width: 854px)" href="{{ media }}/mobile.css" />
 		<link rel="icon" href="{{ media }}/logo.svg" sizes="any">

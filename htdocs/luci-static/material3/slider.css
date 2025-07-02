@@ -1,0 +1,7 @@
+html[data-theme="amoled"][data-darkmode="true"] .cbi-progressbar > div {
+	background: #FFFFFF !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
+	background: #000000 !important;
+}

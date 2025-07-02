@@ -12,8 +12,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
     color: #000 !important;
 }
 
-
-
 	/*!
 	* LuCI Bootstrap Theme
 	* Copyright 2012 Nut & Bolt
@@ -203,9 +201,9 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-card: #f3ebfe;
 		--md-sys-color-card-translucent: #f3ebfebb;
 		--md-sys-color-progressbar: #e6e0e9;
-		--md-sys-color-dropdown: #f3edf7;
-		--md-sys-color-dropdown-selected: #e3dde7;
-		--md-sys-color-dropdown-hover: #e2dce6;
+		--md-sys-color-dropdown: #e8def8;
+		--md-sys-color-dropdown-selected: #d0c7e8;
+		--md-sys-color-dropdown-hover: #c9bce1;
 		--md-sys-color-refresh-button: #a99bf4;
 		--md-sys-color-refresh-button-hover: #8b7ae8;
 		--md-sys-color-font: #000;
@@ -225,9 +223,9 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-card: #e7f0ff;
 		--md-sys-color-card-translucent: #e7f0ffbb;
 		--md-sys-color-progressbar: #e2e2e6;
-		--md-sys-color-dropdown: #eeedf1;
-		--md-sys-color-dropdown-selected: #dedde1;
-		--md-sys-color-dropdown-hover: #dddce0;
+		--md-sys-color-dropdown: #d7e3f8;
+		--md-sys-color-dropdown-selected: #c7d3e8;
+		--md-sys-color-dropdown-hover: #b8cde2;
 		--md-sys-color-refresh-button: #93b8e0;
 		--md-sys-color-refresh-button-hover: #70a1e0;
 	}
@@ -241,9 +239,9 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-card: #edf7ea;
 		--md-sys-color-card-translucent: #edf7eabb;
 		--md-sys-color-progressbar: #e2e3dd;
-		--md-sys-color-dropdown: #eeeee8;
-		--md-sys-color-dropdown-selected: #deded8;
-		--md-sys-color-dropdown-hover: #ddddd8;
+		--md-sys-color-dropdown: #d5e8cf;
+		--md-sys-color-dropdown-selected: #c5d8c0;
+		--md-sys-color-dropdown-hover: #b8cbb4;
 		--md-sys-color-refresh-button: #8ecfaa;
 		--md-sys-color-refresh-button-hover: #6ab88e;
 	}
@@ -257,9 +255,9 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-card: #fef1ef;
 		--md-sys-color-card-translucent: #fef1efbb;
 		--md-sys-color-progressbar: #ede0de;
-		--md-sys-color-dropdown: #f8ebe9;
-		--md-sys-color-dropdown-selected: #e8dbd9;
-		--md-sys-color-dropdown-hover: #e8dbd9;
+		--md-sys-color-dropdown: #ffdad5;
+		--md-sys-color-dropdown-selected: #efccc6;
+		--md-sys-color-dropdown-hover: #e8bfb8;
 		--md-sys-color-refresh-button: #e1a4a3;
 		--md-sys-color-refresh-button-hover: #cd7f7d;
 	}
@@ -268,7 +266,7 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		flex: 0 0 180px !important;
 		text-align: right !important;
 	}
-.modal.login .btn.cbi-button-positive.important {
+html[data-theme="amoled"] .modal.login .btn.cbi-button-positive.important {
     background: #FFFFFF !important;
     color: #000000 !important;
 }
@@ -282,7 +280,7 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 	.modal.login {
 		border: none !important;
 	}
-.modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
+html[data-theme="amoled"] .modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
     background: #FFFFFF !important;
     color: #000000 !important;
 }
@@ -798,7 +796,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 	}
 
 	li {
-		/* color: var(--text-color-medium); */
 	}
 
 	.cbi-button-down,
@@ -1378,7 +1375,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 	}
 
 	header .pull-right {
-		/* flex: 0 0 auto; */
 		margin: 0 12px;
 	}
 
@@ -1415,7 +1411,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		float: none;
 		display: block;
 		overflow: hidden;
-		/* margin: 4px 0; */
 	}
 
 	.dropdown-menu a {
@@ -1467,7 +1462,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--tab-active-text-color: #0069d6;
 		--tab-active-border-color: var(--border-color-medium);
 		margin: 0 0px 10px;
-		/* padding: 0 2px; */
 		list-style: none;
 		display: inline-flex;
 		flex-wrap: wrap;
@@ -1526,15 +1520,15 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		background: #11111111
 	}
 
-	.cbi-tabmenu>li,
+    .cbi-tabmenu>li,
 	.tabs>li {
 		flex: 0 1 auto;
 		display: flex;
 		align-items: center;
 		background: var(--tab-active-background-color);
-		border: 1px solid var(--tab-active-border-color);
+	    border: 1px solid var(--tab-active-background-color)
 		border-bottom: none;
-		color: var(--primary-color-high);
+		color: var (--primary-color-high);
 		border: none;
 		margin: 0;
 		background: var(--md-sys-color-primary-container);
@@ -1964,11 +1958,9 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 	.cbi-dropdown[open]>ul.preview {
 		flex-grow: 1;
 		display: flex !important;
-		/* color: #fff; */
 	}
 
 	.cbi-dropdown>ul>li[display] {
-		/* color: var(--md-sys-color-primary); */
 	}
 
 	.cbi-value-field em {
@@ -2002,7 +1994,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 
 	.cbi-dropdown[open]>ul.dropdown>li[selected].focus {
 		background: var(--md-sys-color-dropdown-selected);
-		/* color: #000 */
 	}
 
 	.cbi-dropdown[open]>ul.dropdown>li:hover,
@@ -2065,11 +2056,11 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		width: 0%
 	}
 
-html[data-darkmode="true"] .cbi-progressbar > div {
+html[data-theme="amoled"][data-darkmode="true"] .cbi-progressbar > div {
 	background: #FFFFFF !important;
 }
 
-html:not([data-darkmode="true"]) .cbi-progressbar > div {
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 	background: #000000 !important;
 }
 
@@ -3075,7 +3066,7 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		border-radius: 2rem
 	}
 
-	.dropdown-menu>li.active {
+    .dropdown-menu>li.active {
 		border-left-color: var(--primary-color-high);
 		background: var(--md-sys-color-primary-container);
 		transition: background-color .3s
@@ -3100,8 +3091,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 
 
 	header .pull-right {
-		/* padding-top: 0; */
-		/* display: flex; */
 	}
 
 	h1,
@@ -3111,7 +3100,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 	}
 
 	header .brand {
-		/* padding: 0 57px 1px; */
 		width: var(--sidebar-width);
 		font-size: 25px;
 		line-height: 40px
@@ -3139,6 +3127,7 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
 		margin: 1px;
 		width: calc(100% - 2px);
+		padding: 16px;
 	}
 
 	.cbi-dropdown>ul>li input[type=text] {
@@ -3189,7 +3178,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		text-shadow: none;
 		padding: 1px 10px;
 		box-shadow: none;
-		/* color: var(--md-sys-color-primary); */
 	}
 
 	textarea {
@@ -3432,8 +3420,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 	.cbi-page-actions .cbi-button-negative+.cbi-button-save,
 	select,
 	textarea {
-		/* background: var(--md-sys-color-light); */
-		/* background: var(--md-sys-color-surface); */
 		border: 1px solid var(--md-sys-color-primary);
 		color: var(--md-sys-color-primary);
 	}
@@ -3461,15 +3447,21 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		border: 1px solid var(--md-sys-color-primary)
 	}
 
+	:root:not([data-theme="amoled"]) .modal.login .btn.cbi-button-positive.important {
+		color: #FFFFFF !important;
+	}
+
+	:root:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save {
+		color: #000000 !important;
+	}
+
 	@media screen and (max-width: 1300px) {
 		.table {
 			max-width: 100%;
-			/* table-layout: fixed; */
 		}
 
 		.table .td,
 		.table .th {
-			/* padding: 6px; */
 			word-wrap: break-word;
 			overflow-wrap: break-word;
 			word-break: break-word;
@@ -3540,9 +3532,9 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent) !important;
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent) !important;
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent) !important;
-		--md-sys-color-dropdown: #fff !important;
-		--md-sys-color-dropdown-selected: #f0f0f0 !important;
-		--md-sys-color-dropdown-hover: #e0e0e0 !important;
+		--md-sys-color-dropdown: #f0f0f0;
+		--md-sys-color-dropdown-selected: #e0e0e0;
+		--md-sys-color-dropdown-hover: #d0d0d0;
 		--md-sys-color-surface: hsl(0, 0%, 100%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
@@ -3560,41 +3552,41 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent) !important;
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent) !important;
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent) !important;
-		--md-sys-color-dropdown: #000 !important;
-		--md-sys-color-dropdown-selected: #111 !important;
-		--md-sys-color-dropdown-hover: #222 !important;
+		--md-sys-color-dropdown: #111;
+		--md-sys-color-dropdown-selected: #222;
+		--md-sys-color-dropdown-hover: #333;
 		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
 		--md-sys-color-light: #fff !important;
 	}
 
-	.table .tr:not(:first-child) .td {
+	html[data-theme="amoled"] .table .tr:not(:first-child) .td {
 		border-top: 1px solid var(--md-sys-color-primary) !important;
 	}
-	.table {
+	html[data-theme="amoled"] .table {
 		border-color: var(--md-sys-color-primary) !important;
 	}
 
-	.cbi-button, input, textarea {
+	html[data-theme="amoled"] .cbi-button, html[data-theme="amoled"] input, html[data-theme="amoled"] textarea {
 		background: var(--md-sys-color-card) !important;
 		color: var(--md-sys-color-font) !important;
 	}
-	.cbi-section > div, #view > div, #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+	html[data-theme="amoled"] .cbi-section > div, html[data-theme="amoled"] #view > div, html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
 		border: none !important;
 	}
-	.cbi-section > div > svg {
+	html[data-theme="amoled"] .cbi-section > div > svg {
 		background: var(--md-sys-color-card) !important;
 		border-radius: 5px !important;
 		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%) !important;
 		margin: 1px !important;
 		width: calc(100% - 2px) !important;
 	}
-	text {
+	html[data-theme="amoled"] text {
 		fill: var(--md-sys-color-font) !important;
 		text-shadow: none !important;
 	}
-	line {
+	html[data-theme="amoled"] line {
 		stroke: var(--md-sys-color-font) !important;
 		stroke-width: 0.1 !important;
 	}
@@ -3604,9 +3596,22 @@ html[data-darkmode="true"] button:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-html:not([data-darkmode="true"]) .dropdown-menu > li:not(.active):hover > a,
-html:not([data-darkmode="true"]) button:hover {
-    background-color: rgba(0, 0, 0, 0.05) !important;
+html .cbi-page-actions .cbi-button-apply.spinning::before {
+    background: currentColor !important;
+}
+
+html:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save.spinning::before {
+    background: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-apply.spinning::before,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-save.spinning::before {
+    background: #FFFFFF !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply.spinning::before,
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save.spinning::before {
+    background: #000000 !important;
 }
 	.cbi-tabmenu {
 		width: fit-content !important;
@@ -3621,24 +3626,55 @@ html:not([data-darkmode="true"]) button:hover {
 .cbi-value-field input,
 .cbi-value-field textarea,
 .cbi-value-field select {
-    width: 100% !important;
+    width: calc(100% - 6px) !important;
+    max-width: calc(100% - 6px) !important;
     margin: 3px !important;
+    box-sizing: border-box !important;
 }
 
-html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator] {
+.cbi-section-node input,
+.cbi-section-node textarea,
+.cbi-section-node select,
+.cbi-dropdown:not(.btn):not(.cbi-button) {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.table .td input,
+.table .td textarea,
+.table .td select,
+.table .td .cbi-dropdown {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator][data-style=active] {
     background: #000000 !important;
     color: #FFFFFF !important;
     font-weight: 700 !important;
 }
 
-html[data-theme="amoled"][data-darkmode="true"] header [data-indicator] {
+html[data-theme="amoled"][data-darkmode="true"] header [data-indicator][data-style=active] {
     background: #FFFFFF !important;
     color: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator][data-style=inactive] {
+    background: transparent !important;
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] header [data-indicator][data-style=inactive] {
+    background: transparent !important;
+    color: #ffffff !important;
 }
 
 
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply {
     background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
 }
 
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply ul li {
@@ -3646,8 +3682,9 @@ html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-ap
 }
 
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save {
-    background: var(--md-sys-color-primary) !important;
-    color: var(--md-sys-color-font) !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
 }
 
 html[data-darkmode="true"]:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-apply.cbi-dropdown > .open {
@@ -3663,18 +3700,141 @@ html[data-theme="amoled"]:not([data-darkmode="true"]) .theme-toggle .icon {
     fill: #000000 !important;
 }
 
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login .btn.cbi-button-positive.important {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-apply,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-save {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-apply.spinning::before,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-save.spinning::before {
+    background: #FFFFFF !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply,
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply.spinning::before,
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save.spinning::before {
+    background: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login .cbi-value-title,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login label,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login h4 {
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login input[type="text"],
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login input[type="password"] {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #CCCCCC !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login input[type="text"]:focus,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .modal.login input[type="password"]:focus {
+    border-color: #000000 !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 html[data-theme="amoled"][data-darkmode="true"] .theme-toggle .icon {
     fill: #FFFFFF !important;
 }
 
-/* Fix dropdown arrow color for Material3Amoled dark mode */
 html[data-theme="amoled"][data-darkmode="true"] .cbi-select::before {
     color: #000000 !important;
 }
 
-/* Fix spinner color for Material3Amoled dark mode */
-html[data-theme="amoled"][data-darkmode="true"] .spinning::before {
+:root:not([data-darkmode]) .spinning::before {
     background: #000000 !important;
+}
+
+:root[data-darkmode="true"] .spinning::before {
+    background: #ffffff !important;
+}
+
+:root[data-theme="amoled"]:not([data-darkmode]) .spinning::before {
+    background: #000000 !important;
+}
+
+:root[data-theme="amoled"][data-darkmode="true"] .spinning::before {
+    background: #ffffff !important;
+}
+
+html[data-darkmode="true"]:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save:hover {
+    background: var(--md-sys-color-primary-container-hover) !important;
+    color: #FFFFFF !important;
+}
+
+html:not([data-darkmode="true"]):not([data-theme="amoled"]) .cbi-page-actions .cbi-button-apply:hover {
+    background: var(--md-sys-color-primary-container-hover) !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+html:not([data-darkmode="true"]):not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save:hover {
+    background: var(--md-sys-color-primary-container-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+html[data-darkmode="true"]:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-apply:hover {
+    background: var(--md-sys-color-primary-container-hover) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+html[data-darkmode="true"]:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save:hover {
+    background: var(--md-sys-color-primary-container-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save:hover {
+    background: #F0F0F0 !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-apply:hover,
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-page-actions .cbi-button-save:hover {
+    background: #333333 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply:hover {
+    background: #F0F0F0 !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 }
 
 html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover > a {
@@ -3683,4 +3843,22 @@ html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover > a {
 
 html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.cbi-page-actions .cbi-dropdown[open] > ul.dropdown {
+    background-color: var(--md-sys-color-dropdown) !important;
+}
+
+.cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li,
+.cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li > * {
+    color: #000000 !important;
+}
+
+.cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li:hover {
+    background-color: var(--md-sys-color-dropdown-hover) !important;
+}
+
+[data-darkmode="true"] .cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li,
+[data-darkmode="true"] .cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li > * {
+    color: #FFFFFF !important;
 }
