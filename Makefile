@@ -100,7 +100,7 @@ define Package/luci-theme-material3/postinst
 }
 endef
 
-LUCI_MINIFY_CSS:=0
+CONFIG_LUCI_CSSTIDY:=
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
