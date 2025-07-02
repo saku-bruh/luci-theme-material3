@@ -1,17 +1,5 @@
 @import url('google-sans.css');
 
-html[data-theme="amoled"] .dropdown-menu > li.active {
-    background: transparent !important;
-}
-html[data-theme="amoled"]:not([data-darkmode="true"]) .dropdown-menu > li.active > a {
-    background: #000 !important;
-    color: #fff !important;
-}
-html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
-    background: #fff !important;
-    color: #000 !important;
-}
-
 	/*!
 	* LuCI Bootstrap Theme
 	* Copyright 2012 Nut & Bolt
@@ -266,10 +254,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		flex: 0 0 180px !important;
 		text-align: right !important;
 	}
-html[data-theme="amoled"] .modal.login .btn.cbi-button-positive.important {
-    background: #FFFFFF !important;
-    color: #000000 !important;
-}
 
 	.modal.login hr {
 		display: none !important;
@@ -280,10 +264,6 @@ html[data-theme="amoled"] .modal.login .btn.cbi-button-positive.important {
 	.modal.login {
 		border: none !important;
 	}
-html[data-theme="amoled"] .modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
-    background: #FFFFFF !important;
-    color: #000000 !important;
-}
 
 	@media (max-width: 854px) {
 		header .brand { max-width: 50vw; overflow:hidden; text-overflow: ellipsis; }
@@ -1264,10 +1244,6 @@ html[data-theme="amoled"] .modal.login[data-darkmode=true] .btn.cbi-button-posit
 		text-align: right
 	}
 
-	html:not([data-theme="amoled"]) .cbi-page-actions {
-		text-align: center;
-	}
-
 	.actions .secondary-action a,
 	.cbi-page-actions .secondary-action a {
 		line-height: 30px
@@ -2055,14 +2031,6 @@ html[data-theme="amoled"] .modal.login[data-darkmode=true] .btn.cbi-button-posit
 		transition: width .25s ease-in;
 		width: 0%
 	}
-
-html[data-theme="amoled"][data-darkmode="true"] .cbi-progressbar > div {
-	background: #FFFFFF !important;
-}
-
-html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
-	background: #000000 !important;
-}
 
 	.cbi-progressbar::before {
 		position: absolute;
@@ -3447,14 +3415,6 @@ html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 		border: 1px solid var(--md-sys-color-primary)
 	}
 
-	:root:not([data-theme="amoled"]) .modal.login .btn.cbi-button-positive.important {
-		color: #FFFFFF !important;
-	}
-
-	:root:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save {
-		color: #000000 !important;
-	}
-
 	@media screen and (max-width: 1300px) {
 		.table {
 			max-width: 100%;
@@ -3521,6 +3481,36 @@ html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 		font-size: 15px !important;
 	}
 
+	.table .tr:not(:first-child) .td {
+		border-top: 1px solid var(--md-sys-color-primary) !important;
+	}
+	.table {
+		border-color: var(--md-sys-color-primary) !important;
+	}
+
+	.cbi-button, input,  textarea {
+		background: var(--md-sys-color-card) !important;
+		color: var(--md-sys-color-font) !important;
+	}
+	 .cbi-section > div,  #view > div,  #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+		border: none !important;
+	}
+	 .cbi-section > div > svg {
+		background: var(--md-sys-color-card) !important;
+		border-radius: 5px !important;
+		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%) !important;
+		margin: 1px !important;
+		width: calc(100% - 2px) !important;
+	}
+	 text {
+		fill: var(--md-sys-color-font) !important;
+		text-shadow: none !important;
+	}
+	 line {
+		stroke: var(--md-sys-color-font) !important;
+		stroke-width: 0.1 !important;
+	}
+
 	:root[data-theme="amoled"] {
 		--background-color-h: 0 !important;
 		--background-color-s: 0% !important;
@@ -3541,7 +3531,6 @@ html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-light: #fff !important;
 	}
 
-
 	:root[data-theme="amoled"][data-darkmode=true] {
 		--background-color-h: 0 !important;
 		--background-color-s: 0% !important;
@@ -3561,43 +3550,17 @@ html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-light: #fff !important;
 	}
 
-	html[data-theme="amoled"] .table .tr:not(:first-child) .td {
-		border-top: 1px solid var(--md-sys-color-primary) !important;
-	}
-	html[data-theme="amoled"] .table {
-		border-color: var(--md-sys-color-primary) !important;
-	}
-
-	html[data-theme="amoled"] .cbi-button, html[data-theme="amoled"] input, html[data-theme="amoled"] textarea {
-		background: var(--md-sys-color-card) !important;
-		color: var(--md-sys-color-font) !important;
-	}
-	html[data-theme="amoled"] .cbi-section > div, html[data-theme="amoled"] #view > div, html[data-theme="amoled"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-		border: none !important;
-	}
-	html[data-theme="amoled"] .cbi-section > div > svg {
-		background: var(--md-sys-color-card) !important;
-		border-radius: 5px !important;
-		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%) !important;
-		margin: 1px !important;
-		width: calc(100% - 2px) !important;
-	}
-	html[data-theme="amoled"] text {
-		fill: var(--md-sys-color-font) !important;
-		text-shadow: none !important;
-	}
-	html[data-theme="amoled"] line {
-		stroke: var(--md-sys-color-font) !important;
-		stroke-width: 0.1 !important;
-	}
-
-html[data-darkmode="true"] .dropdown-menu > li:not(.active):hover > a,
-html[data-darkmode="true"] button:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+html[data-theme="amoled"]:not([data-darkmode="true"]) .dropdown-menu > li.active > a {
+    background: #000 !important;
+    color: #fff !important;
 }
-
-html .cbi-page-actions .cbi-button-apply.spinning::before {
-    background: currentColor !important;
+html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
+    background: #fff !important;
+    color: #000 !important;
+}
+html[data-theme="amoled"]html[data-darkmode="true"] .dropdown-menu > li:not(.active):hover > a,
+html[data-theme="amoled"]html[data-darkmode="true"] button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 html:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save.spinning::before {
@@ -3613,63 +3576,33 @@ html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-ap
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-save.spinning::before {
     background: #000000 !important;
 }
-	.cbi-tabmenu {
-		width: fit-content !important;
-		margin: 0 auto 10px !important;
-	}
-	#view > .cbi-section {
-		text-align: left !important;
-	}
-	#view > div {
-		text-align: center !important;
-	}
-.cbi-value-field input,
-.cbi-value-field textarea,
-.cbi-value-field select {
-    width: calc(100% - 6px) !important;
-    max-width: calc(100% - 6px) !important;
-    margin: 3px !important;
-    box-sizing: border-box !important;
+html[data-theme="amoled"] .modal.login .btn.cbi-button-positive.important {
+    background: #FFFFFF !important;
+    color: #000000 !important;
 }
-
-.cbi-section-node input,
-.cbi-section-node textarea,
-.cbi-section-node select,
-.cbi-dropdown:not(.btn):not(.cbi-button) {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-.table .td input,
-.table .td textarea,
-.table .td select,
-.table .td .cbi-dropdown {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-}
-
-html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator][data-style=active] {
-    background: #000000 !important;
-    color: #FFFFFF !important;
-    font-weight: 700 !important;
-}
-
-html[data-theme="amoled"][data-darkmode="true"] header [data-indicator][data-style=active] {
+html[data-theme="amoled"] .modal.login[data-darkmode=true] .btn.cbi-button-positive.important {
     background: #FFFFFF !important;
     color: #000000 !important;
 }
 
-html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator][data-style=inactive] {
-    background: transparent !important;
-    color: #000000 !important;
+	html:not([data-theme="amoled"]) .cbi-page-actions {
+		text-align: center;
+	}
+
+html[data-theme="amoled"][data-darkmode="true"] .cbi-progressbar > div {
+	background: #FFFFFF !important;
+}
+html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
+	background: #000000 !important;
 }
 
-html[data-theme="amoled"][data-darkmode="true"] header [data-indicator][data-style=inactive] {
-    background: transparent !important;
-    color: #ffffff !important;
-}
+	:root:not([data-theme="amoled"]) .modal.login .btn.cbi-button-positive.important {
+		color: #FFFFFF !important;
+	}
 
+	:root:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save {
+		color: #000000 !important;
+	}
 
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply {
     background: #FFFFFF !important;
@@ -3761,14 +3694,6 @@ html[data-theme="amoled"][data-darkmode="true"] .cbi-select::before {
     color: #000000 !important;
 }
 
-:root:not([data-darkmode]) .spinning::before {
-    background: #000000 !important;
-}
-
-:root[data-darkmode="true"] .spinning::before {
-    background: #ffffff !important;
-}
-
 :root[data-theme="amoled"]:not([data-darkmode]) .spinning::before {
     background: #000000 !important;
 }
@@ -3835,6 +3760,55 @@ html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-ap
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
+}
+
+html .cbi-page-actions .cbi-button-apply.spinning::before {
+    background: currentColor !important;
+}
+
+	.cbi-tabmenu {
+		width: fit-content !important;
+		margin: 0 auto 10px !important;
+	}
+	#view > .cbi-section {
+		text-align: left !important;
+	}
+	#view > div {
+		text-align: center !important;
+	}
+
+.cbi-value-field input,
+.cbi-value-field textarea,
+.cbi-value-field select {
+    width: calc(100% - 6px) !important;
+    max-width: calc(100% - 6px) !important;
+    margin: 3px !important;
+    box-sizing: border-box !important;
+}
+
+.cbi-section-node input,
+.cbi-section-node textarea,
+.cbi-section-node select,
+.cbi-dropdown:not(.btn):not(.cbi-button) {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.table .td input,
+.table .td textarea,
+.table .td select,
+.table .td .cbi-dropdown {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+:root:not([data-darkmode]) .spinning::before {
+    background: #000000 !important;
+}
+
+:root[data-darkmode="true"] .spinning::before {
+    background: #ffffff !important;
 }
 
 html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover > a {
