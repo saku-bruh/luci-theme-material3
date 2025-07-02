@@ -3584,7 +3584,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		border-top: 1px solid var(--md-sys-color-primary) !important;
 	}
 	html[data-theme="amoled"][data-darkmode="true"] .table {
-		background: #000 !important;
 		border-color: var(--md-sys-color-primary) !important;
 	}
 
