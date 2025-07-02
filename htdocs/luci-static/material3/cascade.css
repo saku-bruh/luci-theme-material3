@@ -212,6 +212,10 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-light: #fff;
 	}
 
+	[data-darkmode=true] {
+		--md-sys-color-font: #fff;
+	}
+
 	:root[data-theme="blue"] {
 		--md-sys-color-primary: #0061a4;
 		--md-sys-color-primary-container: #d7e3f8;
@@ -226,8 +230,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-dropdown-hover: #dddce0;
 		--md-sys-color-refresh-button: #93b8e0;
 		--md-sys-color-refresh-button-hover: #70a1e0;
-		--md-sys-color-font: #000;
-		--md-sys-color-light: #fff;
 	}
 
 	:root[data-theme="green"] {
@@ -244,8 +246,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-dropdown-hover: #ddddd8;
 		--md-sys-color-refresh-button: #8ecfaa;
 		--md-sys-color-refresh-button-hover: #6ab88e;
-		--md-sys-color-font: #000;
-		--md-sys-color-light: #fff;
 	}
 
 	:root[data-theme="red"] {
@@ -262,8 +262,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		--md-sys-color-dropdown-hover: #e8dbd9;
 		--md-sys-color-refresh-button: #e1a4a3;
 		--md-sys-color-refresh-button-hover: #cd7f7d;
-		--md-sys-color-font: #000;
-		--md-sys-color-light: #fff;
 	}
 
 	.modal.login .cbi-value-title {
@@ -504,10 +502,6 @@ html[data-theme="amoled"][data-darkmode="true"] .dropdown-menu > li.active > a {
 		.cbi-section, .cbi-map {
 			background-color: #00000000;
 			--text-color-high: hsl(0, 0%, 95%);
-		}
-
-		.cbi-section-node {
-			padding: 4px 8px
 		}
 
 		.cbi-section-node,
@@ -3135,10 +3129,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		padding: 8px 16px
 	}
 
-	.cbi-section-node {
-		padding: 4px 8px
-	}
-
 	.cbi-section-node,
 	.create-item-input,
 	.ifacebox,
@@ -3539,7 +3529,7 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		font-size: 15px !important;
 	}
 
-:root[data-theme="amoled"] {
+	:root[data-theme="amoled"] {
 		--background-color-h: 0 !important;
 		--background-color-s: 0% !important;
 		--background-color-l: 100% !important;
@@ -3556,7 +3546,6 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-surface: hsl(0, 0%, 100%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
-		--md-sys-color-font: #000 !important;
 		--md-sys-color-light: #fff !important;
 	}
 
@@ -3577,41 +3566,39 @@ html:not([data-darkmode="true"]) .cbi-progressbar > div {
 		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.8) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
-		--md-sys-color-font: #fff !important;
 		--md-sys-color-light: #fff !important;
 	}
-	html[data-theme="amoled"] .table .tr:not(:first-child) .td {
+
+	.table .tr:not(:first-child) .td {
 		border-top: 1px solid var(--md-sys-color-primary) !important;
 	}
-	html[data-theme="amoled"][data-darkmode="true"] .table {
+	.table {
 		border-color: var(--md-sys-color-primary) !important;
 	}
 
-	html[data-theme="amoled"][data-darkmode="true"] .cbi-button,
-	html[data-theme="amoled"][data-darkmode="true"] input,
-	html[data-theme="amoled"][data-darkmode="true"] textarea {
+	.cbi-button, input, textarea {
 		background: var(--md-sys-color-card) !important;
 		color: var(--md-sys-color-font) !important;
 	}
-
-	html[data-theme="amoled"][data-darkmode="true"] .cbi-button,
-	html[data-theme="amoled"][data-darkmode="true"] input,
-	html[data-theme="amoled"][data-darkmode="true"] textarea {
-		background: var(--md-sys-color-card) !important;
-		color: var(--md-sys-color-font) !important;
-	}
-html[data-theme="amoled"][data-darkmode="true"] #view > div,
-	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-		background: #000 !important;
+	.cbi-section > div, #view > div, #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
 		border: none !important;
 	}
-html[data-theme="amoled"][data-darkmode="true"] #view > div > svg > text,
-	html[data-theme="amoled"][data-darkmode="true"] #view > div > svg > line,
-	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > text,
-	html[data-theme="amoled"][data-darkmode="true"] #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > line {
-		fill: #fff !important;
-		stroke: #fff !important;
+	.cbi-section > div > svg {
+		background: var(--md-sys-color-card) !important;
+		border-radius: 5px !important;
+		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%) !important;
+		margin: 1px !important;
+		width: calc(100% - 2px) !important;
 	}
+	text {
+		fill: var(--md-sys-color-font) !important;
+		text-shadow: none !important;
+	}
+	line {
+		stroke: var(--md-sys-color-font) !important;
+		stroke-width: 0.1 !important;
+	}
+
 html[data-darkmode="true"] .dropdown-menu > li:not(.active):hover > a,
 html[data-darkmode="true"] button:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
@@ -3621,14 +3608,14 @@ html:not([data-darkmode="true"]) .dropdown-menu > li:not(.active):hover > a,
 html:not([data-darkmode="true"]) button:hover {
     background-color: rgba(0, 0, 0, 0.05) !important;
 }
-	html[data-theme="amoled"] .cbi-tabmenu {
+	.cbi-tabmenu {
 		width: fit-content !important;
 		margin: 0 auto 10px !important;
 	}
-	html[data-theme="amoled"] #view > .cbi-section {
+	#view > .cbi-section {
 		text-align: left !important;
 	}
-	html[data-theme="amoled"] #view > div {
+	#view > div {
 		text-align: center !important;
 	}
 .cbi-value-field input,
