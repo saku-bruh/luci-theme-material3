@@ -3539,7 +3539,7 @@
 		--md-sys-color-primary: #555 !important;
 		--primary-color-high: #555 !important;
 		--md-sys-color-card: #101010 !important;
-		--md-sys-color-primary-container: #0f0f0f !important;
+		--md-sys-color-primary-container: #1a1a1a !important;
 		--md-sys-color-primary-container-hover: color-mix(in srgb, var(--md-sys-color-primary-container) 80%, transparent) !important;
 		--md-sys-color-refresh-button: color-mix(in srgb, var(--md-sys-color-primary) 50%, transparent) !important;
 		--md-sys-color-refresh-button-hover: color-mix(in srgb, var(--md-sys-color-primary) 80%, transparent) !important;
