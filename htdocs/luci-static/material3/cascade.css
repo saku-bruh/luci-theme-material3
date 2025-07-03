@@ -3187,7 +3187,7 @@
 
 	.dropdown-menu li a:hover {
 		border-radius: 2rem;
-		background: 0 0 !important;
+		background: var(--md-sys-color-card) !important;
 		color: var(--text-color-highest) !important
 	}
 
