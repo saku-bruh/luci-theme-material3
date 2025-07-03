@@ -490,7 +490,7 @@
 			background: var(--md-sys-color-card);
 			border-radius: 16px;
 			box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
-			margin: 1px;
+			padding: 5px;
 		}
 
 		.modal.login .cbi-map .cbi-section .cbi-section-node {
@@ -3597,14 +3597,6 @@ html[data-theme="amoled"][data-darkmode="true"] .cbi-progressbar > div {
 html[data-theme="amoled"]:not([data-darkmode="true"]) .cbi-progressbar > div {
 	background: #000000 !important;
 }
-
-	:root:not([data-theme="amoled"]) .modal.login .btn.cbi-button-positive.important {
-		color: #FFFFFF !important;
-	}
-
-	:root:not([data-theme="amoled"]) .cbi-page-actions .cbi-button-save {
-		color: #000000 !important;
-	}
 
 html[data-theme="amoled"][data-darkmode="true"] .cbi-page-actions .cbi-button-apply {
     background: #FFFFFF !important;
