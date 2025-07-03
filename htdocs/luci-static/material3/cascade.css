@@ -181,6 +181,19 @@
 		color-scheme: light;
 		--sidebar-width: 280px;
 		--header-height: 4rem;
+		--tab-bar-background-color: var(--background-color-high);
+		--tab-inactive-background-color-h: var(--border-color-low-h);
+		--tab-inactive-background-color-s: var(--border-color-low-s);
+		--tab-inactive-background-color-l: var(--border-color-low-l);
+		--tab-inactive-background-color: var(--border-color-low);
+		--tab-inactive-border-color: var(--border-color-medium);
+		--tab-inactive-text-color-delta-l: 33.33%;
+		--tab-inactive-text-color-l: calc(var(--tab-inactive-background-color-l) + var(--background-color-delta-l-sign) * var(--tab-inactive-text-color-delta-l));
+		--tab-inactive-text-color: hsl(var(--tab-inactive-background-color-hsl));
+		--tab-inactive-hover-background-color: var(--background-color-high);
+		--tab-active-background-color: var(--background-color-high);
+		--tab-active-text-color: #0069d6;
+		--tab-active-border-color: var(--border-color-medium);
 		--md-sys-color-primary: hsl(256, 34%, 60%);
 		--md-sys-color-primary-container: hsl(263, 65%, 94%);
 		--md-sys-color-primary-container-hover: #d0c7e8;
@@ -200,6 +213,7 @@
 
 	[data-darkmode=true] {
 		--md-sys-color-font: #fff;
+		--md-sys-color-light: #000;
 	}
 
 	:root[data-theme="blue"] {
@@ -482,6 +496,20 @@
 			--text-color-high: hsl(0, 0%, 95%);
 		}
 
+		.cbi-button-disabled,
+		input:disabled {
+			opacity: 0.5;
+			color: var(--text-color-medium) !important;
+		}
+
+		.btn:hover {
+			background-color: color-mix(
+				in srgb,
+				var(--primary-color-high)
+				calc(100% - (var(--state-layer-hover-opacity) * 100)),var(--md-sys-color-on-primary));
+		}
+	}
+
 		.cbi-section-node,
 		.create-item-input,
 		.ifacebox,
@@ -509,20 +537,6 @@
 			-webkit-text-fill-color: var(--md-sys-color-font) !important;
 			color: var(--md-sys-color-font) !important;
 		}
-
-		.cbi-button-disabled,
-		input:disabled {
-			opacity: 0.5;
-			color: var(--text-color-medium) !important;
-		}
-
-		.btn:hover {
-			background-color: color-mix(
-				in srgb,
-				var(--primary-color-high)
-				calc(100% - (var(--state-layer-hover-opacity) * 100)),var(--md-sys-color-on-primary));
-		}
-	}
 
 	.btn {
 		transition: background-color var(--transition-color),
@@ -1440,19 +1454,6 @@
 
 	.cbi-tabmenu,
 	.tabs {
-		--tab-bar-background-color: var(--background-color-high);
-		--tab-inactive-background-color-h: var(--border-color-low-h);
-		--tab-inactive-background-color-s: var(--border-color-low-s);
-		--tab-inactive-background-color-l: var(--border-color-low-l);
-		--tab-inactive-background-color: var(--border-color-low);
-		--tab-inactive-border-color: var(--border-color-medium);
-		--tab-inactive-text-color-delta-l: 33.33%;
-		--tab-inactive-text-color-l: calc(var(--tab-inactive-background-color-l) + var(--background-color-delta-l-sign) * var(--tab-inactive-text-color-delta-l));
-		--tab-inactive-text-color: hsl(var(--tab-inactive-background-color-hsl));
-		--tab-inactive-hover-background-color: var(--background-color-high);
-		--tab-active-background-color: var(--background-color-high);
-		--tab-active-text-color: #0069d6;
-		--tab-active-border-color: var(--border-color-medium);
 		margin: 0 0px 10px;
 		list-style: none;
 		display: inline-flex;
@@ -1517,13 +1518,12 @@
 		flex: 0 1 auto;
 		display: flex;
 		align-items: center;
-		background: var(--tab-active-background-color);
-	    border: 1px solid var(--tab-active-background-color)
+		background: var(--md-sys-color-primary-container);
+	    border: 1px solid var(--md-sys-color-primary-container);
 		border-bottom: none;
-		color: var (--primary-color-high);
+		color: var(--tab-active-text-color);
 		border: none;
 		margin: 0;
-		background: var(--md-sys-color-primary-container);
 		color: #000;
 		font-size: 14px;
 		height: 32px;
@@ -3530,7 +3530,6 @@
 		--md-sys-color-surface: hsl(0, 0%, 100%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 100%, 0.5) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
-		--md-sys-color-light: #fff !important;
 	}
 
 	:root[data-theme="amoled"][data-darkmode=true] {
@@ -3549,7 +3548,6 @@
 		--md-sys-color-surface: hsl(0, 0%, 0%) !important;
 		--md-sys-color-surface-translucent: hsla(0, 0%, 0%, 0.5) !important;
 		--md-sys-color-progressbar: hsl(0, 0%, 50%) !important;
-		--md-sys-color-light: #fff !important;
 	}
 
 html[data-theme="amoled"]:not([data-darkmode="true"]) .dropdown-menu > li.active > a {
@@ -3803,14 +3801,6 @@ html .cbi-page-actions .cbi-button-apply.spinning::before {
 
 :root[data-darkmode="true"] .spinning::before {
     background: #ffffff !important;
-}
-
-html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover > a {
-    color: #FFFFFF !important;
-}
-
-html[data-darkmode="true"] .cbi-tabmenu > li:not(.cbi-tab-active):hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .cbi-page-actions .cbi-dropdown[open] > ul.dropdown {
