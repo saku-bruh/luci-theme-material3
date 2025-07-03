@@ -3495,15 +3495,14 @@
 		background: var(--md-sys-color-card) !important;
 		color: var(--md-sys-color-font) !important;
 	}
-	 .cbi-section > div,  #view > div,  #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+	#channel_graph, .cbi-section > div,  #view > div, #view > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
 		border: none !important;
 	}
-	 .cbi-section > div > svg {
+	div > svg {
 		background: var(--md-sys-color-card) !important;
 		border-radius: 5px !important;
 		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%) !important;
 		margin: 1px !important;
-		width: calc(100% - 2px) !important;
 	}
 	 text {
 		fill: var(--md-sys-color-font) !important;
