@@ -493,6 +493,23 @@
 			margin: 1px;
 		}
 
+		.modal.login .cbi-map .cbi-section .cbi-section-node {
+			background: none !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+			margin: 0 !important;
+		}
+		.modal.login {
+			background: var(--md-sys-color-card) !important;
+			border-radius: 16px;
+		}
+		input:-webkit-autofill {
+			-webkit-box-shadow: inset 0 0 0px 9999px var(--md-sys-color-card); /* Example: Set background to white */
+			box-shadow: inset 0 0 0px 9999px var(--md-sys-color-card); /* For other browsers */
+			-webkit-text-fill-color: var(--md-sys-color-font) !important;
+			color: var(--md-sys-color-font) !important;
+		}
+
 		.cbi-button-disabled,
 		input:disabled {
 			opacity: 0.5;
@@ -3082,18 +3099,6 @@
 	.cbi-page-actions {
 		border: none;
 		padding: 8px 16px
-	}
-
-	.cbi-section-node,
-	.create-item-input,
-	.ifacebox,
-	.table,
-	table {
-		background: var(--md-sys-color-card);
-		border-radius: 16px;
-		box-shadow: 0 .5px 1.5px 0 rgba(0, 0, 0, 19%), 0 0 1px 0 rgba(0, 0, 0, 3.9%);
-		margin: 1px;
-		width: calc(100% - 2px);
 	}
 
 	.cbi-dropdown>ul>li input[type=text] {
