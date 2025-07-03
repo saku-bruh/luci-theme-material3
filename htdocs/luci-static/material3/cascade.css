@@ -3819,3 +3819,27 @@ html .cbi-page-actions .cbi-button-apply.spinning::before {
 [data-darkmode="true"] .cbi-page-actions .cbi-dropdown[open] > ul.dropdown > li > * {
     color: #FFFFFF !important;
 }
+
+html[data-darkmode="true"]:not([data-theme="amoled"]) .modal.login .btn.cbi-button-positive.important {
+    color: #FFFFFF !important;
+}
+
+:root[data-theme="amoled"]:not([data-darkmode="true"]) {
+    --md-sys-color-refresh-button: #000000 !important;
+}
+
+:root[data-theme="amoled"][data-darkmode="true"] {
+    --md-sys-color-refresh-button: #FFFFFF !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] header [data-indicator="poll-status"][data-style="active"] {
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"]:not([data-darkmode="true"]) header [data-indicator="poll-status"][data-style="inactive"] {
+    color: #000000 !important;
+}
+
+html[data-theme="amoled"][data-darkmode="true"] header [data-indicator="poll-status"][data-style="inactive"] {
+    color: #FFFFFF !important;
+}
